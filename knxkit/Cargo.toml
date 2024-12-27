@@ -1,0 +1,22 @@
+[package]
+name = "knxkit"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+nom = "7.1.3"
+num-traits = "0.2.12"
+num-derive = "0.4.2"
+bitflags = "2.6.0"
+cookie-factory = "0.3.3"
+tokio = { version = "1.42.0", features = ["full"] }
+futures = "0.3.31"
+tracing = "0.1.41"
+roxmltree = "0.20.0"
+zip = "2.2"
+regex = "1.11"
+thiserror = "2.0.9"
+hex = "0.4.3"
+url = "2.5.4"
+dns-lookup = "2.0.4"
+macaddr = "1.0.1"
