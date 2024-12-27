@@ -14,6 +14,8 @@ use crate::{
     project::Project,
 };
 
+use super::DPT;
+
 #[derive(Debug, Clone)]
 pub enum CowString<'a> {
     Owned(String),
@@ -50,7 +52,7 @@ impl std::fmt::Display for CowString<'_> {
 pub trait ProjectExt {
     fn device_name(&self, address: impl Borrow<IndividualAddress>) -> Option<CowString>;
     fn group(&self, address: impl Borrow<GroupAddress>) -> Option<CowString>;
-    fn group_dpt(&self, address: GroupAddress) -> Option<CowString>;
+    fn group_dpt(&self, address: GroupAddress) -> Option<DPT>;
     //    fn decode_hex(&self, address: GroupAddress, hex: &str) -> Result<DataPoint, Error>;
 }
 
@@ -73,13 +75,8 @@ impl ProjectExt for Option<&Project> {
         })
     }
 
-    fn group_dpt(&self, address: GroupAddress) -> Option<CowString> {
-        self.and_then(|project| {
-            project
-                .groups
-                .by_address(address)
-                .and_then(|g| g.dpt.map(|d| d.to_string().into()))
-        })
+    fn group_dpt(&self, address: GroupAddress) -> Option<DPT> {
+        self.and_then(|project| project.groups.by_address(address).and_then(|g| g.dpt))
     }
 
     /*

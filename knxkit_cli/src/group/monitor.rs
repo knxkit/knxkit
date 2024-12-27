@@ -55,7 +55,10 @@ fn format_cemi(cemi: &CEMI, format: &Format) -> Result<Option<String>> {
         .map(|service| {
             let project = CLI.globals.project.as_ref();
 
-            let dpt = project.group_dpt(*dst).unwrap_or_missing();
+            let dpt = project
+                .group_dpt(*dst)
+                .map(|dpt| CowString::from(dpt.to_string()))
+                .unwrap_or_missing();
             let dpt_name = project.group_dpt_name(dst).unwrap_or_missing();
             let dpt_unit = project.group_dpt_unit(dst).unwrap_or_missing();
 
