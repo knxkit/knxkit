@@ -12,10 +12,13 @@ use std::{io::Read, path::Path};
 
 use crate::project::{devices::Devices, error::Error, groups::Groups, master};
 
+use super::MasterData;
+
 #[derive(Clone, Debug)]
 pub struct Project {
     pub devices: Devices,
     pub groups: Groups,
+    pub master: MasterData,
 }
 
 impl Project {
@@ -51,6 +54,10 @@ impl Project {
         let devices = Devices::parse(&pfile)?;
         let groups = Groups::parse(&pfile, &master)?;
 
-        Ok(Project { devices, groups })
+        Ok(Project {
+            devices,
+            groups,
+            master,
+        })
     }
 }
