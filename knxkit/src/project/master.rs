@@ -7,7 +7,7 @@
 //
 // SPDX-License-Identifier: EPL-2.0 OR GPL-3.0
 
-use std::{collections::HashMap, fmt::Debug, rc::Rc};
+use std::{collections::HashMap, fmt::Debug, sync::Arc};
 
 use roxmltree::{Document, Node};
 
@@ -32,7 +32,7 @@ pub struct DatapointType {
 #[derive(Debug, Clone)]
 #[allow(dead_code)]
 pub struct DatapointSubtype {
-    pub datapoint_type: Rc<DatapointType>,
+    pub datapoint_type: Arc<DatapointType>,
 
     pub id: String,
     pub dpt: DPT,
@@ -227,7 +227,7 @@ impl MasterData {
             .children()
             .filter(by_name("DatapointType"))
         {
-            let datapoint_type = Rc::new(DatapointType {
+            let datapoint_type = Arc::new(DatapointType {
                 id: type_node.att("Id")?,
                 dpt: DPT::new(type_node.att("Number")?, None),
                 name: type_node.att("Name")?,
