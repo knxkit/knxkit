@@ -38,7 +38,7 @@ fn parse_project(v: &str) -> Result<Project> {
 
 #[derive(Parser, Debug, Clone)]
 pub struct Remote {
-    #[arg(short = 'r', long)]
+    #[arg(long)]
     #[arg(value_parser = remote::parse_remote)]
     pub remote: remote::RemoteSpec,
 }
@@ -58,14 +58,14 @@ pub struct Format {
 
 #[derive(Parser, Debug, Clone)]
 pub struct Globals {
-    #[arg(short = 'l', long = "local")]
+    #[arg(long = "local")]
     #[arg(value_parser = parse_local, default_value="")]
     pub local_address: Ipv4Addr,
 
-    #[arg(long = "log")]
+    #[arg(long)]
     pub log: bool,
 
-    #[arg(long = "project", value_parser = parse_project)]
+    #[arg(long, value_parser = parse_project)]
     pub project: Option<Project>,
 }
 
@@ -110,10 +110,10 @@ pub enum GroupCommand {
         #[arg(value_parser = GroupAddress::from_str)]
         group: GroupAddress,
 
-        #[arg(value_enum, default_value = "value", long = "format")]
+        #[arg(long, value_enum, default_value = "value")]
         format: ValueFormat,
 
-        #[arg(long = "unit", default_value = "false")]
+        #[arg(long, default_value = "false")]
         unit: bool,
     },
 
@@ -126,7 +126,7 @@ pub enum GroupCommand {
 
         value: String,
 
-        #[arg(value_enum, default_value = "hex", long = "format")]
+        #[arg(long, value_enum, default_value = "hex")]
         format: ValueFormat,
     },
 }
