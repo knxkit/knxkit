@@ -115,6 +115,9 @@ pub enum GroupCommand {
 
         #[arg(long, default_value = "false")]
         unit: bool,
+
+        #[arg(long, value_parser = parse_duration::parse, default_value = "5s")]
+        timeout: std::time::Duration,
     },
 
     Write {

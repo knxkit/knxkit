@@ -7,6 +7,8 @@
 //
 // SPDX-License-Identifier: EPL-2.0 OR GPL-3.0
 
+use std::time::Duration;
+
 use anyhow::{anyhow, Result};
 
 use knxkit::{
@@ -26,10 +28,11 @@ pub async fn command(
     group: GroupAddress,
     format: ValueFormat,
     unit: bool,
+    timeout: Duration,
 ) -> Result<()> {
     let mut connection = connect(&remote.remote).await.unwrap();
 
-    let dp = connection.group_read(group).await?;
+    let dp = connection.group_read(group, timeout).await?;
 
     connection.terminate().await;
 

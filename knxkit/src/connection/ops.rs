@@ -25,8 +25,11 @@ use crate::{
 };
 
 pub trait GroupOps {
-    fn group_read(&mut self, group: GroupAddress)
-        -> impl Future<Output = Result<DataPoint, Error>>;
+    fn group_read(
+        &mut self,
+        group: GroupAddress,
+        timeout: Duration,
+    ) -> impl Future<Output = Result<DataPoint, Error>>;
 
     fn group_write(
         &mut self,
@@ -50,7 +53,11 @@ fn cemi(destination: DestinationAddress, apdu: APDU) -> CEMI {
 }
 
 impl<T: KnxBusConnection> GroupOps for T {
-    async fn group_read(&mut self, group: GroupAddress) -> Result<DataPoint, Error> {
+    async fn group_read(
+        &mut self,
+        group: GroupAddress,
+        timeout: Duration,
+    ) -> Result<DataPoint, Error> {
         let apdu = APDU {
             service: crate::core::apdu::Service::GroupValueRead,
             data: None,
@@ -60,7 +67,7 @@ impl<T: KnxBusConnection> GroupOps for T {
         let cemi = cemi(destination, apdu);
 
         self.send(cemi).await?;
-        self.fish_for(Duration::from_secs(1), |cemi| match &cemi.npdu.tpdu {
+        self.fish_for(timeout, |cemi| match &cemi.npdu.tpdu {
             TPDU::DataGroup(APDU {
                 service: Service::GroupValueResponse,
                 data,
