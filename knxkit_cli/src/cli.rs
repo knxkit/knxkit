@@ -88,16 +88,9 @@ pub enum Command {
 }
 
 #[derive(clap::ValueEnum, Debug, Clone, Copy, PartialEq)]
-pub enum ReadValueFormat {
+pub enum ValueFormat {
     Raw,
     Value,
-    Hex,
-}
-
-#[derive(clap::ValueEnum, Debug, Clone, Copy, PartialEq)]
-pub enum WriteValueFormat {
-    Raw,
-    Hex,
 }
 
 #[derive(Subcommand, Debug, Clone)]
@@ -118,7 +111,10 @@ pub enum GroupCommand {
         group: GroupAddress,
 
         #[arg(value_enum, default_value = "value", long = "format")]
-        format: ReadValueFormat,
+        format: ValueFormat,
+
+        #[arg(long = "unit", default_value = "false")]
+        unit: bool,
     },
 
     Write {
@@ -131,7 +127,7 @@ pub enum GroupCommand {
         value: String,
 
         #[arg(value_enum, default_value = "hex", long = "format")]
-        format: WriteValueFormat,
+        format: ValueFormat,
     },
 }
 

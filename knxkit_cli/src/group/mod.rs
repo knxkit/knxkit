@@ -25,7 +25,8 @@ pub async fn command(command: &GroupCommand) -> Result<()> {
             remote: source,
             group,
             format,
-        } => read::command(source, *group, *format).await,
+            unit,
+        } => read::command(source, *group, *format, *unit).await,
         GroupCommand::Write {
             remote: source,
             group,

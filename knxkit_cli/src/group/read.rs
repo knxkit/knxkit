@@ -17,24 +17,29 @@ use knxkit::{
 use knxkit_dpt::project::ProjectExtDPT;
 
 use crate::{
-    cli::{ReadValueFormat, Remote, CLI},
+    cli::{Remote, ValueFormat, CLI},
     util::connect,
 };
 
-pub async fn command(remote: &Remote, group: GroupAddress, format: ReadValueFormat) -> Result<()> {
+pub async fn command(
+    remote: &Remote,
+    group: GroupAddress,
+    format: ValueFormat,
+    unit: bool,
+) -> Result<()> {
     let mut connection = connect(&remote.remote).await.unwrap();
 
     let dp = connection.group_read(group).await?;
 
     connection.terminate().await;
 
-    if format == ReadValueFormat::Hex {
+    if format == ValueFormat::Raw {
         println!("{}", dp);
     } else {
         let project = CLI.globals.project.as_ref();
 
-        if let Some(display) = project.group_value(group, &dp, format == ReadValueFormat::Value) {
-            println!("{}", display.as_str());
+        if let Some(display) = project.group_value(group, &dp, unit) {
+            println!("{}", display);
         } else {
             return Err(anyhow!(
                 "value cannot be decoded (project not set or unknown group)"

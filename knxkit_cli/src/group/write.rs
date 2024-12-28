@@ -17,7 +17,7 @@ use knxkit::{
 };
 
 use crate::{
-    cli::{Remote, WriteValueFormat},
+    cli::{Remote, ValueFormat},
     util::connect,
 };
 
@@ -25,13 +25,13 @@ pub async fn command(
     remote: &Remote,
     group: GroupAddress,
     value: &String,
-    format: WriteValueFormat,
+    format: ValueFormat,
 ) -> Result<()> {
     let mut connection = connect(&remote.remote).await.unwrap();
 
     let data = match format {
-        WriteValueFormat::Hex => DataPoint::from_str(&value)?,
-        WriteValueFormat::Raw => {
+        ValueFormat::Value => DataPoint::from_str(&value)?,
+        ValueFormat::Raw => {
             unimplemented!()
         }
     };
