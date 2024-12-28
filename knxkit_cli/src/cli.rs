@@ -19,7 +19,7 @@ use clap::{command, Parser, Subcommand};
 use knxkit::{connection::remote, core::address::GroupAddress, project::Project};
 
 fn parse_local(v: &str) -> Result<Ipv4Addr> {
-    let local = if v.len() > 0 {
+    let local = if v != "auto" {
         v.parse::<Ipv4Addr>()?
     } else {
         if let Ok(IpAddr::V4(v4)) = local_ip_address::local_ip() {
@@ -39,7 +39,7 @@ fn parse_project(v: &str) -> Result<Project> {
 #[derive(Parser, Debug, Clone)]
 pub struct Remote {
     #[arg(long)]
-    #[arg(value_parser = remote::parse_remote)]
+    #[arg(value_parser = remote::parse_remote, env = "KNX_REMOTE")]
     pub remote: remote::RemoteSpec,
 }
 
@@ -59,13 +59,13 @@ pub struct Format {
 #[derive(Parser, Debug, Clone)]
 pub struct Globals {
     #[arg(long = "local")]
-    #[arg(value_parser = parse_local, default_value="")]
+    #[arg(value_parser = parse_local, default_value="auto", env="KNX_LOCAL")]
     pub local_address: Ipv4Addr,
 
     #[arg(long)]
     pub log: bool,
 
-    #[arg(long, value_parser = parse_project)]
+    #[arg(long, value_parser = parse_project, env="KNX_PROJECT")]
     pub project: Option<Project>,
 }
 
