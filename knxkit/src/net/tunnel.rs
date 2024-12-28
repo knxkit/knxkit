@@ -414,9 +414,9 @@ impl TunnelConnection {
 
         endpoint.send_control(request.into()).await?;
 
-        let (response, from) = timeout(Duration::from_secs(10), endpoint.recv()).await??;
-        //.map_err(|_| Error::TunnelError(format!("timeout")))?;
-        //            .ok_or(Error::TunnelError(format!("")))?; //FIXME - recv() must return Error
+        let (response, from) = timeout(Duration::from_secs(10), endpoint.recv())
+            .await
+            .map_err(|_| Error::Timeout)??;
 
         if response.service_type == ServiceType::ConnectResponse {
             match ConnectResponse::<CRDTunnel>::try_parse(response)? {

@@ -7,12 +7,8 @@
 //
 // SPDX-License-Identifier: EPL-2.0 OR GPL-3.0
 
-use tokio::time::error::Elapsed;
-
 #[derive(Debug, thiserror::Error)]
 pub enum Error {
-    //#[error("Net Error: {0}")]
-    //NetError(#[from] crate::net::error::Error),
     #[error("protocol error: {0}")]
     ProtocolError(#[from] crate::core::util::Error),
 
@@ -25,8 +21,8 @@ pub enum Error {
     #[error("IO error: {0}")]
     IoError(#[from] std::io::Error),
 
-    #[error("timeout: {0}")]
-    Timeout(#[from] Elapsed),
+    #[error("timeout")]
+    Timeout,
 
     #[error("general Error: {0}")]
     General(String),

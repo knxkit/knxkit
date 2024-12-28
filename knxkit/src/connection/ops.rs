@@ -77,7 +77,7 @@ impl<T: KnxBusConnection> GroupOps for T {
             _ => None,
         })
         .await
-        .ok_or_else(|| Error::General(format!("timeout")))?
+        .ok_or_else(|| Error::Timeout)?
         .ok_or_else(|| Error::General(format!("no data")))
     }
 
