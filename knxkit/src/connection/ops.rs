@@ -16,7 +16,7 @@ use crate::{
     core::{
         address::{DestinationAddress, GroupAddress, IndividualAddress},
         apdu::{Service, APDU},
-        cemi::{CEMIFlags, CEMI},
+        cemi::{CEMIFlags, Priority, CEMI},
         npdu::NPDU,
         tpdu::TPDU,
         DataPoint,
@@ -43,7 +43,7 @@ fn cemi(destination: DestinationAddress, apdu: APDU) -> CEMI {
         mc: 0x11,
         flags: CEMIFlags::FT | CEMIFlags::R | CEMIFlags::SB,
         hops: 0x06,
-        prio: 0x03,
+        prio: Priority::Normal,
         source: IndividualAddress::new_zero(),
         destination,
         npdu: NPDU {

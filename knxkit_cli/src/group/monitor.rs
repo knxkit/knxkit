@@ -98,7 +98,7 @@ fn format_cemi(cemi: &CEMI, format: &Format) -> Result<Option<String>> {
                 ("dst_address", Formattable::display(&dst_address)),
                 ("dst", Formattable::display(&dst)),
                 //
-                ("prio", Formattable::integer(prio)),
+                ("prio", Formattable::debug(prio)),
                 ("service", Formattable::display(&service)),
                 ("hops", Formattable::integer(hops)),
                 //

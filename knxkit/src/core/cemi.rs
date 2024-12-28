@@ -7,6 +7,8 @@
 //
 // SPDX-License-Identifier: EPL-2.0 OR GPL-3.0
 
+use num_traits::FromPrimitive;
+
 use crate::core::{
     address::{DestinationAddress, GroupAddress, IndividualAddress},
     npdu::NPDU,
@@ -24,13 +26,21 @@ bitflags::bitflags! {
     }
 }
 
+#[derive(Clone, Copy, Debug, num_derive::ToPrimitive, num_derive::FromPrimitive, PartialEq)]
+pub enum Priority {
+    Low = 0x11,
+    Normal = 0x01,
+    Urgent = 0x10,
+    System = 0x00,
+}
+
 // 03_06_03-4.1.5.3
 #[derive(Debug, Clone)]
 pub struct CEMI {
     pub mc: u8,
     pub flags: CEMIFlags,
     pub hops: u8,
-    pub prio: u8,
+    pub prio: Priority,
     pub source: IndividualAddress,
     pub destination: DestinationAddress,
     pub npdu: NPDU,
@@ -49,7 +59,7 @@ impl CEMI {
 
         let (input, ctrl_1) = parse_u8(input)?;
         let flags = CEMIFlags::from_bits_truncate(ctrl_1);
-        let prio = ctrl_1 >> 2 & 0x03;
+        let prio = Priority::from_u8(ctrl_1 >> 2 & 0x03).unwrap();
 
         let (input, ctrl_2) = parse_u8(input)?;
         let hops = (ctrl_2 >> 4) & 0x07;
@@ -79,7 +89,7 @@ impl CEMI {
     }
 
     fn gen<W: Write>(&self) -> impl SerializeFn<W> {
-        let ctrl_1 = self.flags.bits() | ((self.prio & 0x03) << 2);
+        let ctrl_1 = self.flags.bits() | ((self.prio.to_u8().unwrap() & 0x03) << 2);
         let mut ctrl_2 = (self.hops & 0x07) << 4;
         if let DestinationAddress::Group(_) = self.destination {
             ctrl_2 = ctrl_2 | 0x80;
