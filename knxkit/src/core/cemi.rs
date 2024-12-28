@@ -25,13 +25,13 @@ bitflags::bitflags! {
         const C =  0b00000001;
     }
 }
-
+// 03_03_02-2.2.3
 #[derive(Clone, Copy, Debug, num_derive::ToPrimitive, num_derive::FromPrimitive, PartialEq)]
 pub enum Priority {
-    Low = 0x11,
-    Normal = 0x01,
-    Urgent = 0x10,
-    System = 0x00,
+    Low = 0b11,
+    Normal = 0b01,
+    Urgent = 0b10,
+    System = 0b00,
 }
 
 // 03_06_03-4.1.5.3
