@@ -110,7 +110,7 @@ pub enum GroupCommand {
         #[arg(value_parser = GroupAddress::from_str)]
         group: GroupAddress,
 
-        #[arg(long, value_enum, default_value = "value")]
+        #[arg(long, value_enum, default_value = "raw")]
         format: ValueFormat,
 
         #[arg(long, default_value = "false")]
@@ -126,7 +126,7 @@ pub enum GroupCommand {
 
         value: String,
 
-        #[arg(long, value_enum, default_value = "hex")]
+        #[arg(long, value_enum, default_value = "raw")]
         format: ValueFormat,
     },
 }

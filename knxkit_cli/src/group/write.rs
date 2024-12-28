@@ -30,8 +30,8 @@ pub async fn command(
     let mut connection = connect(&remote.remote).await.unwrap();
 
     let data = match format {
-        ValueFormat::Value => DataPoint::from_str(&value)?,
-        ValueFormat::Raw => {
+        ValueFormat::Raw => DataPoint::from_str(&value)?,
+        ValueFormat::Value => {
             unimplemented!()
         }
     };

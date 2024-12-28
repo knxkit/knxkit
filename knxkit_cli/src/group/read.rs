@@ -33,17 +33,21 @@ pub async fn command(
 
     connection.terminate().await;
 
-    if format == ValueFormat::Raw {
-        println!("{}", dp);
-    } else {
-        let project = CLI.globals.project.as_ref();
+    match format {
+        ValueFormat::Raw => {
+            println!("{}", dp);
+        }
 
-        if let Some(display) = project.group_value(group, &dp, unit) {
-            println!("{}", display);
-        } else {
-            return Err(anyhow!(
-                "value cannot be decoded (project not set or unknown group)"
-            ));
+        ValueFormat::Value => {
+            let project = CLI.globals.project.as_ref();
+
+            if let Some(display) = project.group_value(group, &dp, unit) {
+                println!("{}", display);
+            } else {
+                return Err(anyhow!(
+                    "value cannot be decoded (project not set or unknown group)"
+                ));
+            }
         }
     }
 
