@@ -9,8 +9,6 @@
 
 use std::str::FromStr;
 
-use crate::project::error::Error;
-
 #[derive(Clone, Copy, Debug, PartialEq, Eq, Hash, PartialOrd, Ord)]
 pub struct DPT {
     pub main: u16,
@@ -30,48 +28,50 @@ impl DPT {
 /// ```
 /// use knxkit::project::DPT;
 ///
-/// let dpt = DPT { main: 1, sub: 1 };
-/// assert_eq!(format!("{}", dpt), "1.1");
+/// let dpt = DPT { main: 1, sub: Some(1) };
+/// assert_eq!(format!("{}", dpt), "1.001");
 /// ```
 impl std::fmt::Display for DPT {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
-        f.write_str(&format!(
-            "{}.{}",
-            self.main,
-            self.sub
-                .map(|sub| sub.to_string())
-                .unwrap_or("x".to_string()),
-        ))
+        let s = match self.sub {
+            Some(sub) => format!("{}.{:03}", self.main, sub),
+            None => format!("{}.x", self.main),
+        };
+
+        f.pad(&s)
     }
 }
 
 impl FromStr for DPT {
-    type Err = Error;
+    type Err = crate::Error;
 
     fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
         use nom::{
+            branch::alt,
             bytes::complete::tag,
             character::complete::digit1,
             combinator::{eof, map_res},
             sequence::tuple,
-            Finish, IResult,
+            Finish,
         };
 
-        fn parse_dpt(input: &str) -> IResult<&str, (u16, u16)> {
-            let (input, (main, _, sub, _)) = tuple((
-                map_res(digit1, FromStr::from_str),
-                tag("."),
-                map_res(digit1, FromStr::from_str),
-                eof,
-            ))(input)?;
+        type NomErr<'a> = nom::error::Error<&'a str>;
 
-            Ok((input, (main, sub)))
-        }
+        let s = s.trim();
 
-        match parse_dpt(s).finish() {
-            Ok((_, (main, sub))) => Ok(DPT::new(main, Some(sub))),
-            Err(_) => Err(Error::ParseError(format!("invalid DPT string: {}", s))),
-        }
+        let (_, (main, _, sub, _)) = tuple((
+            map_res(digit1::<_, NomErr>, &str::parse::<u16>),
+            tag("."),
+            alt((
+                map_res(tag("x"), |_| Ok::<_, NomErr>(None)),
+                map_res(digit1, |s: &str| s.parse::<u16>().map(Some)),
+            )),
+            eof,
+        ))(s)
+        .finish()
+        .map_err(|_| Self::Err::InvalidInput(s.to_string()))?;
+
+        Ok(DPT { main, sub })
     }
 }
 
@@ -81,7 +81,9 @@ mod tests {
 
     #[test]
     fn test_dpt_parsing() {
-        assert_eq!("1.1".parse::<DPT>().unwrap(), DPT::new(1, Some(1)));
+        assert_eq!("1.001".parse::<DPT>().unwrap(), DPT::new(1, Some(1)));
+        assert_eq!("3.x".parse::<DPT>().unwrap(), DPT::new(3, None));
+
         assert_eq!("10.234".parse::<DPT>().unwrap(), DPT::new(10, Some(234)));
         assert_eq!("255.255".parse::<DPT>().unwrap(), DPT::new(255, Some(255)));
 
