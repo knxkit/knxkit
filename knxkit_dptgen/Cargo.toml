@@ -2,6 +2,12 @@
 name = "knxkit_dptgen"
 version = "0.1.0"
 edition = "2021"
+authors = ["Alexey Aristov <aav@acm.org>"]
+license = "EPL-2.0 OR GPL-3.0"
+repository = "https://github.com/knxkit/knxkit"
+description = "Data point generator for knxkit"
+categories = ["network-programming", "api-bindings"]
+keywords = ["knx", "iot", "home-automation", "smart-home"]
 autobins = false
 
 [dependencies]
@@ -12,8 +18,7 @@ prettyplease = "0.2.25"
 roxmltree = "0.20.0"
 clap = { version = "4.5.23", features = ["derive"] }
 anyhow = "1.0.95"
-
-knxkit = { path = "../knxkit" }
+knxkit = "0.1.0"
 
 [[bin]]
 name = "dptgen"
