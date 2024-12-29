@@ -19,6 +19,8 @@ pub mod project;
 
 pub use generated::{generic, specific, typeinfo};
 
+pub use opaque::OpaqueDataPoint;
+
 pub fn decode_knxf16(repr: u16) -> f32 {
     if repr != 0x7fff {
         let exp = ((repr & 0x7800) >> 11) as f32;
