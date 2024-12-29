@@ -1,6 +1,6 @@
 [package]
 name = "knxkit_dpt"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Alexey Aristov <aav@acm.org>"]
 license = "EPL-2.0 OR GPL-3.0"
