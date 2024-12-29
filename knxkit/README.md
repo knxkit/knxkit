@@ -10,7 +10,7 @@ __knxkit__ is a library for interfacing with [KNX](https://www.knx.org) devices 
 - data structures for all __Data point types (DPT)__  generated from knx_master.xml contents. Serialzation to and from JSON is supported. _Display_ implementations are generated.
 - __command line__ utilities for data structures generation and knx network interaction.
 
-### Crates
+### Related crates
   - [knxkit_dpt](knxkit_dpt) - DPT definitions
   - [knxkit_dptgen](knxkit_dptgen) - DPT definitions generator
   - [knxkit_cli](knxkit_cli) - command line utility
