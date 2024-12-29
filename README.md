@@ -10,11 +10,10 @@ __knxkit__ is a library for interfacing with [KNX](https://www.knx.org) devices 
 - data structures for all __Data point types (DPT)__  generated from knx_master.xml contents. Serialzation to and from JSON is supported. _Display_ implementations are generated.
 - __command line__ utilities for data structures generation and knx network interaction.
 
-### Related
+### Crates
   - [knxkit_dpt](knxkit_dpt) - DPT definitions
   - [knxkit_dptgen](knxkit_dptgen) - DPT definitions generator
   - [knxkit_cli](knxkit_cli) - command line utility
-  - [knxkit_mqtt](../knxkit_mqtt) - bidirectional knx2mqtt bridge
 
 ### Status
 Currently the library is in development. It may be used for testing and experimentation, but is not yet ready for production use. The API is subject to change. The library is being developed in the open, and contributions are welcome.
@@ -27,7 +26,7 @@ In addition to general improvements and bug fixes, the following features are pl
   - [ ] multiplexing of single tunnel connection over unix domain socket
   
 Tools and applications  
-  - [*] knx2mqtt
+  - [x] knx2mqtt
   - [ ] knx2ws (WebSocket)
   - [ ] knx2prometheus
   - [ ] scriptable logic engine
