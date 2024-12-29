@@ -1,6 +1,6 @@
 [package]
 name = "knxkit_dptgen"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Alexey Aristov <aav@acm.org>"]
 license = "EPL-2.0 OR GPL-3.0"
@@ -18,7 +18,7 @@ prettyplease = "0.2.25"
 roxmltree = "0.20.0"
 clap = { version = "4.5.23", features = ["derive"] }
 anyhow = "1.0.95"
-knxkit = "0.1.0"
+knxkit = "0.1.1"
 
 [[bin]]
 name = "dptgen"
