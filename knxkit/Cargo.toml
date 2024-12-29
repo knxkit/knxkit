@@ -2,6 +2,13 @@
 name = "knxkit"
 version = "0.1.0"
 edition = "2021"
+authors = ["Alexey Aristov <aav@acm.org>"]
+license = "EPL-2.0 OR GPL-3.0"
+readme = "README.md"
+repository = "https://github.com/knxkit/kinxkit"
+description = "High-level API for KNX devices and networks"
+categories = ["network-programming", "api-bindings"]
+keywords = ["knx", "iot", "home-automation", "smart-home"]
 
 [dependencies]
 nom = "7.1.3"
