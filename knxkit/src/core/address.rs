@@ -209,6 +209,30 @@ impl DestinationAddress {
             Self::Individual(_) => Domain::Unicast,
         }
     }
+
+    pub fn is_group(&self) -> bool {
+        matches!(self, Self::Group(_))
+    }
+
+    pub fn is_individual(&self) -> bool {
+        matches!(self, Self::Individual(_))
+    }
+
+    pub fn as_group(&self) -> &GroupAddress {
+        if let Self::Group(g) = self {
+            g
+        } else {
+            panic!("Not a group address");
+        }
+    }
+
+    pub fn as_individual(&self) -> &IndividualAddress {
+        if let Self::Individual(i) = self {
+            i
+        } else {
+            panic!("Not an individual address");
+        }
+    }
 }
 
 #[cfg(test)]
