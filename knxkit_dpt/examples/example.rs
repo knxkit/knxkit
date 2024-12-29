@@ -1,9 +1,3 @@
-Pre-generated datapoint structures for [knxkit](https://crates.io/crates/knxkit)
-=
-
-#### Exmple
-
-```rust
 use knxkit::core::DataPoint;
 use knxkit_dpt::{generic, specific::DPT_3_7, OpaqueDataPoint, Specific};
 use serde_json;
@@ -41,5 +35,3 @@ fn main() {
     println!("Opaque: {}", opaque);
     // -> Opaque: true/1
 }
-```
-
