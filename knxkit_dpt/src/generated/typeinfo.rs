@@ -1,11 +1,11 @@
 // This file is generated, don't manually edit it!
 use knxkit::project::DPT;
-use crate::DataPointTypeInfo;
-pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
-    static DATAPOINTS: &'static [(DPT, DataPointTypeInfo)] = &[
+use crate::typeinfo::TypeInfo;
+pub fn lookup(dpt: DPT) -> Option<&'static TypeInfo> {
+    static DATAPOINTS: &'static [(DPT, TypeInfo)] = &[
         (
             DPT::new(1u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(1u16, None),
                 name: "1.xxx",
                 text: Some("1-bit"),
@@ -14,7 +14,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(1u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(1u16, Some(1u16)),
                 name: "DPT_Switch",
                 text: Some("switch"),
@@ -23,7 +23,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(1u16, Some(2u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(1u16, Some(2u16)),
                 name: "DPT_Bool",
                 text: Some("boolean"),
@@ -32,7 +32,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(1u16, Some(3u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(1u16, Some(3u16)),
                 name: "DPT_Enable",
                 text: Some("enable"),
@@ -41,7 +41,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(1u16, Some(4u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(1u16, Some(4u16)),
                 name: "DPT_Ramp",
                 text: Some("ramp"),
@@ -50,7 +50,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(1u16, Some(5u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(1u16, Some(5u16)),
                 name: "DPT_Alarm",
                 text: Some("alarm"),
@@ -59,7 +59,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(1u16, Some(6u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(1u16, Some(6u16)),
                 name: "DPT_BinaryValue",
                 text: Some("binary value"),
@@ -68,7 +68,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(1u16, Some(7u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(1u16, Some(7u16)),
                 name: "DPT_Step",
                 text: Some("step"),
@@ -77,7 +77,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(1u16, Some(8u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(1u16, Some(8u16)),
                 name: "DPT_UpDown",
                 text: Some("up/down"),
@@ -86,7 +86,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(1u16, Some(9u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(1u16, Some(9u16)),
                 name: "DPT_OpenClose",
                 text: Some("open/close"),
@@ -95,7 +95,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(1u16, Some(10u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(1u16, Some(10u16)),
                 name: "DPT_Start",
                 text: Some("start/stop"),
@@ -104,7 +104,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(1u16, Some(11u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(1u16, Some(11u16)),
                 name: "DPT_State",
                 text: Some("state"),
@@ -113,7 +113,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(1u16, Some(12u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(1u16, Some(12u16)),
                 name: "DPT_Invert",
                 text: Some("invert"),
@@ -122,7 +122,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(1u16, Some(13u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(1u16, Some(13u16)),
                 name: "DPT_DimSendStyle",
                 text: Some("dim send style"),
@@ -131,7 +131,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(1u16, Some(14u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(1u16, Some(14u16)),
                 name: "DPT_InputSource",
                 text: Some("input source"),
@@ -140,7 +140,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(1u16, Some(15u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(1u16, Some(15u16)),
                 name: "DPT_Reset",
                 text: Some("reset"),
@@ -149,7 +149,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(1u16, Some(16u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(1u16, Some(16u16)),
                 name: "DPT_Ack",
                 text: Some("acknowledge"),
@@ -158,7 +158,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(1u16, Some(17u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(1u16, Some(17u16)),
                 name: "DPT_Trigger",
                 text: Some("trigger"),
@@ -167,7 +167,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(1u16, Some(18u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(1u16, Some(18u16)),
                 name: "DPT_Occupancy",
                 text: Some("occupancy"),
@@ -176,7 +176,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(1u16, Some(19u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(1u16, Some(19u16)),
                 name: "DPT_Window_Door",
                 text: Some("window/door"),
@@ -185,7 +185,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(1u16, Some(21u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(1u16, Some(21u16)),
                 name: "DPT_LogicalFunction",
                 text: Some("logical function"),
@@ -194,7 +194,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(1u16, Some(22u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(1u16, Some(22u16)),
                 name: "DPT_Scene_AB",
                 text: Some("scene"),
@@ -203,7 +203,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(1u16, Some(23u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(1u16, Some(23u16)),
                 name: "DPT_ShutterBlinds_Mode",
                 text: Some("shutter/blinds mode"),
@@ -212,7 +212,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(1u16, Some(24u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(1u16, Some(24u16)),
                 name: "DPT_DayNight",
                 text: Some("day/night"),
@@ -221,7 +221,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(1u16, Some(100u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(1u16, Some(100u16)),
                 name: "DPT_Heat_Cool",
                 text: Some("cooling/heating"),
@@ -230,7 +230,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(2u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(2u16, None),
                 name: "2.xxx",
                 text: Some("1-bit controlled"),
@@ -239,7 +239,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(2u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(2u16, Some(1u16)),
                 name: "DPT_Switch_Control",
                 text: Some("switch control"),
@@ -248,7 +248,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(2u16, Some(2u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(2u16, Some(2u16)),
                 name: "DPT_Bool_Control",
                 text: Some("boolean control"),
@@ -257,7 +257,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(2u16, Some(3u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(2u16, Some(3u16)),
                 name: "DPT_Enable_Control",
                 text: Some("enable control"),
@@ -266,7 +266,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(2u16, Some(4u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(2u16, Some(4u16)),
                 name: "DPT_Ramp_Control",
                 text: Some("ramp control"),
@@ -275,7 +275,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(2u16, Some(5u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(2u16, Some(5u16)),
                 name: "DPT_Alarm_Control",
                 text: Some("alarm control"),
@@ -284,7 +284,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(2u16, Some(6u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(2u16, Some(6u16)),
                 name: "DPT_BinaryValue_Control",
                 text: Some("binary value control"),
@@ -293,7 +293,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(2u16, Some(7u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(2u16, Some(7u16)),
                 name: "DPT_Step_Control",
                 text: Some("step control"),
@@ -302,7 +302,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(2u16, Some(8u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(2u16, Some(8u16)),
                 name: "DPT_Direction1_Control",
                 text: Some("direction control 1"),
@@ -311,7 +311,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(2u16, Some(9u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(2u16, Some(9u16)),
                 name: "DPT_Direction2_Control",
                 text: Some("direction control 2"),
@@ -320,7 +320,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(2u16, Some(10u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(2u16, Some(10u16)),
                 name: "DPT_Start_Control",
                 text: Some("start control"),
@@ -329,7 +329,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(2u16, Some(11u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(2u16, Some(11u16)),
                 name: "DPT_State_Control",
                 text: Some("state control"),
@@ -338,7 +338,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(2u16, Some(12u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(2u16, Some(12u16)),
                 name: "DPT_Invert_Control",
                 text: Some("invert control"),
@@ -347,7 +347,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(3u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(3u16, None),
                 name: "3.xxx",
                 text: Some("3-bit controlled"),
@@ -356,7 +356,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(3u16, Some(7u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(3u16, Some(7u16)),
                 name: "DPT_Control_Dimming",
                 text: Some("dimming control"),
@@ -365,7 +365,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(3u16, Some(8u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(3u16, Some(8u16)),
                 name: "DPT_Control_Blinds",
                 text: Some("blind control"),
@@ -374,7 +374,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(4u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(4u16, None),
                 name: "4.xxx",
                 text: Some("character"),
@@ -383,7 +383,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(4u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(4u16, Some(1u16)),
                 name: "DPT_Char_ASCII",
                 text: Some("character (ASCII)"),
@@ -392,7 +392,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(4u16, Some(2u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(4u16, Some(2u16)),
                 name: "DPT_Char_8859_1",
                 text: Some("character (ISO 8859-1)"),
@@ -401,7 +401,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(5u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(5u16, None),
                 name: "5.xxx",
                 text: Some("8-bit unsigned value"),
@@ -410,7 +410,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(5u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(5u16, Some(1u16)),
                 name: "DPT_Scaling",
                 text: Some("percentage (0..100%)"),
@@ -419,7 +419,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(5u16, Some(3u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(5u16, Some(3u16)),
                 name: "DPT_Angle",
                 text: Some("angle (degrees)"),
@@ -428,7 +428,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(5u16, Some(4u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(5u16, Some(4u16)),
                 name: "DPT_Percent_U8",
                 text: Some("percentage (0..255%)"),
@@ -437,7 +437,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(5u16, Some(5u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(5u16, Some(5u16)),
                 name: "DPT_DecimalFactor",
                 text: Some("ratio (0..255)"),
@@ -446,7 +446,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(5u16, Some(6u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(5u16, Some(6u16)),
                 name: "DPT_Tariff",
                 text: Some("tariff (0..255)"),
@@ -455,7 +455,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(5u16, Some(10u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(5u16, Some(10u16)),
                 name: "DPT_Value_1_Ucount",
                 text: Some("counter pulses (0..255)"),
@@ -464,7 +464,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(5u16, Some(100u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(5u16, Some(100u16)),
                 name: "DPT_FanStage",
                 text: Some("fan stage (0..255)"),
@@ -473,7 +473,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(6u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(6u16, None),
                 name: "6.xxx",
                 text: Some("8-bit signed value"),
@@ -482,7 +482,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(6u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(6u16, Some(1u16)),
                 name: "DPT_Percent_V8",
                 text: Some("percentage (-128..127%)"),
@@ -491,7 +491,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(6u16, Some(10u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(6u16, Some(10u16)),
                 name: "DPT_Value_1_Count",
                 text: Some("counter pulses (-128..127)"),
@@ -500,7 +500,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(6u16, Some(20u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(6u16, Some(20u16)),
                 name: "DPT_Status_Mode3",
                 text: Some("status with mode"),
@@ -509,7 +509,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(7u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(7u16, None),
                 name: "7.xxx",
                 text: Some("2-byte unsigned value"),
@@ -518,7 +518,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(7u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(7u16, Some(1u16)),
                 name: "DPT_Value_2_Ucount",
                 text: Some("pulses"),
@@ -527,7 +527,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(7u16, Some(2u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(7u16, Some(2u16)),
                 name: "DPT_TimePeriodMsec",
                 text: Some("time (ms)"),
@@ -536,7 +536,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(7u16, Some(3u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(7u16, Some(3u16)),
                 name: "DPT_TimePeriod10Msec",
                 text: Some("time (10 ms)"),
@@ -545,7 +545,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(7u16, Some(4u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(7u16, Some(4u16)),
                 name: "DPT_TimePeriod100Msec",
                 text: Some("time (100 ms)"),
@@ -554,7 +554,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(7u16, Some(5u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(7u16, Some(5u16)),
                 name: "DPT_TimePeriodSec",
                 text: Some("time (s)"),
@@ -563,7 +563,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(7u16, Some(6u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(7u16, Some(6u16)),
                 name: "DPT_TimePeriodMin",
                 text: Some("time (min)"),
@@ -572,7 +572,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(7u16, Some(7u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(7u16, Some(7u16)),
                 name: "DPT_TimePeriodHrs",
                 text: Some("time (h)"),
@@ -581,7 +581,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(7u16, Some(10u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(7u16, Some(10u16)),
                 name: "DPT_PropDataType",
                 text: Some("property data type"),
@@ -590,7 +590,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(7u16, Some(11u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(7u16, Some(11u16)),
                 name: "DPT_Length_mm",
                 text: Some("length (mm)"),
@@ -599,7 +599,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(7u16, Some(12u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(7u16, Some(12u16)),
                 name: "DPT_UElCurrentmA",
                 text: Some("current (mA)"),
@@ -608,7 +608,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(7u16, Some(13u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(7u16, Some(13u16)),
                 name: "DPT_Brightness",
                 text: Some("brightness (lux)"),
@@ -617,7 +617,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(7u16, Some(600u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(7u16, Some(600u16)),
                 name: "DPT_Absolute_Colour_Temperature",
                 text: Some("absolute colour temperature (K)"),
@@ -626,7 +626,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(8u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(8u16, None),
                 name: "8.xxx",
                 text: Some("2-byte signed value"),
@@ -635,7 +635,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(8u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(8u16, Some(1u16)),
                 name: "DPT_Value_2_Count",
                 text: Some("pulses difference"),
@@ -644,7 +644,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(8u16, Some(2u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(8u16, Some(2u16)),
                 name: "DPT_DeltaTimeMsec",
                 text: Some("time lag (ms)"),
@@ -653,7 +653,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(8u16, Some(3u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(8u16, Some(3u16)),
                 name: "DPT_DeltaTime10Msec",
                 text: Some("time lag(10 ms)"),
@@ -662,7 +662,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(8u16, Some(4u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(8u16, Some(4u16)),
                 name: "DPT_DeltaTime100Msec",
                 text: Some("time lag (100 ms)"),
@@ -671,7 +671,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(8u16, Some(5u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(8u16, Some(5u16)),
                 name: "DPT_DeltaTimeSec",
                 text: Some("time lag (s)"),
@@ -680,7 +680,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(8u16, Some(6u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(8u16, Some(6u16)),
                 name: "DPT_DeltaTimeMin",
                 text: Some("time lag (min)"),
@@ -689,7 +689,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(8u16, Some(7u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(8u16, Some(7u16)),
                 name: "DPT_DeltaTimeHrs",
                 text: Some("time lag (h)"),
@@ -698,7 +698,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(8u16, Some(10u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(8u16, Some(10u16)),
                 name: "DPT_Percent_V16",
                 text: Some("percentage difference (%)"),
@@ -707,7 +707,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(8u16, Some(11u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(8u16, Some(11u16)),
                 name: "DPT_Rotation_Angle",
                 text: Some("rotation angle (°)"),
@@ -716,7 +716,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(8u16, Some(12u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(8u16, Some(12u16)),
                 name: "DPT_Length_m",
                 text: Some("length (m)"),
@@ -725,7 +725,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(9u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(9u16, None),
                 name: "9.xxx",
                 text: Some("2-byte float value"),
@@ -734,7 +734,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(9u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(9u16, Some(1u16)),
                 name: "DPT_Value_Temp",
                 text: Some("temperature (°C)"),
@@ -743,7 +743,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(9u16, Some(2u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(9u16, Some(2u16)),
                 name: "DPT_Value_Tempd",
                 text: Some("temperature difference (K)"),
@@ -752,7 +752,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(9u16, Some(3u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(9u16, Some(3u16)),
                 name: "DPT_Value_Tempa",
                 text: Some("kelvin/hour (K/h)"),
@@ -761,7 +761,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(9u16, Some(4u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(9u16, Some(4u16)),
                 name: "DPT_Value_Lux",
                 text: Some("lux (Lux)"),
@@ -770,7 +770,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(9u16, Some(5u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(9u16, Some(5u16)),
                 name: "DPT_Value_Wsp",
                 text: Some("speed (m/s)"),
@@ -779,7 +779,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(9u16, Some(6u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(9u16, Some(6u16)),
                 name: "DPT_Value_Pres",
                 text: Some("pressure (Pa)"),
@@ -788,7 +788,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(9u16, Some(7u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(9u16, Some(7u16)),
                 name: "DPT_Value_Humidity",
                 text: Some("humidity (%)"),
@@ -797,7 +797,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(9u16, Some(8u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(9u16, Some(8u16)),
                 name: "DPT_Value_AirQuality",
                 text: Some("parts/million (ppm)"),
@@ -806,7 +806,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(9u16, Some(9u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(9u16, Some(9u16)),
                 name: "DPT_Value_AirFlow",
                 text: Some("air flow (m³/h)"),
@@ -815,7 +815,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(9u16, Some(10u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(9u16, Some(10u16)),
                 name: "DPT_Value_Time1",
                 text: Some("time (s)"),
@@ -824,7 +824,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(9u16, Some(11u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(9u16, Some(11u16)),
                 name: "DPT_Value_Time2",
                 text: Some("time (ms)"),
@@ -833,7 +833,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(9u16, Some(20u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(9u16, Some(20u16)),
                 name: "DPT_Value_Volt",
                 text: Some("voltage (mV)"),
@@ -842,7 +842,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(9u16, Some(21u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(9u16, Some(21u16)),
                 name: "DPT_Value_Curr",
                 text: Some("current (mA)"),
@@ -851,7 +851,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(9u16, Some(22u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(9u16, Some(22u16)),
                 name: "DPT_PowerDensity",
                 text: Some("power density (W/m²)"),
@@ -860,7 +860,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(9u16, Some(23u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(9u16, Some(23u16)),
                 name: "DPT_KelvinPerPercent",
                 text: Some("kelvin/percent (K/%)"),
@@ -869,7 +869,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(9u16, Some(24u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(9u16, Some(24u16)),
                 name: "DPT_Power",
                 text: Some("power (kW)"),
@@ -878,7 +878,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(9u16, Some(25u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(9u16, Some(25u16)),
                 name: "DPT_Value_Volume_Flow",
                 text: Some("volume flow (l/h)"),
@@ -887,7 +887,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(9u16, Some(26u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(9u16, Some(26u16)),
                 name: "DPT_Rain_Amount",
                 text: Some("rain amount (l/m²)"),
@@ -896,7 +896,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(9u16, Some(27u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(9u16, Some(27u16)),
                 name: "DPT_Value_Temp_F",
                 text: Some("temperature (°F)"),
@@ -905,7 +905,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(9u16, Some(28u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(9u16, Some(28u16)),
                 name: "DPT_Value_Wsp_kmh",
                 text: Some("wind speed (km/h)"),
@@ -914,7 +914,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(9u16, Some(29u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(9u16, Some(29u16)),
                 name: "DPT_Value_Absolute_Humidity",
                 text: Some("absolute humidity (g/m³)"),
@@ -923,7 +923,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(9u16, Some(30u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(9u16, Some(30u16)),
                 name: "DPT_Concentration_µgm3",
                 text: Some("concentration (µg/m³)"),
@@ -932,7 +932,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(9u16, Some(31u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(9u16, Some(31u16)),
                 name: "DPT_Coefficient",
                 text: Some("coefficient"),
@@ -941,7 +941,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(10u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(10u16, None),
                 name: "10.xxx",
                 text: Some("time"),
@@ -950,7 +950,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(10u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(10u16, Some(1u16)),
                 name: "DPT_TimeOfDay",
                 text: Some("time of day"),
@@ -959,7 +959,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(11u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(11u16, None),
                 name: "11.xxx",
                 text: Some("date"),
@@ -968,7 +968,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(11u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(11u16, Some(1u16)),
                 name: "DPT_Date",
                 text: Some("date"),
@@ -977,7 +977,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(12u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(12u16, None),
                 name: "12.xxx",
                 text: Some("4-byte unsigned value"),
@@ -986,7 +986,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(12u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(12u16, Some(1u16)),
                 name: "DPT_Value_4_Ucount",
                 text: Some("counter pulses (unsigned)"),
@@ -995,7 +995,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(12u16, Some(100u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(12u16, Some(100u16)),
                 name: "DPT_LongTimePeriod_Sec",
                 text: Some("counter timesec (s)"),
@@ -1004,7 +1004,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(12u16, Some(101u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(12u16, Some(101u16)),
                 name: "DPT_LongTimePeriod_Min",
                 text: Some("counter timemin (min)"),
@@ -1013,7 +1013,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(12u16, Some(102u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(12u16, Some(102u16)),
                 name: "DPT_LongTimePeriod_Hrs",
                 text: Some("counter timehrs (h)"),
@@ -1022,7 +1022,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(12u16, Some(1200u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(12u16, Some(1200u16)),
                 name: "DPT_VolumeLiquid_Litre",
                 text: Some("volume liquid (l)"),
@@ -1031,7 +1031,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(12u16, Some(1201u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(12u16, Some(1201u16)),
                 name: "DPT_Volume_m³",
                 text: Some("volume (m³)"),
@@ -1040,7 +1040,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(13u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(13u16, None),
                 name: "13.xxx",
                 text: Some("4-byte signed value"),
@@ -1049,7 +1049,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(13u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(13u16, Some(1u16)),
                 name: "DPT_Value_4_Count",
                 text: Some("counter pulses (signed)"),
@@ -1058,7 +1058,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(13u16, Some(2u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(13u16, Some(2u16)),
                 name: "DPT_FlowRate_m3/h",
                 text: Some("flow rate (m³/h)"),
@@ -1067,7 +1067,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(13u16, Some(10u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(13u16, Some(10u16)),
                 name: "DPT_ActiveEnergy",
                 text: Some("active energy (Wh)"),
@@ -1076,7 +1076,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(13u16, Some(11u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(13u16, Some(11u16)),
                 name: "DPT_ApparantEnergy",
                 text: Some("apparant energy (VAh)"),
@@ -1085,7 +1085,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(13u16, Some(12u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(13u16, Some(12u16)),
                 name: "DPT_ReactiveEnergy",
                 text: Some("reactive energy (VARh)"),
@@ -1094,7 +1094,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(13u16, Some(13u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(13u16, Some(13u16)),
                 name: "DPT_ActiveEnergy_kWh",
                 text: Some("active energy (kWh)"),
@@ -1103,7 +1103,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(13u16, Some(14u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(13u16, Some(14u16)),
                 name: "DPT_ApparantEnergy_kVAh",
                 text: Some("apparant energy (kVAh)"),
@@ -1112,7 +1112,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(13u16, Some(15u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(13u16, Some(15u16)),
                 name: "DPT_ReactiveEnergy_kVARh",
                 text: Some("reactive energy (kVARh)"),
@@ -1121,7 +1121,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(13u16, Some(16u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(13u16, Some(16u16)),
                 name: "DPT_ActiveEnergy_MWh",
                 text: Some("active energy (MWh)"),
@@ -1130,7 +1130,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(13u16, Some(100u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(13u16, Some(100u16)),
                 name: "DPT_LongDeltaTimeSec",
                 text: Some("time lag (s)"),
@@ -1139,7 +1139,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(13u16, Some(1200u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(13u16, Some(1200u16)),
                 name: "DPT_DeltaVolumeLiquid_Litre ",
                 text: Some("delta volume liquid (l)"),
@@ -1148,7 +1148,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(13u16, Some(1201u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(13u16, Some(1201u16)),
                 name: "DPT_DeltaVolume_m³",
                 text: Some("delta volume (m³)"),
@@ -1157,7 +1157,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, None),
                 name: "14.xxx",
                 text: Some("4-byte float value"),
@@ -1166,7 +1166,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(0u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(0u16)),
                 name: "DPT_Value_Acceleration",
                 text: Some("acceleration (m/s²)"),
@@ -1175,7 +1175,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(1u16)),
                 name: "DPT_Value_Acceleration_Angular",
                 text: Some("angular acceleration (rad/s²)"),
@@ -1184,7 +1184,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(2u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(2u16)),
                 name: "DPT_Value_Activation_Energy",
                 text: Some("activation energy (J/mol)"),
@@ -1193,7 +1193,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(3u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(3u16)),
                 name: "DPT_Value_Activity",
                 text: Some("radioactive activity (1/s)"),
@@ -1202,7 +1202,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(4u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(4u16)),
                 name: "DPT_Value_Mol",
                 text: Some("amount of substance (mol)"),
@@ -1211,7 +1211,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(5u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(5u16)),
                 name: "DPT_Value_Amplitude",
                 text: Some("amplitude"),
@@ -1220,7 +1220,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(6u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(6u16)),
                 name: "DPT_Value_AngleRad",
                 text: Some("angle (radiant)"),
@@ -1229,7 +1229,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(7u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(7u16)),
                 name: "DPT_Value_AngleDeg",
                 text: Some("angle (degree)"),
@@ -1238,7 +1238,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(8u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(8u16)),
                 name: "DPT_Value_Angular_Momentum",
                 text: Some("angular momentum (Js)"),
@@ -1247,7 +1247,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(9u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(9u16)),
                 name: "DPT_Value_Angular_Velocity",
                 text: Some("angular velocity (rad/s)"),
@@ -1256,7 +1256,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(10u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(10u16)),
                 name: "DPT_Value_Area",
                 text: Some("area (m*m)"),
@@ -1265,7 +1265,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(11u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(11u16)),
                 name: "DPT_Value_Capacitance",
                 text: Some("capacitance (F)"),
@@ -1274,7 +1274,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(12u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(12u16)),
                 name: "DPT_Value_Charge_DensitySurface",
                 text: Some("flux density (C/m²)"),
@@ -1283,7 +1283,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(13u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(13u16)),
                 name: "DPT_Value_Charge_DensityVolume",
                 text: Some("charge density (C/m³)"),
@@ -1292,7 +1292,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(14u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(14u16)),
                 name: "DPT_Value_Compressibility",
                 text: Some("compressibility (m²/N)"),
@@ -1301,7 +1301,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(15u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(15u16)),
                 name: "DPT_Value_Conductance",
                 text: Some("conductance (S)"),
@@ -1310,7 +1310,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(16u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(16u16)),
                 name: "DPT_Value_Electrical_Conductivity",
                 text: Some("conductivity  (S/m)"),
@@ -1319,7 +1319,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(17u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(17u16)),
                 name: "DPT_Value_Density",
                 text: Some("density (kg/m³)"),
@@ -1328,7 +1328,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(18u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(18u16)),
                 name: "DPT_Value_Electric_Charge",
                 text: Some("electric charge (C)"),
@@ -1337,7 +1337,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(19u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(19u16)),
                 name: "DPT_Value_Electric_Current",
                 text: Some("electric current (A)"),
@@ -1346,7 +1346,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(20u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(20u16)),
                 name: "DPT_Value_Electric_CurrentDensity",
                 text: Some("electric current density (A/m²)"),
@@ -1355,7 +1355,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(21u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(21u16)),
                 name: "DPT_Value_Electric_DipoleMoment",
                 text: Some("electric dipole moment (Cm)"),
@@ -1364,7 +1364,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(22u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(22u16)),
                 name: "DPT_Value_Electric_Displacement",
                 text: Some("electric displacement (C/m²)"),
@@ -1373,7 +1373,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(23u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(23u16)),
                 name: "DPT_Value_Electric_FieldStrength",
                 text: Some("electric field strength (V/m)"),
@@ -1382,7 +1382,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(24u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(24u16)),
                 name: "DPT_Value_Electric_Flux",
                 text: Some("electric flux (C)"),
@@ -1391,7 +1391,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(25u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(25u16)),
                 name: "DPT_Value_Electric_FluxDensity",
                 text: Some("electric flux density (C/m²)"),
@@ -1400,7 +1400,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(26u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(26u16)),
                 name: "DPT_Value_Electric_Polarization",
                 text: Some("electric polarization (C/m²)"),
@@ -1409,7 +1409,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(27u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(27u16)),
                 name: "DPT_Value_Electric_Potential",
                 text: Some("electric potential (V)"),
@@ -1418,7 +1418,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(28u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(28u16)),
                 name: "DPT_Value_Electric_PotentialDifference",
                 text: Some("electric potential difference (V)"),
@@ -1427,7 +1427,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(29u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(29u16)),
                 name: "DPT_Value_ElectromagneticMoment",
                 text: Some("electromagnetic moment (Am²)"),
@@ -1436,7 +1436,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(30u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(30u16)),
                 name: "DPT_Value_Electromotive_Force",
                 text: Some("electromotive force (V)"),
@@ -1445,7 +1445,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(31u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(31u16)),
                 name: "DPT_Value_Energy",
                 text: Some("energy (J)"),
@@ -1454,7 +1454,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(32u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(32u16)),
                 name: "DPT_Value_Force",
                 text: Some("force (N)"),
@@ -1463,7 +1463,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(33u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(33u16)),
                 name: "DPT_Value_Frequency",
                 text: Some("frequency (Hz)"),
@@ -1472,7 +1472,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(34u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(34u16)),
                 name: "DPT_Value_Angular_Frequency",
                 text: Some("angular frequency (rad/s)"),
@@ -1481,7 +1481,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(35u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(35u16)),
                 name: "DPT_Value_Heat_Capacity",
                 text: Some("heat capacity (J/K)"),
@@ -1490,7 +1490,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(36u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(36u16)),
                 name: "DPT_Value_Heat_FlowRate",
                 text: Some("heat flow rate (W)"),
@@ -1499,7 +1499,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(37u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(37u16)),
                 name: "DPT_Value_Heat_Quantity",
                 text: Some("heat quantity"),
@@ -1508,7 +1508,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(38u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(38u16)),
                 name: "DPT_Value_Impedance",
                 text: Some("impedance (Ω)"),
@@ -1517,7 +1517,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(39u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(39u16)),
                 name: "DPT_Value_Length",
                 text: Some("length (m)"),
@@ -1526,7 +1526,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(40u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(40u16)),
                 name: "DPT_Value_Light_Quantity",
                 text: Some("light quantity (J)"),
@@ -1535,7 +1535,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(41u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(41u16)),
                 name: "DPT_Value_Luminance",
                 text: Some("luminance (cd/m²)"),
@@ -1544,7 +1544,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(42u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(42u16)),
                 name: "DPT_Value_Luminous_Flux",
                 text: Some("luminous flux (lm)"),
@@ -1553,7 +1553,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(43u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(43u16)),
                 name: "DPT_Value_Luminous_Intensity",
                 text: Some("luminous intensity (cd)"),
@@ -1562,7 +1562,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(44u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(44u16)),
                 name: "DPT_Value_Magnetic_FieldStrength",
                 text: Some("magnetic field strength (A/m)"),
@@ -1571,7 +1571,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(45u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(45u16)),
                 name: "DPT_Value_Magnetic_Flux",
                 text: Some("magnetic flux (Wb)"),
@@ -1580,7 +1580,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(46u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(46u16)),
                 name: "DPT_Value_Magnetic_FluxDensity",
                 text: Some("magnetic flux density (T)"),
@@ -1589,7 +1589,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(47u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(47u16)),
                 name: "DPT_Value_Magnetic_Moment",
                 text: Some("magnetic moment (Am²)"),
@@ -1598,7 +1598,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(48u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(48u16)),
                 name: "DPT_Value_Magnetic_Polarization",
                 text: Some("magnetic polarization (T)"),
@@ -1607,7 +1607,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(49u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(49u16)),
                 name: "DPT_Value_Magnetization",
                 text: Some("magnetization (A/m)"),
@@ -1616,7 +1616,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(50u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(50u16)),
                 name: "DPT_Value_MagnetomotiveForce",
                 text: Some("magnetomotive force (A)"),
@@ -1625,7 +1625,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(51u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(51u16)),
                 name: "DPT_Value_Mass",
                 text: Some("mass (kg)"),
@@ -1634,7 +1634,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(52u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(52u16)),
                 name: "DPT_Value_MassFlux",
                 text: Some("mass flux (kg/s)"),
@@ -1643,7 +1643,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(53u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(53u16)),
                 name: "DPT_Value_Momentum",
                 text: Some("momentum (N/s)"),
@@ -1652,7 +1652,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(54u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(54u16)),
                 name: "DPT_Value_Phase_AngleRad",
                 text: Some("phase angle (rad)"),
@@ -1661,7 +1661,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(55u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(55u16)),
                 name: "DPT_Value_Phase_AngleDeg",
                 text: Some("phase angle (°)"),
@@ -1670,7 +1670,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(56u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(56u16)),
                 name: "DPT_Value_Power",
                 text: Some("power (W)"),
@@ -1679,7 +1679,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(57u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(57u16)),
                 name: "DPT_Value_Power_Factor",
                 text: Some("power factor (cos Φ)"),
@@ -1688,7 +1688,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(58u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(58u16)),
                 name: "DPT_Value_Pressure",
                 text: Some("pressure (Pa)"),
@@ -1697,7 +1697,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(59u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(59u16)),
                 name: "DPT_Value_Reactance",
                 text: Some("reactance (Ω)"),
@@ -1706,7 +1706,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(60u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(60u16)),
                 name: "DPT_Value_Resistance",
                 text: Some("resistance (Ω)"),
@@ -1715,7 +1715,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(61u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(61u16)),
                 name: "DPT_Value_Resistivity",
                 text: Some("resistivity (Ωm)"),
@@ -1724,7 +1724,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(62u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(62u16)),
                 name: "DPT_Value_SelfInductance",
                 text: Some("self inductance (H)"),
@@ -1733,7 +1733,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(63u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(63u16)),
                 name: "DPT_Value_SolidAngle",
                 text: Some("solid angle (sr)"),
@@ -1742,7 +1742,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(64u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(64u16)),
                 name: "DPT_Value_Sound_Intensity",
                 text: Some("sound intensity (W/m²)"),
@@ -1751,7 +1751,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(65u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(65u16)),
                 name: "DPT_Value_Speed",
                 text: Some("speed (m/s)"),
@@ -1760,7 +1760,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(66u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(66u16)),
                 name: "DPT_Value_Stress",
                 text: Some("stress (Pa)"),
@@ -1769,7 +1769,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(67u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(67u16)),
                 name: "DPT_Value_Surface_Tension",
                 text: Some("surface tension (N/m)"),
@@ -1778,7 +1778,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(68u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(68u16)),
                 name: "DPT_Value_Common_Temperature",
                 text: Some("temperature (°C)"),
@@ -1787,7 +1787,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(69u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(69u16)),
                 name: "DPT_Value_Absolute_Temperature",
                 text: Some("temperature absolute (K)"),
@@ -1796,7 +1796,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(70u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(70u16)),
                 name: "DPT_Value_TemperatureDifference",
                 text: Some("temperature difference (K)"),
@@ -1805,7 +1805,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(71u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(71u16)),
                 name: "DPT_Value_Thermal_Capacity",
                 text: Some("thermal capacity (J/K)"),
@@ -1814,7 +1814,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(72u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(72u16)),
                 name: "DPT_Value_Thermal_Conductivity",
                 text: Some("thermal conductivity (W/mK)"),
@@ -1823,7 +1823,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(73u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(73u16)),
                 name: "DPT_Value_ThermoelectricPower",
                 text: Some("thermoelectric power (V/K)"),
@@ -1832,7 +1832,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(74u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(74u16)),
                 name: "DPT_Value_Time",
                 text: Some("time (s)"),
@@ -1841,7 +1841,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(75u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(75u16)),
                 name: "DPT_Value_Torque",
                 text: Some("torque (Nm)"),
@@ -1850,7 +1850,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(76u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(76u16)),
                 name: "DPT_Value_Volume",
                 text: Some("volume (m³)"),
@@ -1859,7 +1859,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(77u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(77u16)),
                 name: "DPT_Value_Volume_Flux",
                 text: Some("volume flux (m³/s)"),
@@ -1868,7 +1868,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(78u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(78u16)),
                 name: "DPT_Value_Weight",
                 text: Some("weight (N)"),
@@ -1877,7 +1877,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(79u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(79u16)),
                 name: "DPT_Value_Work",
                 text: Some("work (J)"),
@@ -1886,7 +1886,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(80u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(80u16)),
                 name: "DPT_Value_ApparentPower",
                 text: Some("apparent power (VA)"),
@@ -1895,7 +1895,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(1200u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(1200u16)),
                 name: "DPT_Volume_Flux_Meter",
                 text: Some("volume flux for meters (m³/h)"),
@@ -1904,7 +1904,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(14u16, Some(1201u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(14u16, Some(1201u16)),
                 name: "DPT_Volume_Flux_ls",
                 text: Some("volume flux for meters (1/ls)"),
@@ -1913,7 +1913,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(15u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(15u16, None),
                 name: "15.xxx",
                 text: Some("entrance access"),
@@ -1922,7 +1922,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(15u16, Some(0u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(15u16, Some(0u16)),
                 name: "DPT_Access_Data",
                 text: Some("entrance access"),
@@ -1931,7 +1931,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(16u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(16u16, None),
                 name: "16.xxx",
                 text: Some("character string"),
@@ -1940,7 +1940,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(16u16, Some(0u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(16u16, Some(0u16)),
                 name: "DPT_String_ASCII",
                 text: Some("Character String (ASCII)"),
@@ -1949,7 +1949,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(16u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(16u16, Some(1u16)),
                 name: "DPT_String_8859_1",
                 text: Some("Character String (ISO 8859-1)"),
@@ -1958,7 +1958,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(17u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(17u16, None),
                 name: "17.xxx",
                 text: Some("scene number"),
@@ -1967,7 +1967,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(17u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(17u16, Some(1u16)),
                 name: "DPT_SceneNumber",
                 text: Some("scene number"),
@@ -1976,7 +1976,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(18u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(18u16, None),
                 name: "18.xxx",
                 text: Some("scene control"),
@@ -1985,7 +1985,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(18u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(18u16, Some(1u16)),
                 name: "DPT_SceneControl",
                 text: Some("scene control"),
@@ -1994,7 +1994,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(19u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(19u16, None),
                 name: "19.xxx",
                 text: Some("Date Time"),
@@ -2003,7 +2003,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(19u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(19u16, Some(1u16)),
                 name: "DPT_DateTime",
                 text: Some("date time"),
@@ -2012,7 +2012,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, None),
                 name: "20.xxx",
                 text: Some("1-byte"),
@@ -2021,7 +2021,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(1u16)),
                 name: "DPT_SCLOMode",
                 text: Some("SCLO mode"),
@@ -2030,7 +2030,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(2u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(2u16)),
                 name: "DPT_BuildingMode",
                 text: Some("building mode"),
@@ -2039,7 +2039,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(3u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(3u16)),
                 name: "DPT_OccMode",
                 text: Some("occupied"),
@@ -2048,7 +2048,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(4u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(4u16)),
                 name: "DPT_Priority",
                 text: Some("priority"),
@@ -2057,7 +2057,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(5u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(5u16)),
                 name: "DPT_LightApplicationMode",
                 text: Some("light application mode"),
@@ -2066,7 +2066,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(6u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(6u16)),
                 name: "DPT_ApplicationArea",
                 text: Some("light application area"),
@@ -2075,7 +2075,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(7u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(7u16)),
                 name: "DPT_AlarmClassType",
                 text: Some("alarm class"),
@@ -2084,7 +2084,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(8u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(8u16)),
                 name: "DPT_PSUMode",
                 text: Some("PSU mode"),
@@ -2093,7 +2093,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(11u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(11u16)),
                 name: "DPT_ErrorClass_System",
                 text: Some("system error class"),
@@ -2102,7 +2102,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(12u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(12u16)),
                 name: "DPT_ErrorClass_HVAC",
                 text: Some("HVAC error class"),
@@ -2111,7 +2111,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(13u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(13u16)),
                 name: "DPT_Time_Delay",
                 text: Some("time delay"),
@@ -2120,7 +2120,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(14u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(14u16)),
                 name: "DPT_Beaufort_Wind_Force_Scale",
                 text: Some("wind force scale (0..12)"),
@@ -2129,7 +2129,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(17u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(17u16)),
                 name: "DPT_SensorSelect",
                 text: Some("sensor mode"),
@@ -2138,7 +2138,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(20u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(20u16)),
                 name: "DPT_ActuatorConnectType",
                 text: Some("actuator connect type"),
@@ -2147,7 +2147,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(21u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(21u16)),
                 name: "DPT_Cloud_Cover",
                 text: Some("cloud cover"),
@@ -2156,7 +2156,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(22u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(22u16)),
                 name: "DPT_PowerReturnMode",
                 text: Some("power return mode"),
@@ -2165,7 +2165,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(100u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(100u16)),
                 name: "DPT_FuelType",
                 text: Some("fuel type"),
@@ -2174,7 +2174,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(101u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(101u16)),
                 name: "DPT_BurnerType",
                 text: Some("burner type"),
@@ -2183,7 +2183,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(102u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(102u16)),
                 name: "DPT_HVACMode",
                 text: Some("HVAC mode"),
@@ -2192,7 +2192,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(103u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(103u16)),
                 name: "DPT_DHWMode",
                 text: Some("DHW mode"),
@@ -2201,7 +2201,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(104u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(104u16)),
                 name: "DPT_LoadPriority",
                 text: Some("load priority"),
@@ -2210,7 +2210,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(105u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(105u16)),
                 name: "DPT_HVACContrMode",
                 text: Some("HVAC control mode"),
@@ -2219,7 +2219,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(106u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(106u16)),
                 name: "DPT_HVACEmergMode",
                 text: Some("HVAC emergency mode"),
@@ -2228,7 +2228,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(107u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(107u16)),
                 name: "DPT_ChangeoverMode",
                 text: Some("changeover mode"),
@@ -2237,7 +2237,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(108u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(108u16)),
                 name: "DPT_ValveMode",
                 text: Some("valve mode"),
@@ -2246,7 +2246,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(109u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(109u16)),
                 name: "DPT_DamperMode",
                 text: Some("damper mode"),
@@ -2255,7 +2255,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(110u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(110u16)),
                 name: "DPT_HeaterMode",
                 text: Some("heater mode"),
@@ -2264,7 +2264,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(111u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(111u16)),
                 name: "DPT_FanMode",
                 text: Some("fan mode"),
@@ -2273,7 +2273,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(112u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(112u16)),
                 name: "DPT_MasterSlaveMode",
                 text: Some("master/slave mode"),
@@ -2282,7 +2282,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(113u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(113u16)),
                 name: "DPT_StatusRoomSetp",
                 text: Some("status room setpoint"),
@@ -2291,7 +2291,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(114u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(114u16)),
                 name: "DPT_Metering_DeviceType",
                 text: Some("metering device type"),
@@ -2300,7 +2300,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(115u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(115u16)),
                 name: "DPT_HumDehumMode",
                 text: Some("hum dehum mode"),
@@ -2309,7 +2309,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(116u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(116u16)),
                 name: "DPT_EnableHCStage",
                 text: Some("enable H/C stage"),
@@ -2318,7 +2318,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(120u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(120u16)),
                 name: "DPT_ADAType",
                 text: Some("ADA type"),
@@ -2327,7 +2327,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(121u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(121u16)),
                 name: "DPT_BackupMode",
                 text: Some("backup mode"),
@@ -2336,7 +2336,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(122u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(122u16)),
                 name: "DPT_StartSynchronization",
                 text: Some("start syncronization type"),
@@ -2345,7 +2345,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(600u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(600u16)),
                 name: "DPT_Behaviour_Lock_Unlock",
                 text: Some("behavior lock/unlock"),
@@ -2354,7 +2354,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(601u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(601u16)),
                 name: "DPT_Behaviour_Bus_Power_Up_Down",
                 text: Some("behavior bus power up/down"),
@@ -2363,7 +2363,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(602u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(602u16)),
                 name: "DPT_DALI_Fade_Time",
                 text: Some("dali fade time"),
@@ -2372,7 +2372,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(603u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(603u16)),
                 name: "DPT_BlinkingMode",
                 text: Some("blink mode"),
@@ -2381,7 +2381,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(604u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(604u16)),
                 name: "DPT_LightControlMode",
                 text: Some("light control mode"),
@@ -2390,7 +2390,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(605u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(605u16)),
                 name: "DPT_SwitchPBModel",
                 text: Some("PB switch mode"),
@@ -2399,7 +2399,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(606u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(606u16)),
                 name: "DPT_PBAction",
                 text: Some("PB action mode"),
@@ -2408,7 +2408,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(607u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(607u16)),
                 name: "DPT_DimmPBModel",
                 text: Some("PB dimm mode"),
@@ -2417,7 +2417,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(608u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(608u16)),
                 name: "DPT_SwitchOnMode",
                 text: Some("switch on mode"),
@@ -2426,7 +2426,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(609u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(609u16)),
                 name: "DPT_LoadTypeSet",
                 text: Some("load type"),
@@ -2435,7 +2435,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(610u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(610u16)),
                 name: "DPT_LoadTypeDetected",
                 text: Some("load type detection"),
@@ -2444,7 +2444,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(611u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(611u16)),
                 name: "DPT_Converter_Test_Control",
                 text: Some("converter test control"),
@@ -2453,7 +2453,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(612u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(612u16)),
                 name: "DPT_Converter_Control",
                 text: Some("converter control"),
@@ -2462,7 +2462,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(801u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(801u16)),
                 name: "DPT_SABExcept-Behaviour",
                 text: Some("SAB except behavior"),
@@ -2471,7 +2471,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(802u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(802u16)),
                 name: "DPT_SABBehaviour_Lock_Unlock",
                 text: Some("SAB behavior on lock/unlock"),
@@ -2480,7 +2480,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(803u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(803u16)),
                 name: "DPT_SSSBMode",
                 text: Some("SSSB mode"),
@@ -2489,7 +2489,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(804u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(804u16)),
                 name: "DPT_BlindsControlMode",
                 text: Some("blinds control mode"),
@@ -2498,7 +2498,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(1000u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(1000u16)),
                 name: "DPT_CommMode",
                 text: Some("communication mode"),
@@ -2507,7 +2507,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(1001u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(1001u16)),
                 name: "DPT_AddInfoTypes",
                 text: Some("additional information type"),
@@ -2516,7 +2516,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(1002u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(1002u16)),
                 name: "DPT_RF_ModeSelect",
                 text: Some("RF mode selection"),
@@ -2525,7 +2525,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(20u16, Some(1003u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(20u16, Some(1003u16)),
                 name: "DPT_RF_FilterSelect",
                 text: Some("RF filter mode selection"),
@@ -2534,7 +2534,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(21u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(21u16, None),
                 name: "21.xxx",
                 text: Some("8-bit set"),
@@ -2543,7 +2543,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(21u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(21u16, Some(1u16)),
                 name: "DPT_StatusGen",
                 text: Some("general status"),
@@ -2552,7 +2552,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(21u16, Some(2u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(21u16, Some(2u16)),
                 name: "DPT_Device_Control",
                 text: Some("device control"),
@@ -2561,7 +2561,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(21u16, Some(100u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(21u16, Some(100u16)),
                 name: "DPT_ForceSign",
                 text: Some("forcing signal"),
@@ -2570,7 +2570,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(21u16, Some(101u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(21u16, Some(101u16)),
                 name: "DPT_ForceSignCool",
                 text: Some("forcing signal cool"),
@@ -2579,7 +2579,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(21u16, Some(102u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(21u16, Some(102u16)),
                 name: "DPT_StatusRHC",
                 text: Some("room heating controller status"),
@@ -2588,7 +2588,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(21u16, Some(103u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(21u16, Some(103u16)),
                 name: "DPT_StatusSDHWC",
                 text: Some("solar DHW controller status"),
@@ -2597,7 +2597,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(21u16, Some(104u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(21u16, Some(104u16)),
                 name: "DPT_FuelTypeSet",
                 text: Some("fuel type set"),
@@ -2606,7 +2606,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(21u16, Some(105u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(21u16, Some(105u16)),
                 name: "DPT_StatusRCC",
                 text: Some("room cooling controller status"),
@@ -2615,7 +2615,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(21u16, Some(106u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(21u16, Some(106u16)),
                 name: "DPT_StatusAHU",
                 text: Some("ventilation controller status"),
@@ -2624,7 +2624,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(21u16, Some(107u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(21u16, Some(107u16)),
                 name: "DPT_CombinedStatus_RTSM",
                 text: Some("combined status RTSM"),
@@ -2633,7 +2633,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(21u16, Some(601u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(21u16, Some(601u16)),
                 name: "DPT_LightActuatorErrorInfo",
                 text: Some("lighting actuator error information"),
@@ -2642,7 +2642,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(21u16, Some(1000u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(21u16, Some(1000u16)),
                 name: "DPT_RF_ModeInfo",
                 text: Some("RF communication mode info"),
@@ -2651,7 +2651,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(21u16, Some(1001u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(21u16, Some(1001u16)),
                 name: "DPT_RF_FilterInfo",
                 text: Some("cEMI server supported RF filtering modes"),
@@ -2660,7 +2660,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(21u16, Some(1010u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(21u16, Some(1010u16)),
                 name: "DPT_Channel_Activation_8",
                 text: Some("channel activation for 8 channels"),
@@ -2669,7 +2669,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(22u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(22u16, None),
                 name: "22.xxx",
                 text: Some("16-bit set"),
@@ -2678,7 +2678,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(22u16, Some(100u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(22u16, Some(100u16)),
                 name: "DPT_StatusDHWC",
                 text: Some("DHW controller status"),
@@ -2687,7 +2687,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(22u16, Some(101u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(22u16, Some(101u16)),
                 name: "DPT_StatusRHCC",
                 text: Some("RHCC status"),
@@ -2696,7 +2696,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(22u16, Some(102u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(22u16, Some(102u16)),
                 name: "DPT_CombinedStatus_HVA",
                 text: Some("combined status HVA"),
@@ -2705,7 +2705,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(22u16, Some(103u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(22u16, Some(103u16)),
                 name: "DPT_CombinedStatus_RTC",
                 text: Some("combined status RTC"),
@@ -2714,7 +2714,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(22u16, Some(1000u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(22u16, Some(1000u16)),
                 name: "DPT_Media",
                 text: Some("media"),
@@ -2723,7 +2723,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(22u16, Some(1010u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(22u16, Some(1010u16)),
                 name: "DPT_Channel_Activation_16",
                 text: Some("channel activation for 16 channels"),
@@ -2732,7 +2732,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(23u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(23u16, None),
                 name: "23.xxx",
                 text: Some("2-bit set"),
@@ -2741,7 +2741,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(23u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(23u16, Some(1u16)),
                 name: "DPT_OnOffAction",
                 text: Some("on/off action"),
@@ -2750,7 +2750,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(23u16, Some(2u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(23u16, Some(2u16)),
                 name: "DPT_Alarm_Reaction",
                 text: Some("alarm reaction"),
@@ -2759,7 +2759,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(23u16, Some(3u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(23u16, Some(3u16)),
                 name: "DPT_UpDown_Action",
                 text: Some("up/down action"),
@@ -2768,7 +2768,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(23u16, Some(102u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(23u16, Some(102u16)),
                 name: "DPT_HVAC_PB_Action",
                 text: Some("HVAC push button action"),
@@ -2777,7 +2777,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(24u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(24u16, None),
                 name: "24.xxx",
                 text: None,
@@ -2786,7 +2786,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(24u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(24u16, Some(1u16)),
                 name: "DPT_VarString_8859_1",
                 text: Some("Variable-Length ISO-8859-1 String"),
@@ -2795,7 +2795,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(25u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(25u16, None),
                 name: "25.xxx",
                 text: Some("2-nibble set"),
@@ -2804,7 +2804,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(25u16, Some(1000u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(25u16, Some(1000u16)),
                 name: "DPT_DoubleNibble",
                 text: Some("busy/nak repetitions"),
@@ -2813,7 +2813,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(26u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(26u16, None),
                 name: "26.xxx",
                 text: Some("8-bit set"),
@@ -2822,7 +2822,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(26u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(26u16, Some(1u16)),
                 name: "DPT_SceneInfo",
                 text: Some("scene information"),
@@ -2831,7 +2831,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(27u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(27u16, None),
                 name: "27.xxx",
                 text: Some("32-bit set"),
@@ -2840,7 +2840,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(27u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(27u16, Some(1u16)),
                 name: "DPT_CombinedInfoOnOff",
                 text: Some("bit-combined info on/off"),
@@ -2849,7 +2849,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(28u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(28u16, None),
                 name: "28.xxx",
                 text: None,
@@ -2858,7 +2858,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(28u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(28u16, Some(1u16)),
                 name: "DPT_UTF-8",
                 text: Some("Unicode UTF-8 String"),
@@ -2867,7 +2867,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(29u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(29u16, None),
                 name: "29.xxx",
                 text: Some("electrical energy"),
@@ -2876,7 +2876,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(29u16, Some(10u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(29u16, Some(10u16)),
                 name: "DPT_ActiveEnergy_V64",
                 text: Some("active energy (Wh)"),
@@ -2885,7 +2885,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(29u16, Some(11u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(29u16, Some(11u16)),
                 name: "DPT_ApparantEnergy_V64",
                 text: Some("apparant energy (VAh)"),
@@ -2894,7 +2894,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(29u16, Some(12u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(29u16, Some(12u16)),
                 name: "DPT_ReactiveEnergy_V64",
                 text: Some("reactive energy (VARh)"),
@@ -2903,7 +2903,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(30u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(30u16, None),
                 name: "30.xxx",
                 text: Some("24 times channel activation"),
@@ -2912,7 +2912,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(30u16, Some(1010u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(30u16, Some(1010u16)),
                 name: "DPT_Channel_Activation_24",
                 text: Some("activation state 0..23"),
@@ -2921,7 +2921,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(206u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(206u16, None),
                 name: "206.xxx",
                 text: Some("16-bit unsigned value & 8-bit enum"),
@@ -2930,7 +2930,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(206u16, Some(100u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(206u16, Some(100u16)),
                 name: "DPT_HVACModeNext",
                 text: Some("time delay & HVAC mode"),
@@ -2939,7 +2939,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(206u16, Some(102u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(206u16, Some(102u16)),
                 name: "DPT_DHWModeNext",
                 text: Some("time delay & DHW mode"),
@@ -2948,7 +2948,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(206u16, Some(104u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(206u16, Some(104u16)),
                 name: "DPT_OccModeNext",
                 text: Some("time delay & occupancy mode"),
@@ -2957,7 +2957,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(206u16, Some(105u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(206u16, Some(105u16)),
                 name: "DPT_BuildingModeNext",
                 text: Some("time delay & building mode"),
@@ -2966,7 +2966,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(207u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(207u16, None),
                 name: "207.xxx",
                 text: Some("8-bit unsigned value & 8-bit enum"),
@@ -2975,7 +2975,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(207u16, Some(600u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(207u16, Some(600u16)),
                 name: "DPT_StatusLightingActuator",
                 text: Some("Status Lighting Actuator"),
@@ -2984,7 +2984,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(217u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(217u16, None),
                 name: "217.xxx",
                 text: Some("datapoint type version"),
@@ -2993,7 +2993,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(217u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(217u16, Some(1u16)),
                 name: "DPT_Version",
                 text: Some("DPT version"),
@@ -3002,7 +3002,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(219u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(219u16, None),
                 name: "219.xxx",
                 text: Some("alarm info"),
@@ -3011,7 +3011,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(219u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(219u16, Some(1u16)),
                 name: "DPT_AlarmInfo",
                 text: Some("alarm info"),
@@ -3020,7 +3020,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(222u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(222u16, None),
                 name: "222.xxx",
                 text: Some("3x 2-byte float value"),
@@ -3029,7 +3029,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(222u16, Some(100u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(222u16, Some(100u16)),
                 name: "DPT_TempRoomSetpSetF16[3]",
                 text: Some("room temperature setpoint"),
@@ -3038,7 +3038,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(222u16, Some(101u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(222u16, Some(101u16)),
                 name: "DPT_TempRoomSetpSetShiftF16[3]",
                 text: Some("room temperature setpoint shift"),
@@ -3047,7 +3047,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(225u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(225u16, None),
                 name: "225.xxx",
                 text: Some("scaling speed"),
@@ -3056,7 +3056,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(225u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(225u16, Some(1u16)),
                 name: "Scaling Speed",
                 text: Some("scaling speed"),
@@ -3065,7 +3065,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(225u16, Some(2u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(225u16, Some(2u16)),
                 name: "Scaling step time",
                 text: Some("scaling step time"),
@@ -3074,7 +3074,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(229u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(229u16, None),
                 name: "229.xxx",
                 text: Some("4-1-1 byte combined information"),
@@ -3083,7 +3083,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(229u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(229u16, Some(1u16)),
                 name: "DPT_MeteringValue",
                 text: Some("metering value (value,encoding,cmd)"),
@@ -3092,7 +3092,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(230u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(230u16, None),
                 name: "230.xxx",
                 text: Some("MBus address"),
@@ -3101,7 +3101,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(230u16, Some(1000u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(230u16, Some(1000u16)),
                 name: "DPT_MBus_Address",
                 text: Some("MBus address"),
@@ -3110,7 +3110,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(232u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(232u16, None),
                 name: "232.xxx",
                 text: Some("3-byte colour RGB"),
@@ -3119,7 +3119,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(232u16, Some(600u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(232u16, Some(600u16)),
                 name: "DPT_Colour_RGB",
                 text: Some("RGB value 3x(0..255)"),
@@ -3128,7 +3128,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(234u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(234u16, None),
                 name: "234.xxx",
                 text: Some("language code ISO 639-1"),
@@ -3137,7 +3137,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(234u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(234u16, Some(1u16)),
                 name: "DPT_LanguageCodeAlpha2_ASCII",
                 text: Some("language code (ASCII)"),
@@ -3146,7 +3146,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(235u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(235u16, None),
                 name: "235.xxx",
                 text: Some("Signed value with classification and validity"),
@@ -3155,7 +3155,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(235u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(235u16, Some(1u16)),
                 name: "DPT_Tariff_ActiveEnergy",
                 text: Some("electrical energy with tariff"),
@@ -3164,7 +3164,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(236u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(236u16, None),
                 name: "236.xxx",
                 text: Some("Prioritised Mode Control"),
@@ -3173,7 +3173,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(236u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(236u16, Some(1u16)),
                 name: "DPT_Prioritised_Mode_Control",
                 text: Some("priority control"),
@@ -3182,7 +3182,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(237u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(237u16, None),
                 name: "237.xxx",
                 text: Some("configuration/ diagnostics"),
@@ -3191,7 +3191,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(237u16, Some(600u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(237u16, Some(600u16)),
                 name: "DPT_DALI_Control_Gear_Diagnostic",
                 text: Some("diagnostic value"),
@@ -3200,7 +3200,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(238u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(238u16, None),
                 name: "238.xxx",
                 text: Some("configuration/ diagnostics"),
@@ -3209,7 +3209,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(238u16, Some(600u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(238u16, Some(600u16)),
                 name: "DPT_DALI_Diagnostics",
                 text: Some("diagnostic value"),
@@ -3218,7 +3218,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(240u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(240u16, None),
                 name: "240.xxx",
                 text: Some("positions"),
@@ -3227,7 +3227,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(240u16, Some(800u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(240u16, Some(800u16)),
                 name: "DPT_CombinedPosition",
                 text: Some("combined position"),
@@ -3236,7 +3236,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(241u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(241u16, None),
                 name: "241.xxx",
                 text: Some("status"),
@@ -3245,7 +3245,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(241u16, Some(800u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(241u16, Some(800u16)),
                 name: "DPT_StatusSAB",
                 text: Some("status sunblind & shutter actuator"),
@@ -3254,7 +3254,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(242u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(242u16, None),
                 name: "242.xxx",
                 text: Some("status"),
@@ -3263,7 +3263,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(242u16, Some(600u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(242u16, Some(600u16)),
                 name: "DPT_Colour_xyY",
                 text: Some("colour xyY"),
@@ -3272,7 +3272,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(244u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(244u16, None),
                 name: "244.xxx",
                 text: Some("Converter Status"),
@@ -3281,7 +3281,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(244u16, Some(600u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(244u16, Some(600u16)),
                 name: "DPT_Converter_Status",
                 text: Some("DALI converter status"),
@@ -3290,7 +3290,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(245u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(245u16, None),
                 name: "245.xxx",
                 text: Some("Converter test result"),
@@ -3299,7 +3299,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(245u16, Some(600u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(245u16, Some(600u16)),
                 name: "DPT_Converter_Test_Result",
                 text: Some("DALI converter test result"),
@@ -3308,7 +3308,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(246u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(246u16, None),
                 name: "246.xxx",
                 text: Some("Battery Information"),
@@ -3317,7 +3317,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(246u16, Some(600u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(246u16, Some(600u16)),
                 name: "DPT_Battery_Info",
                 text: Some("Battery Information"),
@@ -3326,7 +3326,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(249u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(249u16, None),
                 name: "249.xxx",
                 text: Some("brightness colour temperature transition"),
@@ -3335,7 +3335,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(249u16, Some(600u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(249u16, Some(600u16)),
                 name: "DPT_Brightness_Colour_Temperature_Transition",
                 text: Some("brightness colour temperature transition"),
@@ -3344,7 +3344,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(250u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(250u16, None),
                 name: "250.xxx",
                 text: Some("status"),
@@ -3353,7 +3353,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(250u16, Some(600u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(250u16, Some(600u16)),
                 name: "DPT_Brightness_Colour_Temperature_Control",
                 text: Some("brightness colour temperature control"),
@@ -3362,7 +3362,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(251u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(251u16, None),
                 name: "251.xxx",
                 text: Some("Colour RGBW"),
@@ -3371,7 +3371,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(251u16, Some(600u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(251u16, Some(600u16)),
                 name: "DPT_Colour_RGBW",
                 text: Some("RGBW value 4x(0..100%)"),
@@ -3380,7 +3380,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(252u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(252u16, None),
                 name: "252.xxx",
                 text: Some("Relative Control RGBW"),
@@ -3389,7 +3389,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(252u16, Some(600u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(252u16, Some(600u16)),
                 name: "DPT_Relative_Control_RGBW",
                 text: Some("RGBW relative control"),
@@ -3398,7 +3398,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(254u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(254u16, None),
                 name: "254.xxx",
                 text: Some("Relative Control RGB"),
@@ -3407,7 +3407,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(254u16, Some(600u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(254u16, Some(600u16)),
                 name: "DPT_Relative_Control_RGB",
                 text: Some("RGB relative control"),
@@ -3416,7 +3416,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(255u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(255u16, None),
                 name: "255.xxx",
                 text: Some("F32F32"),
@@ -3425,7 +3425,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(255u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(255u16, Some(1u16)),
                 name: "DPT_GeographicalLocation",
                 text: Some(
@@ -3436,7 +3436,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(275u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(275u16, None),
                 name: "275.xxx",
                 text: Some("F16F16F16F16"),
@@ -3445,7 +3445,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(275u16, Some(100u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(275u16, Some(100u16)),
                 name: "DPT_TempRoomSetpSetF16[4]",
                 text: Some("Temperature setpoint setting for 4 HVAC Modes"),
@@ -3454,7 +3454,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(275u16, Some(101u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(275u16, Some(101u16)),
                 name: "DPT_TempRoomSetpSetShiftF16[4]",
                 text: Some("Temperature setpoint shift setting for 4 HVAC Modes"),
@@ -3463,7 +3463,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(285u16, None),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(285u16, None),
                 name: "285.xxx",
                 text: Some("ipv6"),
@@ -3472,7 +3472,7 @@ pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
         ),
         (
             DPT::new(285u16, Some(1u16)),
-            DataPointTypeInfo {
+            TypeInfo {
                 dpt: DPT::new(285u16, Some(1u16)),
                 name: "DPT_ipv6",
                 text: Some("IPv6 address encoded in the network byte order"),

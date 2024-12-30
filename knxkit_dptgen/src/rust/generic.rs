@@ -23,7 +23,7 @@ pub fn generate(masterdata: &MasterData) -> TokenStream {
 
         quote! {
             (#new_dpt, |dp| {
-                Ok(OpaqueDataPoint::new(#sname::from_data_point(dp)?))
+                Ok(GenericDataPoint::new(#sname::from_data_point(dp)?))
             })
         }
     });
@@ -34,7 +34,7 @@ pub fn generate(masterdata: &MasterData) -> TokenStream {
 
         quote! {
             (#new_dpt, |value| {
-                Ok(OpaqueDataPoint::new(serde_json::from_value::<#sname>(
+                Ok(GenericDataPoint::new(serde_json::from_value::<#sname>(
                     value,
                 )?))
             })
@@ -51,17 +51,17 @@ pub fn generate(masterdata: &MasterData) -> TokenStream {
     quote! {
         use serde_json::Value;
         use knxkit::{core::DataPoint, project::DPT};
-        use crate::{Error, Specific, opaque::OpaqueDataPoint, specific::*};
+        use crate::{Error, specific::SpecificDataPoint, generic::GenericDataPoint, specific::*};
 
-        pub fn try_decode(dpt: DPT, data: &DataPoint) -> Result<OpaqueDataPoint, Error> {
-            static DECODERS: &'static [(DPT, fn(&DataPoint) -> Result<OpaqueDataPoint, Error>)] =
+        pub fn try_decode(dpt: DPT, data: &DataPoint) -> Result<GenericDataPoint, Error> {
+            static DECODERS: &'static [(DPT, fn(&DataPoint) -> Result<GenericDataPoint, Error>)] =
                 &[#(#datapoint_decoders),*];
 
             #lookup
         }
 
-        pub fn try_decode_json(dpt: DPT, data: Value) -> Result<OpaqueDataPoint, Error> {
-            static DECODERS: &'static [(DPT, fn(Value) -> Result<OpaqueDataPoint, Error>)] =
+        pub fn try_decode_json(dpt: DPT, data: Value) -> Result<GenericDataPoint, Error> {
+            static DECODERS: &'static [(DPT, fn(Value) -> Result<GenericDataPoint, Error>)] =
                 &[#(#serde_decoders),*];
 
             #lookup

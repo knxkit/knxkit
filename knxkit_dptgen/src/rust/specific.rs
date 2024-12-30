@@ -69,7 +69,7 @@ fn impl_value(sname: &Ident, subtype: &DatapointSubtype) -> TokenStream {
     let encode = super::encode::encode(subtype);
 
     quote! {
-        impl crate::Specific for #sname {
+        impl crate::specific::SpecificDataPoint for #sname {
             const DPT: DPT = #new_dpt;
 
             fn to_data_point(&self) -> DataPoint {
@@ -187,7 +187,7 @@ pub fn generate(masterdata: &MasterData) -> TokenStream {
             project::DPT,
             core::DataPoint
         };
-        use crate::{decode_knxf16, encode_knxf16, Error, Reserved};
+        use crate::{specific::{decode_knxf16, encode_knxf16, Reserved}, Error};
 
         #(#subtypes)*
     }

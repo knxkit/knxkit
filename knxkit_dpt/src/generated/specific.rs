@@ -10,11 +10,14 @@ use encoding::{
 };
 use serde::{Serialize, Deserialize};
 use knxkit::{project::DPT, core::DataPoint};
-use crate::{decode_knxf16, encode_knxf16, Error, Reserved};
+use crate::{
+    specific::{decode_knxf16, encode_knxf16, Reserved},
+    Error,
+};
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_1_1(pub bool);
-impl crate::Specific for DPT_1_1 {
+impl crate::specific::SpecificDataPoint for DPT_1_1 {
     const DPT: DPT = DPT::new(1u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -40,7 +43,7 @@ impl Display for DPT_1_1 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_1_2(pub bool);
-impl crate::Specific for DPT_1_2 {
+impl crate::specific::SpecificDataPoint for DPT_1_2 {
     const DPT: DPT = DPT::new(1u16, Some(2u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -66,7 +69,7 @@ impl Display for DPT_1_2 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_1_3(pub bool);
-impl crate::Specific for DPT_1_3 {
+impl crate::specific::SpecificDataPoint for DPT_1_3 {
     const DPT: DPT = DPT::new(1u16, Some(3u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -92,7 +95,7 @@ impl Display for DPT_1_3 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_1_4(pub bool);
-impl crate::Specific for DPT_1_4 {
+impl crate::specific::SpecificDataPoint for DPT_1_4 {
     const DPT: DPT = DPT::new(1u16, Some(4u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -118,7 +121,7 @@ impl Display for DPT_1_4 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_1_5(pub bool);
-impl crate::Specific for DPT_1_5 {
+impl crate::specific::SpecificDataPoint for DPT_1_5 {
     const DPT: DPT = DPT::new(1u16, Some(5u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -144,7 +147,7 @@ impl Display for DPT_1_5 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_1_6(pub bool);
-impl crate::Specific for DPT_1_6 {
+impl crate::specific::SpecificDataPoint for DPT_1_6 {
     const DPT: DPT = DPT::new(1u16, Some(6u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -170,7 +173,7 @@ impl Display for DPT_1_6 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_1_7(pub bool);
-impl crate::Specific for DPT_1_7 {
+impl crate::specific::SpecificDataPoint for DPT_1_7 {
     const DPT: DPT = DPT::new(1u16, Some(7u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -196,7 +199,7 @@ impl Display for DPT_1_7 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_1_8(pub bool);
-impl crate::Specific for DPT_1_8 {
+impl crate::specific::SpecificDataPoint for DPT_1_8 {
     const DPT: DPT = DPT::new(1u16, Some(8u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -222,7 +225,7 @@ impl Display for DPT_1_8 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_1_9(pub bool);
-impl crate::Specific for DPT_1_9 {
+impl crate::specific::SpecificDataPoint for DPT_1_9 {
     const DPT: DPT = DPT::new(1u16, Some(9u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -248,7 +251,7 @@ impl Display for DPT_1_9 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_1_10(pub bool);
-impl crate::Specific for DPT_1_10 {
+impl crate::specific::SpecificDataPoint for DPT_1_10 {
     const DPT: DPT = DPT::new(1u16, Some(10u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -274,7 +277,7 @@ impl Display for DPT_1_10 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_1_11(pub bool);
-impl crate::Specific for DPT_1_11 {
+impl crate::specific::SpecificDataPoint for DPT_1_11 {
     const DPT: DPT = DPT::new(1u16, Some(11u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -300,7 +303,7 @@ impl Display for DPT_1_11 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_1_12(pub bool);
-impl crate::Specific for DPT_1_12 {
+impl crate::specific::SpecificDataPoint for DPT_1_12 {
     const DPT: DPT = DPT::new(1u16, Some(12u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -326,7 +329,7 @@ impl Display for DPT_1_12 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_1_13(pub bool);
-impl crate::Specific for DPT_1_13 {
+impl crate::specific::SpecificDataPoint for DPT_1_13 {
     const DPT: DPT = DPT::new(1u16, Some(13u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -352,7 +355,7 @@ impl Display for DPT_1_13 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_1_14(pub bool);
-impl crate::Specific for DPT_1_14 {
+impl crate::specific::SpecificDataPoint for DPT_1_14 {
     const DPT: DPT = DPT::new(1u16, Some(14u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -378,7 +381,7 @@ impl Display for DPT_1_14 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_1_15(pub bool);
-impl crate::Specific for DPT_1_15 {
+impl crate::specific::SpecificDataPoint for DPT_1_15 {
     const DPT: DPT = DPT::new(1u16, Some(15u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -404,7 +407,7 @@ impl Display for DPT_1_15 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_1_16(pub bool);
-impl crate::Specific for DPT_1_16 {
+impl crate::specific::SpecificDataPoint for DPT_1_16 {
     const DPT: DPT = DPT::new(1u16, Some(16u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -430,7 +433,7 @@ impl Display for DPT_1_16 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_1_17(pub bool);
-impl crate::Specific for DPT_1_17 {
+impl crate::specific::SpecificDataPoint for DPT_1_17 {
     const DPT: DPT = DPT::new(1u16, Some(17u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -456,7 +459,7 @@ impl Display for DPT_1_17 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_1_18(pub bool);
-impl crate::Specific for DPT_1_18 {
+impl crate::specific::SpecificDataPoint for DPT_1_18 {
     const DPT: DPT = DPT::new(1u16, Some(18u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -482,7 +485,7 @@ impl Display for DPT_1_18 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_1_19(pub bool);
-impl crate::Specific for DPT_1_19 {
+impl crate::specific::SpecificDataPoint for DPT_1_19 {
     const DPT: DPT = DPT::new(1u16, Some(19u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -508,7 +511,7 @@ impl Display for DPT_1_19 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_1_21(pub bool);
-impl crate::Specific for DPT_1_21 {
+impl crate::specific::SpecificDataPoint for DPT_1_21 {
     const DPT: DPT = DPT::new(1u16, Some(21u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -534,7 +537,7 @@ impl Display for DPT_1_21 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_1_22(pub bool);
-impl crate::Specific for DPT_1_22 {
+impl crate::specific::SpecificDataPoint for DPT_1_22 {
     const DPT: DPT = DPT::new(1u16, Some(22u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -560,7 +563,7 @@ impl Display for DPT_1_22 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_1_23(pub bool);
-impl crate::Specific for DPT_1_23 {
+impl crate::specific::SpecificDataPoint for DPT_1_23 {
     const DPT: DPT = DPT::new(1u16, Some(23u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -586,7 +589,7 @@ impl Display for DPT_1_23 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_1_24(pub bool);
-impl crate::Specific for DPT_1_24 {
+impl crate::specific::SpecificDataPoint for DPT_1_24 {
     const DPT: DPT = DPT::new(1u16, Some(24u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -612,7 +615,7 @@ impl Display for DPT_1_24 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_1_100(pub bool);
-impl crate::Specific for DPT_1_100 {
+impl crate::specific::SpecificDataPoint for DPT_1_100 {
     const DPT: DPT = DPT::new(1u16, Some(100u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -638,7 +641,7 @@ impl Display for DPT_1_100 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_1_x(pub bool);
-impl crate::Specific for DPT_1_x {
+impl crate::specific::SpecificDataPoint for DPT_1_x {
     const DPT: DPT = DPT::new(1u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -668,7 +671,7 @@ pub struct DPT_2_1 {
     pub control: bool,
     pub On: bool,
 }
-impl crate::Specific for DPT_2_1 {
+impl crate::specific::SpecificDataPoint for DPT_2_1 {
     const DPT: DPT = DPT::new(2u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -702,7 +705,7 @@ pub struct DPT_2_2 {
     pub control: bool,
     pub bit: bool,
 }
-impl crate::Specific for DPT_2_2 {
+impl crate::specific::SpecificDataPoint for DPT_2_2 {
     const DPT: DPT = DPT::new(2u16, Some(2u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -736,7 +739,7 @@ pub struct DPT_2_3 {
     pub control: bool,
     pub Enable: bool,
 }
-impl crate::Specific for DPT_2_3 {
+impl crate::specific::SpecificDataPoint for DPT_2_3 {
     const DPT: DPT = DPT::new(2u16, Some(3u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -770,7 +773,7 @@ pub struct DPT_2_4 {
     pub control: bool,
     pub Ramp: bool,
 }
-impl crate::Specific for DPT_2_4 {
+impl crate::specific::SpecificDataPoint for DPT_2_4 {
     const DPT: DPT = DPT::new(2u16, Some(4u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -804,7 +807,7 @@ pub struct DPT_2_5 {
     pub control: bool,
     pub Alarm: bool,
 }
-impl crate::Specific for DPT_2_5 {
+impl crate::specific::SpecificDataPoint for DPT_2_5 {
     const DPT: DPT = DPT::new(2u16, Some(5u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -838,7 +841,7 @@ pub struct DPT_2_6 {
     pub control: bool,
     pub High: bool,
 }
-impl crate::Specific for DPT_2_6 {
+impl crate::specific::SpecificDataPoint for DPT_2_6 {
     const DPT: DPT = DPT::new(2u16, Some(6u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -872,7 +875,7 @@ pub struct DPT_2_7 {
     pub control: bool,
     pub Increase: bool,
 }
-impl crate::Specific for DPT_2_7 {
+impl crate::specific::SpecificDataPoint for DPT_2_7 {
     const DPT: DPT = DPT::new(2u16, Some(7u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -906,7 +909,7 @@ pub struct DPT_2_8 {
     pub control: bool,
     pub Down: bool,
 }
-impl crate::Specific for DPT_2_8 {
+impl crate::specific::SpecificDataPoint for DPT_2_8 {
     const DPT: DPT = DPT::new(2u16, Some(8u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -940,7 +943,7 @@ pub struct DPT_2_9 {
     pub control: bool,
     pub Close: bool,
 }
-impl crate::Specific for DPT_2_9 {
+impl crate::specific::SpecificDataPoint for DPT_2_9 {
     const DPT: DPT = DPT::new(2u16, Some(9u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -974,7 +977,7 @@ pub struct DPT_2_10 {
     pub control: bool,
     pub Start: bool,
 }
-impl crate::Specific for DPT_2_10 {
+impl crate::specific::SpecificDataPoint for DPT_2_10 {
     const DPT: DPT = DPT::new(2u16, Some(10u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -1008,7 +1011,7 @@ pub struct DPT_2_11 {
     pub control: bool,
     pub Active: bool,
 }
-impl crate::Specific for DPT_2_11 {
+impl crate::specific::SpecificDataPoint for DPT_2_11 {
     const DPT: DPT = DPT::new(2u16, Some(11u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -1042,7 +1045,7 @@ pub struct DPT_2_12 {
     pub control: bool,
     pub Inverted: bool,
 }
-impl crate::Specific for DPT_2_12 {
+impl crate::specific::SpecificDataPoint for DPT_2_12 {
     const DPT: DPT = DPT::new(2u16, Some(12u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -1076,7 +1079,7 @@ pub struct DPT_2_x {
     pub control: bool,
     pub On: bool,
 }
-impl crate::Specific for DPT_2_x {
+impl crate::specific::SpecificDataPoint for DPT_2_x {
     const DPT: DPT = DPT::new(2u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -1110,7 +1113,7 @@ pub struct DPT_3_7 {
     pub Increase: bool,
     pub StepCode: u8,
 }
-impl crate::Specific for DPT_3_7 {
+impl crate::specific::SpecificDataPoint for DPT_3_7 {
     const DPT: DPT = DPT::new(3u16, Some(7u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -1144,7 +1147,7 @@ pub struct DPT_3_8 {
     pub Down: bool,
     pub StepCode: u8,
 }
-impl crate::Specific for DPT_3_8 {
+impl crate::specific::SpecificDataPoint for DPT_3_8 {
     const DPT: DPT = DPT::new(3u16, Some(8u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -1178,7 +1181,7 @@ pub struct DPT_3_x {
     pub Increase: bool,
     pub StepCode: u8,
 }
-impl crate::Specific for DPT_3_x {
+impl crate::specific::SpecificDataPoint for DPT_3_x {
     const DPT: DPT = DPT::new(3u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -1208,7 +1211,7 @@ impl Display for DPT_3_x {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_4_1(pub char);
-impl crate::Specific for DPT_4_1 {
+impl crate::specific::SpecificDataPoint for DPT_4_1 {
     const DPT: DPT = DPT::new(4u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1234,7 +1237,7 @@ impl Display for DPT_4_1 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_4_2(pub char);
-impl crate::Specific for DPT_4_2 {
+impl crate::specific::SpecificDataPoint for DPT_4_2 {
     const DPT: DPT = DPT::new(4u16, Some(2u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1271,7 +1274,7 @@ impl Display for DPT_4_2 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_4_x(pub char);
-impl crate::Specific for DPT_4_x {
+impl crate::specific::SpecificDataPoint for DPT_4_x {
     const DPT: DPT = DPT::new(4u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1297,7 +1300,7 @@ impl Display for DPT_4_x {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_5_1(pub u8);
-impl crate::Specific for DPT_5_1 {
+impl crate::specific::SpecificDataPoint for DPT_5_1 {
     const DPT: DPT = DPT::new(5u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1323,7 +1326,7 @@ impl Display for DPT_5_1 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_5_3(pub u8);
-impl crate::Specific for DPT_5_3 {
+impl crate::specific::SpecificDataPoint for DPT_5_3 {
     const DPT: DPT = DPT::new(5u16, Some(3u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1349,7 +1352,7 @@ impl Display for DPT_5_3 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_5_4(pub u8);
-impl crate::Specific for DPT_5_4 {
+impl crate::specific::SpecificDataPoint for DPT_5_4 {
     const DPT: DPT = DPT::new(5u16, Some(4u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1375,7 +1378,7 @@ impl Display for DPT_5_4 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_5_5(pub u8);
-impl crate::Specific for DPT_5_5 {
+impl crate::specific::SpecificDataPoint for DPT_5_5 {
     const DPT: DPT = DPT::new(5u16, Some(5u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1401,7 +1404,7 @@ impl Display for DPT_5_5 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_5_6(pub u8);
-impl crate::Specific for DPT_5_6 {
+impl crate::specific::SpecificDataPoint for DPT_5_6 {
     const DPT: DPT = DPT::new(5u16, Some(6u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1427,7 +1430,7 @@ impl Display for DPT_5_6 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_5_10(pub u8);
-impl crate::Specific for DPT_5_10 {
+impl crate::specific::SpecificDataPoint for DPT_5_10 {
     const DPT: DPT = DPT::new(5u16, Some(10u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1453,7 +1456,7 @@ impl Display for DPT_5_10 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_5_100(pub u8);
-impl crate::Specific for DPT_5_100 {
+impl crate::specific::SpecificDataPoint for DPT_5_100 {
     const DPT: DPT = DPT::new(5u16, Some(100u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1479,7 +1482,7 @@ impl Display for DPT_5_100 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_5_x(pub u8);
-impl crate::Specific for DPT_5_x {
+impl crate::specific::SpecificDataPoint for DPT_5_x {
     const DPT: DPT = DPT::new(5u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1505,7 +1508,7 @@ impl Display for DPT_5_x {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_6_1(pub i8);
-impl crate::Specific for DPT_6_1 {
+impl crate::specific::SpecificDataPoint for DPT_6_1 {
     const DPT: DPT = DPT::new(6u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1531,7 +1534,7 @@ impl Display for DPT_6_1 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_6_10(pub i8);
-impl crate::Specific for DPT_6_10 {
+impl crate::specific::SpecificDataPoint for DPT_6_10 {
     const DPT: DPT = DPT::new(6u16, Some(10u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1565,7 +1568,7 @@ pub struct DPT_6_20 {
     pub StatusE: bool,
     pub enumeration: u8,
 }
-impl crate::Specific for DPT_6_20 {
+impl crate::specific::SpecificDataPoint for DPT_6_20 {
     const DPT: DPT = DPT::new(6u16, Some(20u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1606,7 +1609,7 @@ impl Display for DPT_6_20 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_6_x(pub i8);
-impl crate::Specific for DPT_6_x {
+impl crate::specific::SpecificDataPoint for DPT_6_x {
     const DPT: DPT = DPT::new(6u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1632,7 +1635,7 @@ impl Display for DPT_6_x {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_7_1(pub u16);
-impl crate::Specific for DPT_7_1 {
+impl crate::specific::SpecificDataPoint for DPT_7_1 {
     const DPT: DPT = DPT::new(7u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1658,7 +1661,7 @@ impl Display for DPT_7_1 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_7_2(pub u16);
-impl crate::Specific for DPT_7_2 {
+impl crate::specific::SpecificDataPoint for DPT_7_2 {
     const DPT: DPT = DPT::new(7u16, Some(2u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1684,7 +1687,7 @@ impl Display for DPT_7_2 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_7_3(pub u16);
-impl crate::Specific for DPT_7_3 {
+impl crate::specific::SpecificDataPoint for DPT_7_3 {
     const DPT: DPT = DPT::new(7u16, Some(3u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1710,7 +1713,7 @@ impl Display for DPT_7_3 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_7_4(pub u16);
-impl crate::Specific for DPT_7_4 {
+impl crate::specific::SpecificDataPoint for DPT_7_4 {
     const DPT: DPT = DPT::new(7u16, Some(4u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1736,7 +1739,7 @@ impl Display for DPT_7_4 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_7_5(pub u16);
-impl crate::Specific for DPT_7_5 {
+impl crate::specific::SpecificDataPoint for DPT_7_5 {
     const DPT: DPT = DPT::new(7u16, Some(5u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1762,7 +1765,7 @@ impl Display for DPT_7_5 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_7_6(pub u16);
-impl crate::Specific for DPT_7_6 {
+impl crate::specific::SpecificDataPoint for DPT_7_6 {
     const DPT: DPT = DPT::new(7u16, Some(6u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1788,7 +1791,7 @@ impl Display for DPT_7_6 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_7_7(pub u16);
-impl crate::Specific for DPT_7_7 {
+impl crate::specific::SpecificDataPoint for DPT_7_7 {
     const DPT: DPT = DPT::new(7u16, Some(7u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1814,7 +1817,7 @@ impl Display for DPT_7_7 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_7_10(pub u16);
-impl crate::Specific for DPT_7_10 {
+impl crate::specific::SpecificDataPoint for DPT_7_10 {
     const DPT: DPT = DPT::new(7u16, Some(10u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1840,7 +1843,7 @@ impl Display for DPT_7_10 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_7_11(pub u16);
-impl crate::Specific for DPT_7_11 {
+impl crate::specific::SpecificDataPoint for DPT_7_11 {
     const DPT: DPT = DPT::new(7u16, Some(11u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1866,7 +1869,7 @@ impl Display for DPT_7_11 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_7_12(pub u16);
-impl crate::Specific for DPT_7_12 {
+impl crate::specific::SpecificDataPoint for DPT_7_12 {
     const DPT: DPT = DPT::new(7u16, Some(12u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1892,7 +1895,7 @@ impl Display for DPT_7_12 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_7_13(pub u16);
-impl crate::Specific for DPT_7_13 {
+impl crate::specific::SpecificDataPoint for DPT_7_13 {
     const DPT: DPT = DPT::new(7u16, Some(13u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1918,7 +1921,7 @@ impl Display for DPT_7_13 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_7_600(pub u16);
-impl crate::Specific for DPT_7_600 {
+impl crate::specific::SpecificDataPoint for DPT_7_600 {
     const DPT: DPT = DPT::new(7u16, Some(600u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1944,7 +1947,7 @@ impl Display for DPT_7_600 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_7_x(pub u16);
-impl crate::Specific for DPT_7_x {
+impl crate::specific::SpecificDataPoint for DPT_7_x {
     const DPT: DPT = DPT::new(7u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1970,7 +1973,7 @@ impl Display for DPT_7_x {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_8_1(pub i16);
-impl crate::Specific for DPT_8_1 {
+impl crate::specific::SpecificDataPoint for DPT_8_1 {
     const DPT: DPT = DPT::new(8u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -1996,7 +1999,7 @@ impl Display for DPT_8_1 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_8_2(pub i16);
-impl crate::Specific for DPT_8_2 {
+impl crate::specific::SpecificDataPoint for DPT_8_2 {
     const DPT: DPT = DPT::new(8u16, Some(2u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2022,7 +2025,7 @@ impl Display for DPT_8_2 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_8_3(pub i16);
-impl crate::Specific for DPT_8_3 {
+impl crate::specific::SpecificDataPoint for DPT_8_3 {
     const DPT: DPT = DPT::new(8u16, Some(3u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2048,7 +2051,7 @@ impl Display for DPT_8_3 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_8_4(pub i16);
-impl crate::Specific for DPT_8_4 {
+impl crate::specific::SpecificDataPoint for DPT_8_4 {
     const DPT: DPT = DPT::new(8u16, Some(4u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2074,7 +2077,7 @@ impl Display for DPT_8_4 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_8_5(pub i16);
-impl crate::Specific for DPT_8_5 {
+impl crate::specific::SpecificDataPoint for DPT_8_5 {
     const DPT: DPT = DPT::new(8u16, Some(5u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2100,7 +2103,7 @@ impl Display for DPT_8_5 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_8_6(pub i16);
-impl crate::Specific for DPT_8_6 {
+impl crate::specific::SpecificDataPoint for DPT_8_6 {
     const DPT: DPT = DPT::new(8u16, Some(6u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2126,7 +2129,7 @@ impl Display for DPT_8_6 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_8_7(pub i16);
-impl crate::Specific for DPT_8_7 {
+impl crate::specific::SpecificDataPoint for DPT_8_7 {
     const DPT: DPT = DPT::new(8u16, Some(7u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2152,7 +2155,7 @@ impl Display for DPT_8_7 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_8_10(pub i16);
-impl crate::Specific for DPT_8_10 {
+impl crate::specific::SpecificDataPoint for DPT_8_10 {
     const DPT: DPT = DPT::new(8u16, Some(10u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2178,7 +2181,7 @@ impl Display for DPT_8_10 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_8_11(pub i16);
-impl crate::Specific for DPT_8_11 {
+impl crate::specific::SpecificDataPoint for DPT_8_11 {
     const DPT: DPT = DPT::new(8u16, Some(11u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2204,7 +2207,7 @@ impl Display for DPT_8_11 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_8_12(pub i16);
-impl crate::Specific for DPT_8_12 {
+impl crate::specific::SpecificDataPoint for DPT_8_12 {
     const DPT: DPT = DPT::new(8u16, Some(12u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2230,7 +2233,7 @@ impl Display for DPT_8_12 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_8_x(pub i16);
-impl crate::Specific for DPT_8_x {
+impl crate::specific::SpecificDataPoint for DPT_8_x {
     const DPT: DPT = DPT::new(8u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2256,7 +2259,7 @@ impl Display for DPT_8_x {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_9_1(pub f32);
-impl crate::Specific for DPT_9_1 {
+impl crate::specific::SpecificDataPoint for DPT_9_1 {
     const DPT: DPT = DPT::new(9u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2288,7 +2291,7 @@ impl Display for DPT_9_1 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_9_2(pub f32);
-impl crate::Specific for DPT_9_2 {
+impl crate::specific::SpecificDataPoint for DPT_9_2 {
     const DPT: DPT = DPT::new(9u16, Some(2u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2320,7 +2323,7 @@ impl Display for DPT_9_2 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_9_3(pub f32);
-impl crate::Specific for DPT_9_3 {
+impl crate::specific::SpecificDataPoint for DPT_9_3 {
     const DPT: DPT = DPT::new(9u16, Some(3u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2352,7 +2355,7 @@ impl Display for DPT_9_3 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_9_4(pub f32);
-impl crate::Specific for DPT_9_4 {
+impl crate::specific::SpecificDataPoint for DPT_9_4 {
     const DPT: DPT = DPT::new(9u16, Some(4u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2384,7 +2387,7 @@ impl Display for DPT_9_4 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_9_5(pub f32);
-impl crate::Specific for DPT_9_5 {
+impl crate::specific::SpecificDataPoint for DPT_9_5 {
     const DPT: DPT = DPT::new(9u16, Some(5u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2416,7 +2419,7 @@ impl Display for DPT_9_5 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_9_6(pub f32);
-impl crate::Specific for DPT_9_6 {
+impl crate::specific::SpecificDataPoint for DPT_9_6 {
     const DPT: DPT = DPT::new(9u16, Some(6u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2448,7 +2451,7 @@ impl Display for DPT_9_6 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_9_7(pub f32);
-impl crate::Specific for DPT_9_7 {
+impl crate::specific::SpecificDataPoint for DPT_9_7 {
     const DPT: DPT = DPT::new(9u16, Some(7u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2480,7 +2483,7 @@ impl Display for DPT_9_7 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_9_8(pub f32);
-impl crate::Specific for DPT_9_8 {
+impl crate::specific::SpecificDataPoint for DPT_9_8 {
     const DPT: DPT = DPT::new(9u16, Some(8u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2512,7 +2515,7 @@ impl Display for DPT_9_8 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_9_9(pub f32);
-impl crate::Specific for DPT_9_9 {
+impl crate::specific::SpecificDataPoint for DPT_9_9 {
     const DPT: DPT = DPT::new(9u16, Some(9u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2544,7 +2547,7 @@ impl Display for DPT_9_9 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_9_10(pub f32);
-impl crate::Specific for DPT_9_10 {
+impl crate::specific::SpecificDataPoint for DPT_9_10 {
     const DPT: DPT = DPT::new(9u16, Some(10u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2576,7 +2579,7 @@ impl Display for DPT_9_10 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_9_11(pub f32);
-impl crate::Specific for DPT_9_11 {
+impl crate::specific::SpecificDataPoint for DPT_9_11 {
     const DPT: DPT = DPT::new(9u16, Some(11u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2608,7 +2611,7 @@ impl Display for DPT_9_11 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_9_20(pub f32);
-impl crate::Specific for DPT_9_20 {
+impl crate::specific::SpecificDataPoint for DPT_9_20 {
     const DPT: DPT = DPT::new(9u16, Some(20u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2640,7 +2643,7 @@ impl Display for DPT_9_20 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_9_21(pub f32);
-impl crate::Specific for DPT_9_21 {
+impl crate::specific::SpecificDataPoint for DPT_9_21 {
     const DPT: DPT = DPT::new(9u16, Some(21u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2672,7 +2675,7 @@ impl Display for DPT_9_21 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_9_22(pub f32);
-impl crate::Specific for DPT_9_22 {
+impl crate::specific::SpecificDataPoint for DPT_9_22 {
     const DPT: DPT = DPT::new(9u16, Some(22u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2704,7 +2707,7 @@ impl Display for DPT_9_22 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_9_23(pub f32);
-impl crate::Specific for DPT_9_23 {
+impl crate::specific::SpecificDataPoint for DPT_9_23 {
     const DPT: DPT = DPT::new(9u16, Some(23u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2736,7 +2739,7 @@ impl Display for DPT_9_23 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_9_24(pub f32);
-impl crate::Specific for DPT_9_24 {
+impl crate::specific::SpecificDataPoint for DPT_9_24 {
     const DPT: DPT = DPT::new(9u16, Some(24u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2768,7 +2771,7 @@ impl Display for DPT_9_24 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_9_25(pub f32);
-impl crate::Specific for DPT_9_25 {
+impl crate::specific::SpecificDataPoint for DPT_9_25 {
     const DPT: DPT = DPT::new(9u16, Some(25u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2800,7 +2803,7 @@ impl Display for DPT_9_25 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_9_26(pub f32);
-impl crate::Specific for DPT_9_26 {
+impl crate::specific::SpecificDataPoint for DPT_9_26 {
     const DPT: DPT = DPT::new(9u16, Some(26u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2832,7 +2835,7 @@ impl Display for DPT_9_26 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_9_27(pub f32);
-impl crate::Specific for DPT_9_27 {
+impl crate::specific::SpecificDataPoint for DPT_9_27 {
     const DPT: DPT = DPT::new(9u16, Some(27u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2864,7 +2867,7 @@ impl Display for DPT_9_27 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_9_28(pub f32);
-impl crate::Specific for DPT_9_28 {
+impl crate::specific::SpecificDataPoint for DPT_9_28 {
     const DPT: DPT = DPT::new(9u16, Some(28u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2896,7 +2899,7 @@ impl Display for DPT_9_28 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_9_29(pub f32);
-impl crate::Specific for DPT_9_29 {
+impl crate::specific::SpecificDataPoint for DPT_9_29 {
     const DPT: DPT = DPT::new(9u16, Some(29u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2928,7 +2931,7 @@ impl Display for DPT_9_29 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_9_30(pub f32);
-impl crate::Specific for DPT_9_30 {
+impl crate::specific::SpecificDataPoint for DPT_9_30 {
     const DPT: DPT = DPT::new(9u16, Some(30u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2960,7 +2963,7 @@ impl Display for DPT_9_30 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_9_31(pub f32);
-impl crate::Specific for DPT_9_31 {
+impl crate::specific::SpecificDataPoint for DPT_9_31 {
     const DPT: DPT = DPT::new(9u16, Some(31u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -2992,7 +2995,7 @@ impl Display for DPT_9_31 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_9_x(pub f32);
-impl crate::Specific for DPT_9_x {
+impl crate::specific::SpecificDataPoint for DPT_9_x {
     const DPT: DPT = DPT::new(9u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3032,7 +3035,7 @@ pub struct DPT_10_1 {
     pub reserved2: Reserved,
     pub Seconds: u8,
 }
-impl crate::Specific for DPT_10_1 {
+impl crate::specific::SpecificDataPoint for DPT_10_1 {
     const DPT: DPT = DPT::new(10u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3087,7 +3090,7 @@ pub struct DPT_10_x {
     pub reserved2: Reserved,
     pub Seconds: u8,
 }
-impl crate::Specific for DPT_10_x {
+impl crate::specific::SpecificDataPoint for DPT_10_x {
     const DPT: DPT = DPT::new(10u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3142,7 +3145,7 @@ pub struct DPT_11_1 {
     pub reserved3: Reserved,
     pub int3: u8,
 }
-impl crate::Specific for DPT_11_1 {
+impl crate::specific::SpecificDataPoint for DPT_11_1 {
     const DPT: DPT = DPT::new(11u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3200,7 +3203,7 @@ pub struct DPT_11_x {
     pub reserved3: Reserved,
     pub int3: u8,
 }
-impl crate::Specific for DPT_11_x {
+impl crate::specific::SpecificDataPoint for DPT_11_x {
     const DPT: DPT = DPT::new(11u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3250,7 +3253,7 @@ impl Display for DPT_11_x {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_12_1(pub u32);
-impl crate::Specific for DPT_12_1 {
+impl crate::specific::SpecificDataPoint for DPT_12_1 {
     const DPT: DPT = DPT::new(12u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3276,7 +3279,7 @@ impl Display for DPT_12_1 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_12_100(pub u32);
-impl crate::Specific for DPT_12_100 {
+impl crate::specific::SpecificDataPoint for DPT_12_100 {
     const DPT: DPT = DPT::new(12u16, Some(100u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3302,7 +3305,7 @@ impl Display for DPT_12_100 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_12_101(pub u32);
-impl crate::Specific for DPT_12_101 {
+impl crate::specific::SpecificDataPoint for DPT_12_101 {
     const DPT: DPT = DPT::new(12u16, Some(101u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3328,7 +3331,7 @@ impl Display for DPT_12_101 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_12_102(pub u32);
-impl crate::Specific for DPT_12_102 {
+impl crate::specific::SpecificDataPoint for DPT_12_102 {
     const DPT: DPT = DPT::new(12u16, Some(102u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3354,7 +3357,7 @@ impl Display for DPT_12_102 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_12_1200(pub u32);
-impl crate::Specific for DPT_12_1200 {
+impl crate::specific::SpecificDataPoint for DPT_12_1200 {
     const DPT: DPT = DPT::new(12u16, Some(1200u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3380,7 +3383,7 @@ impl Display for DPT_12_1200 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_12_1201(pub u32);
-impl crate::Specific for DPT_12_1201 {
+impl crate::specific::SpecificDataPoint for DPT_12_1201 {
     const DPT: DPT = DPT::new(12u16, Some(1201u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3406,7 +3409,7 @@ impl Display for DPT_12_1201 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_12_x(pub u32);
-impl crate::Specific for DPT_12_x {
+impl crate::specific::SpecificDataPoint for DPT_12_x {
     const DPT: DPT = DPT::new(12u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3432,7 +3435,7 @@ impl Display for DPT_12_x {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_13_1(pub i32);
-impl crate::Specific for DPT_13_1 {
+impl crate::specific::SpecificDataPoint for DPT_13_1 {
     const DPT: DPT = DPT::new(13u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3458,7 +3461,7 @@ impl Display for DPT_13_1 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_13_2(pub i32);
-impl crate::Specific for DPT_13_2 {
+impl crate::specific::SpecificDataPoint for DPT_13_2 {
     const DPT: DPT = DPT::new(13u16, Some(2u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3484,7 +3487,7 @@ impl Display for DPT_13_2 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_13_10(pub i32);
-impl crate::Specific for DPT_13_10 {
+impl crate::specific::SpecificDataPoint for DPT_13_10 {
     const DPT: DPT = DPT::new(13u16, Some(10u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3510,7 +3513,7 @@ impl Display for DPT_13_10 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_13_11(pub i32);
-impl crate::Specific for DPT_13_11 {
+impl crate::specific::SpecificDataPoint for DPT_13_11 {
     const DPT: DPT = DPT::new(13u16, Some(11u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3536,7 +3539,7 @@ impl Display for DPT_13_11 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_13_12(pub i32);
-impl crate::Specific for DPT_13_12 {
+impl crate::specific::SpecificDataPoint for DPT_13_12 {
     const DPT: DPT = DPT::new(13u16, Some(12u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3562,7 +3565,7 @@ impl Display for DPT_13_12 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_13_13(pub i32);
-impl crate::Specific for DPT_13_13 {
+impl crate::specific::SpecificDataPoint for DPT_13_13 {
     const DPT: DPT = DPT::new(13u16, Some(13u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3588,7 +3591,7 @@ impl Display for DPT_13_13 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_13_14(pub i32);
-impl crate::Specific for DPT_13_14 {
+impl crate::specific::SpecificDataPoint for DPT_13_14 {
     const DPT: DPT = DPT::new(13u16, Some(14u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3614,7 +3617,7 @@ impl Display for DPT_13_14 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_13_15(pub i32);
-impl crate::Specific for DPT_13_15 {
+impl crate::specific::SpecificDataPoint for DPT_13_15 {
     const DPT: DPT = DPT::new(13u16, Some(15u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3640,7 +3643,7 @@ impl Display for DPT_13_15 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_13_16(pub i32);
-impl crate::Specific for DPT_13_16 {
+impl crate::specific::SpecificDataPoint for DPT_13_16 {
     const DPT: DPT = DPT::new(13u16, Some(16u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3666,7 +3669,7 @@ impl Display for DPT_13_16 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_13_100(pub i32);
-impl crate::Specific for DPT_13_100 {
+impl crate::specific::SpecificDataPoint for DPT_13_100 {
     const DPT: DPT = DPT::new(13u16, Some(100u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3692,7 +3695,7 @@ impl Display for DPT_13_100 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_13_1200(pub i32);
-impl crate::Specific for DPT_13_1200 {
+impl crate::specific::SpecificDataPoint for DPT_13_1200 {
     const DPT: DPT = DPT::new(13u16, Some(1200u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3718,7 +3721,7 @@ impl Display for DPT_13_1200 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_13_1201(pub i32);
-impl crate::Specific for DPT_13_1201 {
+impl crate::specific::SpecificDataPoint for DPT_13_1201 {
     const DPT: DPT = DPT::new(13u16, Some(1201u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3744,7 +3747,7 @@ impl Display for DPT_13_1201 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_13_x(pub i32);
-impl crate::Specific for DPT_13_x {
+impl crate::specific::SpecificDataPoint for DPT_13_x {
     const DPT: DPT = DPT::new(13u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3770,7 +3773,7 @@ impl Display for DPT_13_x {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_0(pub f32);
-impl crate::Specific for DPT_14_0 {
+impl crate::specific::SpecificDataPoint for DPT_14_0 {
     const DPT: DPT = DPT::new(14u16, Some(0u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3802,7 +3805,7 @@ impl Display for DPT_14_0 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_1(pub f32);
-impl crate::Specific for DPT_14_1 {
+impl crate::specific::SpecificDataPoint for DPT_14_1 {
     const DPT: DPT = DPT::new(14u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3834,7 +3837,7 @@ impl Display for DPT_14_1 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_2(pub f32);
-impl crate::Specific for DPT_14_2 {
+impl crate::specific::SpecificDataPoint for DPT_14_2 {
     const DPT: DPT = DPT::new(14u16, Some(2u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3866,7 +3869,7 @@ impl Display for DPT_14_2 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_3(pub f32);
-impl crate::Specific for DPT_14_3 {
+impl crate::specific::SpecificDataPoint for DPT_14_3 {
     const DPT: DPT = DPT::new(14u16, Some(3u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3898,7 +3901,7 @@ impl Display for DPT_14_3 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_4(pub f32);
-impl crate::Specific for DPT_14_4 {
+impl crate::specific::SpecificDataPoint for DPT_14_4 {
     const DPT: DPT = DPT::new(14u16, Some(4u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3930,7 +3933,7 @@ impl Display for DPT_14_4 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_5(pub f32);
-impl crate::Specific for DPT_14_5 {
+impl crate::specific::SpecificDataPoint for DPT_14_5 {
     const DPT: DPT = DPT::new(14u16, Some(5u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3962,7 +3965,7 @@ impl Display for DPT_14_5 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_6(pub f32);
-impl crate::Specific for DPT_14_6 {
+impl crate::specific::SpecificDataPoint for DPT_14_6 {
     const DPT: DPT = DPT::new(14u16, Some(6u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -3994,7 +3997,7 @@ impl Display for DPT_14_6 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_7(pub f32);
-impl crate::Specific for DPT_14_7 {
+impl crate::specific::SpecificDataPoint for DPT_14_7 {
     const DPT: DPT = DPT::new(14u16, Some(7u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4026,7 +4029,7 @@ impl Display for DPT_14_7 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_8(pub f32);
-impl crate::Specific for DPT_14_8 {
+impl crate::specific::SpecificDataPoint for DPT_14_8 {
     const DPT: DPT = DPT::new(14u16, Some(8u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4058,7 +4061,7 @@ impl Display for DPT_14_8 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_9(pub f32);
-impl crate::Specific for DPT_14_9 {
+impl crate::specific::SpecificDataPoint for DPT_14_9 {
     const DPT: DPT = DPT::new(14u16, Some(9u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4090,7 +4093,7 @@ impl Display for DPT_14_9 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_10(pub f32);
-impl crate::Specific for DPT_14_10 {
+impl crate::specific::SpecificDataPoint for DPT_14_10 {
     const DPT: DPT = DPT::new(14u16, Some(10u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4122,7 +4125,7 @@ impl Display for DPT_14_10 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_11(pub f32);
-impl crate::Specific for DPT_14_11 {
+impl crate::specific::SpecificDataPoint for DPT_14_11 {
     const DPT: DPT = DPT::new(14u16, Some(11u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4154,7 +4157,7 @@ impl Display for DPT_14_11 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_12(pub f32);
-impl crate::Specific for DPT_14_12 {
+impl crate::specific::SpecificDataPoint for DPT_14_12 {
     const DPT: DPT = DPT::new(14u16, Some(12u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4186,7 +4189,7 @@ impl Display for DPT_14_12 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_13(pub f32);
-impl crate::Specific for DPT_14_13 {
+impl crate::specific::SpecificDataPoint for DPT_14_13 {
     const DPT: DPT = DPT::new(14u16, Some(13u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4218,7 +4221,7 @@ impl Display for DPT_14_13 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_14(pub f32);
-impl crate::Specific for DPT_14_14 {
+impl crate::specific::SpecificDataPoint for DPT_14_14 {
     const DPT: DPT = DPT::new(14u16, Some(14u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4250,7 +4253,7 @@ impl Display for DPT_14_14 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_15(pub f32);
-impl crate::Specific for DPT_14_15 {
+impl crate::specific::SpecificDataPoint for DPT_14_15 {
     const DPT: DPT = DPT::new(14u16, Some(15u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4282,7 +4285,7 @@ impl Display for DPT_14_15 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_16(pub f32);
-impl crate::Specific for DPT_14_16 {
+impl crate::specific::SpecificDataPoint for DPT_14_16 {
     const DPT: DPT = DPT::new(14u16, Some(16u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4314,7 +4317,7 @@ impl Display for DPT_14_16 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_17(pub f32);
-impl crate::Specific for DPT_14_17 {
+impl crate::specific::SpecificDataPoint for DPT_14_17 {
     const DPT: DPT = DPT::new(14u16, Some(17u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4346,7 +4349,7 @@ impl Display for DPT_14_17 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_18(pub f32);
-impl crate::Specific for DPT_14_18 {
+impl crate::specific::SpecificDataPoint for DPT_14_18 {
     const DPT: DPT = DPT::new(14u16, Some(18u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4378,7 +4381,7 @@ impl Display for DPT_14_18 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_19(pub f32);
-impl crate::Specific for DPT_14_19 {
+impl crate::specific::SpecificDataPoint for DPT_14_19 {
     const DPT: DPT = DPT::new(14u16, Some(19u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4410,7 +4413,7 @@ impl Display for DPT_14_19 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_20(pub f32);
-impl crate::Specific for DPT_14_20 {
+impl crate::specific::SpecificDataPoint for DPT_14_20 {
     const DPT: DPT = DPT::new(14u16, Some(20u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4442,7 +4445,7 @@ impl Display for DPT_14_20 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_21(pub f32);
-impl crate::Specific for DPT_14_21 {
+impl crate::specific::SpecificDataPoint for DPT_14_21 {
     const DPT: DPT = DPT::new(14u16, Some(21u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4474,7 +4477,7 @@ impl Display for DPT_14_21 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_22(pub f32);
-impl crate::Specific for DPT_14_22 {
+impl crate::specific::SpecificDataPoint for DPT_14_22 {
     const DPT: DPT = DPT::new(14u16, Some(22u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4506,7 +4509,7 @@ impl Display for DPT_14_22 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_23(pub f32);
-impl crate::Specific for DPT_14_23 {
+impl crate::specific::SpecificDataPoint for DPT_14_23 {
     const DPT: DPT = DPT::new(14u16, Some(23u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4538,7 +4541,7 @@ impl Display for DPT_14_23 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_24(pub f32);
-impl crate::Specific for DPT_14_24 {
+impl crate::specific::SpecificDataPoint for DPT_14_24 {
     const DPT: DPT = DPT::new(14u16, Some(24u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4570,7 +4573,7 @@ impl Display for DPT_14_24 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_25(pub f32);
-impl crate::Specific for DPT_14_25 {
+impl crate::specific::SpecificDataPoint for DPT_14_25 {
     const DPT: DPT = DPT::new(14u16, Some(25u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4602,7 +4605,7 @@ impl Display for DPT_14_25 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_26(pub f32);
-impl crate::Specific for DPT_14_26 {
+impl crate::specific::SpecificDataPoint for DPT_14_26 {
     const DPT: DPT = DPT::new(14u16, Some(26u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4634,7 +4637,7 @@ impl Display for DPT_14_26 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_27(pub f32);
-impl crate::Specific for DPT_14_27 {
+impl crate::specific::SpecificDataPoint for DPT_14_27 {
     const DPT: DPT = DPT::new(14u16, Some(27u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4666,7 +4669,7 @@ impl Display for DPT_14_27 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_28(pub f32);
-impl crate::Specific for DPT_14_28 {
+impl crate::specific::SpecificDataPoint for DPT_14_28 {
     const DPT: DPT = DPT::new(14u16, Some(28u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4698,7 +4701,7 @@ impl Display for DPT_14_28 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_29(pub f32);
-impl crate::Specific for DPT_14_29 {
+impl crate::specific::SpecificDataPoint for DPT_14_29 {
     const DPT: DPT = DPT::new(14u16, Some(29u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4730,7 +4733,7 @@ impl Display for DPT_14_29 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_30(pub f32);
-impl crate::Specific for DPT_14_30 {
+impl crate::specific::SpecificDataPoint for DPT_14_30 {
     const DPT: DPT = DPT::new(14u16, Some(30u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4762,7 +4765,7 @@ impl Display for DPT_14_30 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_31(pub f32);
-impl crate::Specific for DPT_14_31 {
+impl crate::specific::SpecificDataPoint for DPT_14_31 {
     const DPT: DPT = DPT::new(14u16, Some(31u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4794,7 +4797,7 @@ impl Display for DPT_14_31 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_32(pub f32);
-impl crate::Specific for DPT_14_32 {
+impl crate::specific::SpecificDataPoint for DPT_14_32 {
     const DPT: DPT = DPT::new(14u16, Some(32u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4826,7 +4829,7 @@ impl Display for DPT_14_32 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_33(pub f32);
-impl crate::Specific for DPT_14_33 {
+impl crate::specific::SpecificDataPoint for DPT_14_33 {
     const DPT: DPT = DPT::new(14u16, Some(33u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4858,7 +4861,7 @@ impl Display for DPT_14_33 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_34(pub f32);
-impl crate::Specific for DPT_14_34 {
+impl crate::specific::SpecificDataPoint for DPT_14_34 {
     const DPT: DPT = DPT::new(14u16, Some(34u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4890,7 +4893,7 @@ impl Display for DPT_14_34 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_35(pub f32);
-impl crate::Specific for DPT_14_35 {
+impl crate::specific::SpecificDataPoint for DPT_14_35 {
     const DPT: DPT = DPT::new(14u16, Some(35u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4922,7 +4925,7 @@ impl Display for DPT_14_35 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_36(pub f32);
-impl crate::Specific for DPT_14_36 {
+impl crate::specific::SpecificDataPoint for DPT_14_36 {
     const DPT: DPT = DPT::new(14u16, Some(36u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4954,7 +4957,7 @@ impl Display for DPT_14_36 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_37(pub f32);
-impl crate::Specific for DPT_14_37 {
+impl crate::specific::SpecificDataPoint for DPT_14_37 {
     const DPT: DPT = DPT::new(14u16, Some(37u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -4986,7 +4989,7 @@ impl Display for DPT_14_37 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_38(pub f32);
-impl crate::Specific for DPT_14_38 {
+impl crate::specific::SpecificDataPoint for DPT_14_38 {
     const DPT: DPT = DPT::new(14u16, Some(38u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5018,7 +5021,7 @@ impl Display for DPT_14_38 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_39(pub f32);
-impl crate::Specific for DPT_14_39 {
+impl crate::specific::SpecificDataPoint for DPT_14_39 {
     const DPT: DPT = DPT::new(14u16, Some(39u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5050,7 +5053,7 @@ impl Display for DPT_14_39 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_40(pub f32);
-impl crate::Specific for DPT_14_40 {
+impl crate::specific::SpecificDataPoint for DPT_14_40 {
     const DPT: DPT = DPT::new(14u16, Some(40u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5082,7 +5085,7 @@ impl Display for DPT_14_40 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_41(pub f32);
-impl crate::Specific for DPT_14_41 {
+impl crate::specific::SpecificDataPoint for DPT_14_41 {
     const DPT: DPT = DPT::new(14u16, Some(41u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5114,7 +5117,7 @@ impl Display for DPT_14_41 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_42(pub f32);
-impl crate::Specific for DPT_14_42 {
+impl crate::specific::SpecificDataPoint for DPT_14_42 {
     const DPT: DPT = DPT::new(14u16, Some(42u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5146,7 +5149,7 @@ impl Display for DPT_14_42 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_43(pub f32);
-impl crate::Specific for DPT_14_43 {
+impl crate::specific::SpecificDataPoint for DPT_14_43 {
     const DPT: DPT = DPT::new(14u16, Some(43u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5178,7 +5181,7 @@ impl Display for DPT_14_43 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_44(pub f32);
-impl crate::Specific for DPT_14_44 {
+impl crate::specific::SpecificDataPoint for DPT_14_44 {
     const DPT: DPT = DPT::new(14u16, Some(44u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5210,7 +5213,7 @@ impl Display for DPT_14_44 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_45(pub f32);
-impl crate::Specific for DPT_14_45 {
+impl crate::specific::SpecificDataPoint for DPT_14_45 {
     const DPT: DPT = DPT::new(14u16, Some(45u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5242,7 +5245,7 @@ impl Display for DPT_14_45 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_46(pub f32);
-impl crate::Specific for DPT_14_46 {
+impl crate::specific::SpecificDataPoint for DPT_14_46 {
     const DPT: DPT = DPT::new(14u16, Some(46u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5274,7 +5277,7 @@ impl Display for DPT_14_46 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_47(pub f32);
-impl crate::Specific for DPT_14_47 {
+impl crate::specific::SpecificDataPoint for DPT_14_47 {
     const DPT: DPT = DPT::new(14u16, Some(47u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5306,7 +5309,7 @@ impl Display for DPT_14_47 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_48(pub f32);
-impl crate::Specific for DPT_14_48 {
+impl crate::specific::SpecificDataPoint for DPT_14_48 {
     const DPT: DPT = DPT::new(14u16, Some(48u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5338,7 +5341,7 @@ impl Display for DPT_14_48 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_49(pub f32);
-impl crate::Specific for DPT_14_49 {
+impl crate::specific::SpecificDataPoint for DPT_14_49 {
     const DPT: DPT = DPT::new(14u16, Some(49u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5370,7 +5373,7 @@ impl Display for DPT_14_49 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_50(pub f32);
-impl crate::Specific for DPT_14_50 {
+impl crate::specific::SpecificDataPoint for DPT_14_50 {
     const DPT: DPT = DPT::new(14u16, Some(50u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5402,7 +5405,7 @@ impl Display for DPT_14_50 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_51(pub f32);
-impl crate::Specific for DPT_14_51 {
+impl crate::specific::SpecificDataPoint for DPT_14_51 {
     const DPT: DPT = DPT::new(14u16, Some(51u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5434,7 +5437,7 @@ impl Display for DPT_14_51 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_52(pub f32);
-impl crate::Specific for DPT_14_52 {
+impl crate::specific::SpecificDataPoint for DPT_14_52 {
     const DPT: DPT = DPT::new(14u16, Some(52u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5466,7 +5469,7 @@ impl Display for DPT_14_52 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_53(pub f32);
-impl crate::Specific for DPT_14_53 {
+impl crate::specific::SpecificDataPoint for DPT_14_53 {
     const DPT: DPT = DPT::new(14u16, Some(53u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5498,7 +5501,7 @@ impl Display for DPT_14_53 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_54(pub f32);
-impl crate::Specific for DPT_14_54 {
+impl crate::specific::SpecificDataPoint for DPT_14_54 {
     const DPT: DPT = DPT::new(14u16, Some(54u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5530,7 +5533,7 @@ impl Display for DPT_14_54 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_55(pub f32);
-impl crate::Specific for DPT_14_55 {
+impl crate::specific::SpecificDataPoint for DPT_14_55 {
     const DPT: DPT = DPT::new(14u16, Some(55u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5562,7 +5565,7 @@ impl Display for DPT_14_55 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_56(pub f32);
-impl crate::Specific for DPT_14_56 {
+impl crate::specific::SpecificDataPoint for DPT_14_56 {
     const DPT: DPT = DPT::new(14u16, Some(56u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5594,7 +5597,7 @@ impl Display for DPT_14_56 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_57(pub f32);
-impl crate::Specific for DPT_14_57 {
+impl crate::specific::SpecificDataPoint for DPT_14_57 {
     const DPT: DPT = DPT::new(14u16, Some(57u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5626,7 +5629,7 @@ impl Display for DPT_14_57 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_58(pub f32);
-impl crate::Specific for DPT_14_58 {
+impl crate::specific::SpecificDataPoint for DPT_14_58 {
     const DPT: DPT = DPT::new(14u16, Some(58u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5658,7 +5661,7 @@ impl Display for DPT_14_58 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_59(pub f32);
-impl crate::Specific for DPT_14_59 {
+impl crate::specific::SpecificDataPoint for DPT_14_59 {
     const DPT: DPT = DPT::new(14u16, Some(59u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5690,7 +5693,7 @@ impl Display for DPT_14_59 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_60(pub f32);
-impl crate::Specific for DPT_14_60 {
+impl crate::specific::SpecificDataPoint for DPT_14_60 {
     const DPT: DPT = DPT::new(14u16, Some(60u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5722,7 +5725,7 @@ impl Display for DPT_14_60 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_61(pub f32);
-impl crate::Specific for DPT_14_61 {
+impl crate::specific::SpecificDataPoint for DPT_14_61 {
     const DPT: DPT = DPT::new(14u16, Some(61u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5754,7 +5757,7 @@ impl Display for DPT_14_61 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_62(pub f32);
-impl crate::Specific for DPT_14_62 {
+impl crate::specific::SpecificDataPoint for DPT_14_62 {
     const DPT: DPT = DPT::new(14u16, Some(62u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5786,7 +5789,7 @@ impl Display for DPT_14_62 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_63(pub f32);
-impl crate::Specific for DPT_14_63 {
+impl crate::specific::SpecificDataPoint for DPT_14_63 {
     const DPT: DPT = DPT::new(14u16, Some(63u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5818,7 +5821,7 @@ impl Display for DPT_14_63 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_64(pub f32);
-impl crate::Specific for DPT_14_64 {
+impl crate::specific::SpecificDataPoint for DPT_14_64 {
     const DPT: DPT = DPT::new(14u16, Some(64u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5850,7 +5853,7 @@ impl Display for DPT_14_64 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_65(pub f32);
-impl crate::Specific for DPT_14_65 {
+impl crate::specific::SpecificDataPoint for DPT_14_65 {
     const DPT: DPT = DPT::new(14u16, Some(65u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5882,7 +5885,7 @@ impl Display for DPT_14_65 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_66(pub f32);
-impl crate::Specific for DPT_14_66 {
+impl crate::specific::SpecificDataPoint for DPT_14_66 {
     const DPT: DPT = DPT::new(14u16, Some(66u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5914,7 +5917,7 @@ impl Display for DPT_14_66 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_67(pub f32);
-impl crate::Specific for DPT_14_67 {
+impl crate::specific::SpecificDataPoint for DPT_14_67 {
     const DPT: DPT = DPT::new(14u16, Some(67u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5946,7 +5949,7 @@ impl Display for DPT_14_67 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_68(pub f32);
-impl crate::Specific for DPT_14_68 {
+impl crate::specific::SpecificDataPoint for DPT_14_68 {
     const DPT: DPT = DPT::new(14u16, Some(68u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -5978,7 +5981,7 @@ impl Display for DPT_14_68 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_69(pub f32);
-impl crate::Specific for DPT_14_69 {
+impl crate::specific::SpecificDataPoint for DPT_14_69 {
     const DPT: DPT = DPT::new(14u16, Some(69u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -6010,7 +6013,7 @@ impl Display for DPT_14_69 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_70(pub f32);
-impl crate::Specific for DPT_14_70 {
+impl crate::specific::SpecificDataPoint for DPT_14_70 {
     const DPT: DPT = DPT::new(14u16, Some(70u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -6042,7 +6045,7 @@ impl Display for DPT_14_70 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_71(pub f32);
-impl crate::Specific for DPT_14_71 {
+impl crate::specific::SpecificDataPoint for DPT_14_71 {
     const DPT: DPT = DPT::new(14u16, Some(71u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -6074,7 +6077,7 @@ impl Display for DPT_14_71 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_72(pub f32);
-impl crate::Specific for DPT_14_72 {
+impl crate::specific::SpecificDataPoint for DPT_14_72 {
     const DPT: DPT = DPT::new(14u16, Some(72u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -6106,7 +6109,7 @@ impl Display for DPT_14_72 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_73(pub f32);
-impl crate::Specific for DPT_14_73 {
+impl crate::specific::SpecificDataPoint for DPT_14_73 {
     const DPT: DPT = DPT::new(14u16, Some(73u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -6138,7 +6141,7 @@ impl Display for DPT_14_73 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_74(pub f32);
-impl crate::Specific for DPT_14_74 {
+impl crate::specific::SpecificDataPoint for DPT_14_74 {
     const DPT: DPT = DPT::new(14u16, Some(74u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -6170,7 +6173,7 @@ impl Display for DPT_14_74 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_75(pub f32);
-impl crate::Specific for DPT_14_75 {
+impl crate::specific::SpecificDataPoint for DPT_14_75 {
     const DPT: DPT = DPT::new(14u16, Some(75u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -6202,7 +6205,7 @@ impl Display for DPT_14_75 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_76(pub f32);
-impl crate::Specific for DPT_14_76 {
+impl crate::specific::SpecificDataPoint for DPT_14_76 {
     const DPT: DPT = DPT::new(14u16, Some(76u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -6234,7 +6237,7 @@ impl Display for DPT_14_76 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_77(pub f32);
-impl crate::Specific for DPT_14_77 {
+impl crate::specific::SpecificDataPoint for DPT_14_77 {
     const DPT: DPT = DPT::new(14u16, Some(77u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -6266,7 +6269,7 @@ impl Display for DPT_14_77 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_78(pub f32);
-impl crate::Specific for DPT_14_78 {
+impl crate::specific::SpecificDataPoint for DPT_14_78 {
     const DPT: DPT = DPT::new(14u16, Some(78u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -6298,7 +6301,7 @@ impl Display for DPT_14_78 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_79(pub f32);
-impl crate::Specific for DPT_14_79 {
+impl crate::specific::SpecificDataPoint for DPT_14_79 {
     const DPT: DPT = DPT::new(14u16, Some(79u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -6330,7 +6333,7 @@ impl Display for DPT_14_79 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_80(pub f32);
-impl crate::Specific for DPT_14_80 {
+impl crate::specific::SpecificDataPoint for DPT_14_80 {
     const DPT: DPT = DPT::new(14u16, Some(80u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -6362,7 +6365,7 @@ impl Display for DPT_14_80 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_1200(pub f32);
-impl crate::Specific for DPT_14_1200 {
+impl crate::specific::SpecificDataPoint for DPT_14_1200 {
     const DPT: DPT = DPT::new(14u16, Some(1200u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -6394,7 +6397,7 @@ impl Display for DPT_14_1200 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_1201(pub f32);
-impl crate::Specific for DPT_14_1201 {
+impl crate::specific::SpecificDataPoint for DPT_14_1201 {
     const DPT: DPT = DPT::new(14u16, Some(1201u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -6426,7 +6429,7 @@ impl Display for DPT_14_1201 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_14_x(pub f32);
-impl crate::Specific for DPT_14_x {
+impl crate::specific::SpecificDataPoint for DPT_14_x {
     const DPT: DPT = DPT::new(14u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -6471,7 +6474,7 @@ pub struct DPT_15_0 {
     pub Encryptionofaccessinformation: bool,
     pub Indexofaccessidentificationcode: u8,
 }
-impl crate::Specific for DPT_15_0 {
+impl crate::specific::SpecificDataPoint for DPT_15_0 {
     const DPT: DPT = DPT::new(15u16, Some(0u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -6537,7 +6540,7 @@ pub struct DPT_15_x {
     pub Encryptionofaccessinformation: bool,
     pub Indexofaccessidentificationcode: u8,
 }
-impl crate::Specific for DPT_15_x {
+impl crate::specific::SpecificDataPoint for DPT_15_x {
     const DPT: DPT = DPT::new(15u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -6590,7 +6593,7 @@ impl Display for DPT_15_x {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_16_0(pub String);
-impl crate::Specific for DPT_16_0 {
+impl crate::specific::SpecificDataPoint for DPT_16_0 {
     const DPT: DPT = DPT::new(16u16, Some(0u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -6624,7 +6627,7 @@ impl Display for DPT_16_0 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_16_1(pub String);
-impl crate::Specific for DPT_16_1 {
+impl crate::specific::SpecificDataPoint for DPT_16_1 {
     const DPT: DPT = DPT::new(16u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -6660,7 +6663,7 @@ impl Display for DPT_16_1 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_16_x(pub String);
-impl crate::Specific for DPT_16_x {
+impl crate::specific::SpecificDataPoint for DPT_16_x {
     const DPT: DPT = DPT::new(16u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -6698,7 +6701,7 @@ pub struct DPT_17_1 {
     pub reserved: Reserved,
     pub Scenenumber: u8,
 }
-impl crate::Specific for DPT_17_1 {
+impl crate::specific::SpecificDataPoint for DPT_17_1 {
     const DPT: DPT = DPT::new(17u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -6735,7 +6738,7 @@ pub struct DPT_17_x {
     pub reserved: Reserved,
     pub Scenenumber: u8,
 }
-impl crate::Specific for DPT_17_x {
+impl crate::specific::SpecificDataPoint for DPT_17_x {
     const DPT: DPT = DPT::new(17u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -6773,7 +6776,7 @@ pub struct DPT_18_1 {
     pub reserved: Reserved,
     pub Scenenumber: u8,
 }
-impl crate::Specific for DPT_18_1 {
+impl crate::specific::SpecificDataPoint for DPT_18_1 {
     const DPT: DPT = DPT::new(18u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -6816,7 +6819,7 @@ pub struct DPT_18_x {
     pub reserved: Reserved,
     pub Scenenumber: u8,
 }
-impl crate::Specific for DPT_18_x {
+impl crate::specific::SpecificDataPoint for DPT_18_x {
     const DPT: DPT = DPT::new(18u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -6877,7 +6880,7 @@ pub struct DPT_19_1 {
     pub Qualityofclock: bool,
     pub reserved5: Reserved,
 }
-impl crate::Specific for DPT_19_1 {
+impl crate::specific::SpecificDataPoint for DPT_19_1 {
     const DPT: DPT = DPT::new(19u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -6990,7 +6993,7 @@ pub struct DPT_19_x {
     pub Qualityofclock: bool,
     pub reserved5: Reserved,
 }
-impl crate::Specific for DPT_19_x {
+impl crate::specific::SpecificDataPoint for DPT_19_x {
     const DPT: DPT = DPT::new(19u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7080,7 +7083,7 @@ impl Display for DPT_19_x {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_1(pub u8);
-impl crate::Specific for DPT_20_1 {
+impl crate::specific::SpecificDataPoint for DPT_20_1 {
     const DPT: DPT = DPT::new(20u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7106,7 +7109,7 @@ impl Display for DPT_20_1 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_2(pub u8);
-impl crate::Specific for DPT_20_2 {
+impl crate::specific::SpecificDataPoint for DPT_20_2 {
     const DPT: DPT = DPT::new(20u16, Some(2u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7132,7 +7135,7 @@ impl Display for DPT_20_2 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_3(pub u8);
-impl crate::Specific for DPT_20_3 {
+impl crate::specific::SpecificDataPoint for DPT_20_3 {
     const DPT: DPT = DPT::new(20u16, Some(3u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7158,7 +7161,7 @@ impl Display for DPT_20_3 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_4(pub u8);
-impl crate::Specific for DPT_20_4 {
+impl crate::specific::SpecificDataPoint for DPT_20_4 {
     const DPT: DPT = DPT::new(20u16, Some(4u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7184,7 +7187,7 @@ impl Display for DPT_20_4 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_5(pub u8);
-impl crate::Specific for DPT_20_5 {
+impl crate::specific::SpecificDataPoint for DPT_20_5 {
     const DPT: DPT = DPT::new(20u16, Some(5u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7210,7 +7213,7 @@ impl Display for DPT_20_5 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_6(pub u8);
-impl crate::Specific for DPT_20_6 {
+impl crate::specific::SpecificDataPoint for DPT_20_6 {
     const DPT: DPT = DPT::new(20u16, Some(6u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7236,7 +7239,7 @@ impl Display for DPT_20_6 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_7(pub u8);
-impl crate::Specific for DPT_20_7 {
+impl crate::specific::SpecificDataPoint for DPT_20_7 {
     const DPT: DPT = DPT::new(20u16, Some(7u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7262,7 +7265,7 @@ impl Display for DPT_20_7 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_8(pub u8);
-impl crate::Specific for DPT_20_8 {
+impl crate::specific::SpecificDataPoint for DPT_20_8 {
     const DPT: DPT = DPT::new(20u16, Some(8u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7288,7 +7291,7 @@ impl Display for DPT_20_8 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_11(pub u8);
-impl crate::Specific for DPT_20_11 {
+impl crate::specific::SpecificDataPoint for DPT_20_11 {
     const DPT: DPT = DPT::new(20u16, Some(11u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7314,7 +7317,7 @@ impl Display for DPT_20_11 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_12(pub u8);
-impl crate::Specific for DPT_20_12 {
+impl crate::specific::SpecificDataPoint for DPT_20_12 {
     const DPT: DPT = DPT::new(20u16, Some(12u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7340,7 +7343,7 @@ impl Display for DPT_20_12 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_13(pub u8);
-impl crate::Specific for DPT_20_13 {
+impl crate::specific::SpecificDataPoint for DPT_20_13 {
     const DPT: DPT = DPT::new(20u16, Some(13u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7366,7 +7369,7 @@ impl Display for DPT_20_13 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_14(pub u8);
-impl crate::Specific for DPT_20_14 {
+impl crate::specific::SpecificDataPoint for DPT_20_14 {
     const DPT: DPT = DPT::new(20u16, Some(14u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7392,7 +7395,7 @@ impl Display for DPT_20_14 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_17(pub u8);
-impl crate::Specific for DPT_20_17 {
+impl crate::specific::SpecificDataPoint for DPT_20_17 {
     const DPT: DPT = DPT::new(20u16, Some(17u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7418,7 +7421,7 @@ impl Display for DPT_20_17 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_20(pub u8);
-impl crate::Specific for DPT_20_20 {
+impl crate::specific::SpecificDataPoint for DPT_20_20 {
     const DPT: DPT = DPT::new(20u16, Some(20u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7444,7 +7447,7 @@ impl Display for DPT_20_20 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_21(pub u8);
-impl crate::Specific for DPT_20_21 {
+impl crate::specific::SpecificDataPoint for DPT_20_21 {
     const DPT: DPT = DPT::new(20u16, Some(21u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7470,7 +7473,7 @@ impl Display for DPT_20_21 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_22(pub u8);
-impl crate::Specific for DPT_20_22 {
+impl crate::specific::SpecificDataPoint for DPT_20_22 {
     const DPT: DPT = DPT::new(20u16, Some(22u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7496,7 +7499,7 @@ impl Display for DPT_20_22 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_100(pub u8);
-impl crate::Specific for DPT_20_100 {
+impl crate::specific::SpecificDataPoint for DPT_20_100 {
     const DPT: DPT = DPT::new(20u16, Some(100u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7522,7 +7525,7 @@ impl Display for DPT_20_100 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_101(pub u8);
-impl crate::Specific for DPT_20_101 {
+impl crate::specific::SpecificDataPoint for DPT_20_101 {
     const DPT: DPT = DPT::new(20u16, Some(101u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7548,7 +7551,7 @@ impl Display for DPT_20_101 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_102(pub u8);
-impl crate::Specific for DPT_20_102 {
+impl crate::specific::SpecificDataPoint for DPT_20_102 {
     const DPT: DPT = DPT::new(20u16, Some(102u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7574,7 +7577,7 @@ impl Display for DPT_20_102 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_103(pub u8);
-impl crate::Specific for DPT_20_103 {
+impl crate::specific::SpecificDataPoint for DPT_20_103 {
     const DPT: DPT = DPT::new(20u16, Some(103u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7600,7 +7603,7 @@ impl Display for DPT_20_103 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_104(pub u8);
-impl crate::Specific for DPT_20_104 {
+impl crate::specific::SpecificDataPoint for DPT_20_104 {
     const DPT: DPT = DPT::new(20u16, Some(104u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7626,7 +7629,7 @@ impl Display for DPT_20_104 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_105(pub u8);
-impl crate::Specific for DPT_20_105 {
+impl crate::specific::SpecificDataPoint for DPT_20_105 {
     const DPT: DPT = DPT::new(20u16, Some(105u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7652,7 +7655,7 @@ impl Display for DPT_20_105 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_106(pub u8);
-impl crate::Specific for DPT_20_106 {
+impl crate::specific::SpecificDataPoint for DPT_20_106 {
     const DPT: DPT = DPT::new(20u16, Some(106u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7678,7 +7681,7 @@ impl Display for DPT_20_106 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_107(pub u8);
-impl crate::Specific for DPT_20_107 {
+impl crate::specific::SpecificDataPoint for DPT_20_107 {
     const DPT: DPT = DPT::new(20u16, Some(107u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7704,7 +7707,7 @@ impl Display for DPT_20_107 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_108(pub u8);
-impl crate::Specific for DPT_20_108 {
+impl crate::specific::SpecificDataPoint for DPT_20_108 {
     const DPT: DPT = DPT::new(20u16, Some(108u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7730,7 +7733,7 @@ impl Display for DPT_20_108 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_109(pub u8);
-impl crate::Specific for DPT_20_109 {
+impl crate::specific::SpecificDataPoint for DPT_20_109 {
     const DPT: DPT = DPT::new(20u16, Some(109u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7756,7 +7759,7 @@ impl Display for DPT_20_109 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_110(pub u8);
-impl crate::Specific for DPT_20_110 {
+impl crate::specific::SpecificDataPoint for DPT_20_110 {
     const DPT: DPT = DPT::new(20u16, Some(110u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7782,7 +7785,7 @@ impl Display for DPT_20_110 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_111(pub u8);
-impl crate::Specific for DPT_20_111 {
+impl crate::specific::SpecificDataPoint for DPT_20_111 {
     const DPT: DPT = DPT::new(20u16, Some(111u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7808,7 +7811,7 @@ impl Display for DPT_20_111 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_112(pub u8);
-impl crate::Specific for DPT_20_112 {
+impl crate::specific::SpecificDataPoint for DPT_20_112 {
     const DPT: DPT = DPT::new(20u16, Some(112u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7834,7 +7837,7 @@ impl Display for DPT_20_112 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_113(pub u8);
-impl crate::Specific for DPT_20_113 {
+impl crate::specific::SpecificDataPoint for DPT_20_113 {
     const DPT: DPT = DPT::new(20u16, Some(113u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7860,7 +7863,7 @@ impl Display for DPT_20_113 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_114(pub u8);
-impl crate::Specific for DPT_20_114 {
+impl crate::specific::SpecificDataPoint for DPT_20_114 {
     const DPT: DPT = DPT::new(20u16, Some(114u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7886,7 +7889,7 @@ impl Display for DPT_20_114 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_115(pub u8);
-impl crate::Specific for DPT_20_115 {
+impl crate::specific::SpecificDataPoint for DPT_20_115 {
     const DPT: DPT = DPT::new(20u16, Some(115u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7912,7 +7915,7 @@ impl Display for DPT_20_115 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_116(pub u8);
-impl crate::Specific for DPT_20_116 {
+impl crate::specific::SpecificDataPoint for DPT_20_116 {
     const DPT: DPT = DPT::new(20u16, Some(116u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7938,7 +7941,7 @@ impl Display for DPT_20_116 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_120(pub u8);
-impl crate::Specific for DPT_20_120 {
+impl crate::specific::SpecificDataPoint for DPT_20_120 {
     const DPT: DPT = DPT::new(20u16, Some(120u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7964,7 +7967,7 @@ impl Display for DPT_20_120 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_121(pub u8);
-impl crate::Specific for DPT_20_121 {
+impl crate::specific::SpecificDataPoint for DPT_20_121 {
     const DPT: DPT = DPT::new(20u16, Some(121u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -7990,7 +7993,7 @@ impl Display for DPT_20_121 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_122(pub u8);
-impl crate::Specific for DPT_20_122 {
+impl crate::specific::SpecificDataPoint for DPT_20_122 {
     const DPT: DPT = DPT::new(20u16, Some(122u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8016,7 +8019,7 @@ impl Display for DPT_20_122 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_600(pub u8);
-impl crate::Specific for DPT_20_600 {
+impl crate::specific::SpecificDataPoint for DPT_20_600 {
     const DPT: DPT = DPT::new(20u16, Some(600u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8042,7 +8045,7 @@ impl Display for DPT_20_600 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_601(pub u8);
-impl crate::Specific for DPT_20_601 {
+impl crate::specific::SpecificDataPoint for DPT_20_601 {
     const DPT: DPT = DPT::new(20u16, Some(601u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8068,7 +8071,7 @@ impl Display for DPT_20_601 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_602(pub u8);
-impl crate::Specific for DPT_20_602 {
+impl crate::specific::SpecificDataPoint for DPT_20_602 {
     const DPT: DPT = DPT::new(20u16, Some(602u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8094,7 +8097,7 @@ impl Display for DPT_20_602 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_603(pub u8);
-impl crate::Specific for DPT_20_603 {
+impl crate::specific::SpecificDataPoint for DPT_20_603 {
     const DPT: DPT = DPT::new(20u16, Some(603u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8120,7 +8123,7 @@ impl Display for DPT_20_603 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_604(pub u8);
-impl crate::Specific for DPT_20_604 {
+impl crate::specific::SpecificDataPoint for DPT_20_604 {
     const DPT: DPT = DPT::new(20u16, Some(604u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8146,7 +8149,7 @@ impl Display for DPT_20_604 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_605(pub u8);
-impl crate::Specific for DPT_20_605 {
+impl crate::specific::SpecificDataPoint for DPT_20_605 {
     const DPT: DPT = DPT::new(20u16, Some(605u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8172,7 +8175,7 @@ impl Display for DPT_20_605 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_606(pub u8);
-impl crate::Specific for DPT_20_606 {
+impl crate::specific::SpecificDataPoint for DPT_20_606 {
     const DPT: DPT = DPT::new(20u16, Some(606u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8198,7 +8201,7 @@ impl Display for DPT_20_606 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_607(pub u8);
-impl crate::Specific for DPT_20_607 {
+impl crate::specific::SpecificDataPoint for DPT_20_607 {
     const DPT: DPT = DPT::new(20u16, Some(607u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8224,7 +8227,7 @@ impl Display for DPT_20_607 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_608(pub u8);
-impl crate::Specific for DPT_20_608 {
+impl crate::specific::SpecificDataPoint for DPT_20_608 {
     const DPT: DPT = DPT::new(20u16, Some(608u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8250,7 +8253,7 @@ impl Display for DPT_20_608 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_609(pub u8);
-impl crate::Specific for DPT_20_609 {
+impl crate::specific::SpecificDataPoint for DPT_20_609 {
     const DPT: DPT = DPT::new(20u16, Some(609u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8276,7 +8279,7 @@ impl Display for DPT_20_609 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_610(pub u8);
-impl crate::Specific for DPT_20_610 {
+impl crate::specific::SpecificDataPoint for DPT_20_610 {
     const DPT: DPT = DPT::new(20u16, Some(610u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8302,7 +8305,7 @@ impl Display for DPT_20_610 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_611(pub u8);
-impl crate::Specific for DPT_20_611 {
+impl crate::specific::SpecificDataPoint for DPT_20_611 {
     const DPT: DPT = DPT::new(20u16, Some(611u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8328,7 +8331,7 @@ impl Display for DPT_20_611 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_612(pub u8);
-impl crate::Specific for DPT_20_612 {
+impl crate::specific::SpecificDataPoint for DPT_20_612 {
     const DPT: DPT = DPT::new(20u16, Some(612u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8354,7 +8357,7 @@ impl Display for DPT_20_612 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_801(pub u8);
-impl crate::Specific for DPT_20_801 {
+impl crate::specific::SpecificDataPoint for DPT_20_801 {
     const DPT: DPT = DPT::new(20u16, Some(801u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8380,7 +8383,7 @@ impl Display for DPT_20_801 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_802(pub u8);
-impl crate::Specific for DPT_20_802 {
+impl crate::specific::SpecificDataPoint for DPT_20_802 {
     const DPT: DPT = DPT::new(20u16, Some(802u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8406,7 +8409,7 @@ impl Display for DPT_20_802 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_803(pub u8);
-impl crate::Specific for DPT_20_803 {
+impl crate::specific::SpecificDataPoint for DPT_20_803 {
     const DPT: DPT = DPT::new(20u16, Some(803u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8432,7 +8435,7 @@ impl Display for DPT_20_803 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_804(pub u8);
-impl crate::Specific for DPT_20_804 {
+impl crate::specific::SpecificDataPoint for DPT_20_804 {
     const DPT: DPT = DPT::new(20u16, Some(804u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8458,7 +8461,7 @@ impl Display for DPT_20_804 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_1000(pub u8);
-impl crate::Specific for DPT_20_1000 {
+impl crate::specific::SpecificDataPoint for DPT_20_1000 {
     const DPT: DPT = DPT::new(20u16, Some(1000u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8484,7 +8487,7 @@ impl Display for DPT_20_1000 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_1001(pub u8);
-impl crate::Specific for DPT_20_1001 {
+impl crate::specific::SpecificDataPoint for DPT_20_1001 {
     const DPT: DPT = DPT::new(20u16, Some(1001u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8510,7 +8513,7 @@ impl Display for DPT_20_1001 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_1002(pub u8);
-impl crate::Specific for DPT_20_1002 {
+impl crate::specific::SpecificDataPoint for DPT_20_1002 {
     const DPT: DPT = DPT::new(20u16, Some(1002u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8536,7 +8539,7 @@ impl Display for DPT_20_1002 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_1003(pub u8);
-impl crate::Specific for DPT_20_1003 {
+impl crate::specific::SpecificDataPoint for DPT_20_1003 {
     const DPT: DPT = DPT::new(20u16, Some(1003u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8562,7 +8565,7 @@ impl Display for DPT_20_1003 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_20_x(pub u8);
-impl crate::Specific for DPT_20_x {
+impl crate::specific::SpecificDataPoint for DPT_20_x {
     const DPT: DPT = DPT::new(20u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8596,7 +8599,7 @@ pub struct DPT_21_1 {
     pub correspondingDatapointMainvalueiscorruptedduetofailure: bool,
     pub correspondingDatapointvalueisoutofservice: bool,
 }
-impl crate::Specific for DPT_21_1 {
+impl crate::specific::SpecificDataPoint for DPT_21_1 {
     const DPT: DPT = DPT::new(21u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8655,7 +8658,7 @@ pub struct DPT_21_2 {
     pub AdatagramwiththeownIndividualAddressasSourceAddresshasbeenreceived: bool,
     pub Theuserapplicationisstopped: bool,
 }
-impl crate::Specific for DPT_21_2 {
+impl crate::specific::SpecificDataPoint for DPT_21_2 {
     const DPT: DPT = DPT::new(21u16, Some(2u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8711,7 +8714,7 @@ pub struct DPT_21_100 {
     pub Protection: bool,
     pub ForceRequest: bool,
 }
-impl crate::Specific for DPT_21_100 {
+impl crate::specific::SpecificDataPoint for DPT_21_100 {
     const DPT: DPT = DPT::new(21u16, Some(100u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8761,7 +8764,7 @@ pub struct DPT_21_101 {
     pub reserved: Reserved,
     pub ForceRequest: bool,
 }
-impl crate::Specific for DPT_21_101 {
+impl crate::specific::SpecificDataPoint for DPT_21_101 {
     const DPT: DPT = DPT::new(21u16, Some(101u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8804,7 +8807,7 @@ pub struct DPT_21_102 {
     pub SatusECO: bool,
     pub Fault: bool,
 }
-impl crate::Specific for DPT_21_102 {
+impl crate::specific::SpecificDataPoint for DPT_21_102 {
     const DPT: DPT = DPT::new(21u16, Some(102u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8856,7 +8859,7 @@ pub struct DPT_21_103 {
     pub SDHWLoadActive: bool,
     pub Fault: bool,
 }
-impl crate::Specific for DPT_21_103 {
+impl crate::specific::SpecificDataPoint for DPT_21_103 {
     const DPT: DPT = DPT::new(21u16, Some(103u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8902,7 +8905,7 @@ pub struct DPT_21_104 {
     pub Gas: bool,
     pub Oil: bool,
 }
-impl crate::Specific for DPT_21_104 {
+impl crate::specific::SpecificDataPoint for DPT_21_104 {
     const DPT: DPT = DPT::new(21u16, Some(104u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8943,7 +8946,7 @@ pub struct DPT_21_105 {
     pub reserved: Reserved,
     pub Fault: bool,
 }
-impl crate::Specific for DPT_21_105 {
+impl crate::specific::SpecificDataPoint for DPT_21_105 {
     const DPT: DPT = DPT::new(21u16, Some(105u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -8983,7 +8986,7 @@ pub struct DPT_21_106 {
     pub FanActive: bool,
     pub Fault: bool,
 }
-impl crate::Specific for DPT_21_106 {
+impl crate::specific::SpecificDataPoint for DPT_21_106 {
     const DPT: DPT = DPT::new(21u16, Some(106u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -9033,7 +9036,7 @@ pub struct DPT_21_107 {
     pub Effectivevalueofthepresencestatus: bool,
     pub Effectivevalueofthewindowstatus: bool,
 }
-impl crate::Specific for DPT_21_107 {
+impl crate::specific::SpecificDataPoint for DPT_21_107 {
     const DPT: DPT = DPT::new(21u16, Some(107u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -9088,7 +9091,7 @@ pub struct DPT_21_601 {
     pub Undervoltage: bool,
     pub LoadDetectionError: bool,
 }
-impl crate::Specific for DPT_21_601 {
+impl crate::specific::SpecificDataPoint for DPT_21_601 {
     const DPT: DPT = DPT::new(21u16, Some(601u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -9143,7 +9146,7 @@ pub struct DPT_21_1000 {
     pub BiBatMaster: bool,
     pub Asynchronous: bool,
 }
-impl crate::Specific for DPT_21_1000 {
+impl crate::specific::SpecificDataPoint for DPT_21_1000 {
     const DPT: DPT = DPT::new(21u16, Some(1000u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -9189,7 +9192,7 @@ pub struct DPT_21_1001 {
     pub KNXSN: bool,
     pub DoAandKNXSN: bool,
 }
-impl crate::Specific for DPT_21_1001 {
+impl crate::specific::SpecificDataPoint for DPT_21_1001 {
     const DPT: DPT = DPT::new(21u16, Some(1001u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -9236,7 +9239,7 @@ pub struct DPT_21_1010 {
     pub Activationstateofchannel7: bool,
     pub Activationstateofchannel8: bool,
 }
-impl crate::Specific for DPT_21_1010 {
+impl crate::specific::SpecificDataPoint for DPT_21_1010 {
     const DPT: DPT = DPT::new(21u16, Some(1010u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -9292,7 +9295,7 @@ pub struct DPT_21_x {
     pub correspondingDatapointMainvalueiscorruptedduetofailure: bool,
     pub correspondingDatapointvalueisoutofservice: bool,
 }
-impl crate::Specific for DPT_21_x {
+impl crate::specific::SpecificDataPoint for DPT_21_x {
     const DPT: DPT = DPT::new(21u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -9356,7 +9359,7 @@ pub struct DPT_22_100 {
     pub DHWLoadActive: bool,
     pub Fault: bool,
 }
-impl crate::Specific for DPT_22_100 {
+impl crate::specific::SpecificDataPoint for DPT_22_100 {
     const DPT: DPT = DPT::new(22u16, Some(100u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -9425,7 +9428,7 @@ pub struct DPT_22_101 {
     pub StatusEcoH: bool,
     pub Fault: bool,
 }
-impl crate::Specific for DPT_22_101 {
+impl crate::specific::SpecificDataPoint for DPT_22_101 {
     const DPT: DPT = DPT::new(22u16, Some(101u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -9504,7 +9507,7 @@ pub struct DPT_22_102 {
     pub ShortCircuit: bool,
     pub CurrentValveposition: bool,
 }
-impl crate::Specific for DPT_22_102 {
+impl crate::specific::SpecificDataPoint for DPT_22_102 {
     const DPT: DPT = DPT::new(22u16, Some(102u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -9570,7 +9573,7 @@ pub struct DPT_22_103 {
     pub ActiveMode: bool,
     pub Generalfailureinformation: bool,
 }
-impl crate::Specific for DPT_22_103 {
+impl crate::specific::SpecificDataPoint for DPT_22_103 {
     const DPT: DPT = DPT::new(22u16, Some(103u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -9633,7 +9636,7 @@ pub struct DPT_22_1000 {
     pub TP: bool,
     pub reserved3: Reserved,
 }
-impl crate::Specific for DPT_22_1000 {
+impl crate::specific::SpecificDataPoint for DPT_22_1000 {
     const DPT: DPT = DPT::new(22u16, Some(1000u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -9703,7 +9706,7 @@ pub struct DPT_22_1010 {
     pub Activationstateofchannel15: bool,
     pub Activationstateofchannel16: bool,
 }
-impl crate::Specific for DPT_22_1010 {
+impl crate::specific::SpecificDataPoint for DPT_22_1010 {
     const DPT: DPT = DPT::new(22u16, Some(1010u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -9782,7 +9785,7 @@ pub struct DPT_22_x {
     pub DHWLoadActive: bool,
     pub Fault: bool,
 }
-impl crate::Specific for DPT_22_x {
+impl crate::specific::SpecificDataPoint for DPT_22_x {
     const DPT: DPT = DPT::new(22u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -9833,7 +9836,7 @@ impl Display for DPT_22_x {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_23_1(pub u8);
-impl crate::Specific for DPT_23_1 {
+impl crate::specific::SpecificDataPoint for DPT_23_1 {
     const DPT: DPT = DPT::new(23u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -9859,7 +9862,7 @@ impl Display for DPT_23_1 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_23_2(pub u8);
-impl crate::Specific for DPT_23_2 {
+impl crate::specific::SpecificDataPoint for DPT_23_2 {
     const DPT: DPT = DPT::new(23u16, Some(2u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -9885,7 +9888,7 @@ impl Display for DPT_23_2 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_23_3(pub u8);
-impl crate::Specific for DPT_23_3 {
+impl crate::specific::SpecificDataPoint for DPT_23_3 {
     const DPT: DPT = DPT::new(23u16, Some(3u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -9911,7 +9914,7 @@ impl Display for DPT_23_3 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_23_102(pub u8);
-impl crate::Specific for DPT_23_102 {
+impl crate::specific::SpecificDataPoint for DPT_23_102 {
     const DPT: DPT = DPT::new(23u16, Some(102u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -9937,7 +9940,7 @@ impl Display for DPT_23_102 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_23_x(pub u8);
-impl crate::Specific for DPT_23_x {
+impl crate::specific::SpecificDataPoint for DPT_23_x {
     const DPT: DPT = DPT::new(23u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = [0u8];
@@ -9963,7 +9966,7 @@ impl Display for DPT_23_x {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_24_1(pub String);
-impl crate::Specific for DPT_24_1 {
+impl crate::specific::SpecificDataPoint for DPT_24_1 {
     const DPT: DPT = DPT::new(24u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -10001,7 +10004,7 @@ impl Display for DPT_24_1 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_24_x(pub String);
-impl crate::Specific for DPT_24_x {
+impl crate::specific::SpecificDataPoint for DPT_24_x {
     const DPT: DPT = DPT::new(24u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -10043,7 +10046,7 @@ pub struct DPT_25_1000 {
     pub Busy: u8,
     pub Nak: u8,
 }
-impl crate::Specific for DPT_25_1000 {
+impl crate::specific::SpecificDataPoint for DPT_25_1000 {
     const DPT: DPT = DPT::new(25u16, Some(1000u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -10077,7 +10080,7 @@ pub struct DPT_25_x {
     pub Busy: u8,
     pub Nak: u8,
 }
-impl crate::Specific for DPT_25_x {
+impl crate::specific::SpecificDataPoint for DPT_25_x {
     const DPT: DPT = DPT::new(25u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -10112,7 +10115,7 @@ pub struct DPT_26_1 {
     pub sceneisinactive: bool,
     pub SceneNumber: u8,
 }
-impl crate::Specific for DPT_26_1 {
+impl crate::specific::SpecificDataPoint for DPT_26_1 {
     const DPT: DPT = DPT::new(26u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -10152,7 +10155,7 @@ pub struct DPT_26_x {
     pub sceneisinactive: bool,
     pub SceneNumber: u8,
 }
-impl crate::Specific for DPT_26_x {
+impl crate::specific::SpecificDataPoint for DPT_26_x {
     const DPT: DPT = DPT::new(26u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -10221,7 +10224,7 @@ pub struct DPT_27_1 {
     pub InfoOnOffOutput15: bool,
     pub InfoOnOffOutput16: bool,
 }
-impl crate::Specific for DPT_27_1 {
+impl crate::specific::SpecificDataPoint for DPT_27_1 {
     const DPT: DPT = DPT::new(27u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -10362,7 +10365,7 @@ pub struct DPT_27_x {
     pub InfoOnOffOutput15: bool,
     pub InfoOnOffOutput16: bool,
 }
-impl crate::Specific for DPT_27_x {
+impl crate::specific::SpecificDataPoint for DPT_27_x {
     const DPT: DPT = DPT::new(27u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -10469,7 +10472,7 @@ impl Display for DPT_27_x {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_28_1(pub String);
-impl crate::Specific for DPT_28_1 {
+impl crate::specific::SpecificDataPoint for DPT_28_1 {
     const DPT: DPT = DPT::new(28u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -10507,7 +10510,7 @@ impl Display for DPT_28_1 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_28_x(pub String);
-impl crate::Specific for DPT_28_x {
+impl crate::specific::SpecificDataPoint for DPT_28_x {
     const DPT: DPT = DPT::new(28u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -10545,7 +10548,7 @@ impl Display for DPT_28_x {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_29_10(pub i64);
-impl crate::Specific for DPT_29_10 {
+impl crate::specific::SpecificDataPoint for DPT_29_10 {
     const DPT: DPT = DPT::new(29u16, Some(10u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -10571,7 +10574,7 @@ impl Display for DPT_29_10 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_29_11(pub i64);
-impl crate::Specific for DPT_29_11 {
+impl crate::specific::SpecificDataPoint for DPT_29_11 {
     const DPT: DPT = DPT::new(29u16, Some(11u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -10597,7 +10600,7 @@ impl Display for DPT_29_11 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_29_12(pub i64);
-impl crate::Specific for DPT_29_12 {
+impl crate::specific::SpecificDataPoint for DPT_29_12 {
     const DPT: DPT = DPT::new(29u16, Some(12u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -10623,7 +10626,7 @@ impl Display for DPT_29_12 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_29_x(pub i64);
-impl crate::Specific for DPT_29_x {
+impl crate::specific::SpecificDataPoint for DPT_29_x {
     const DPT: DPT = DPT::new(29u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -10675,7 +10678,7 @@ pub struct DPT_30_1010 {
     pub Activationstateofchannel23: bool,
     pub Activationstateofchannel24: bool,
 }
-impl crate::Specific for DPT_30_1010 {
+impl crate::specific::SpecificDataPoint for DPT_30_1010 {
     const DPT: DPT = DPT::new(30u16, Some(1010u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -10789,7 +10792,7 @@ pub struct DPT_30_x {
     pub Activationstateofchannel23: bool,
     pub Activationstateofchannel24: bool,
 }
-impl crate::Specific for DPT_30_x {
+impl crate::specific::SpecificDataPoint for DPT_30_x {
     const DPT: DPT = DPT::new(30u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -10881,7 +10884,7 @@ pub struct DPT_206_100 {
     pub delaytimemin: u16,
     pub HVACmode: u8,
 }
-impl crate::Specific for DPT_206_100 {
+impl crate::specific::SpecificDataPoint for DPT_206_100 {
     const DPT: DPT = DPT::new(206u16, Some(100u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -10915,7 +10918,7 @@ pub struct DPT_206_102 {
     pub delaytimemin: u16,
     pub DHWmode: u8,
 }
-impl crate::Specific for DPT_206_102 {
+impl crate::specific::SpecificDataPoint for DPT_206_102 {
     const DPT: DPT = DPT::new(206u16, Some(102u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -10949,7 +10952,7 @@ pub struct DPT_206_104 {
     pub delaytimemin: u16,
     pub occupancymode: u8,
 }
-impl crate::Specific for DPT_206_104 {
+impl crate::specific::SpecificDataPoint for DPT_206_104 {
     const DPT: DPT = DPT::new(206u16, Some(104u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -10983,7 +10986,7 @@ pub struct DPT_206_105 {
     pub delaytimemin: u16,
     pub buildingmode: u8,
 }
-impl crate::Specific for DPT_206_105 {
+impl crate::specific::SpecificDataPoint for DPT_206_105 {
     const DPT: DPT = DPT::new(206u16, Some(105u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -11017,7 +11020,7 @@ pub struct DPT_206_x {
     pub delaytimemin: u16,
     pub HVACmode: u8,
 }
-impl crate::Specific for DPT_206_x {
+impl crate::specific::SpecificDataPoint for DPT_206_x {
     const DPT: DPT = DPT::new(206u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -11058,7 +11061,7 @@ pub struct DPT_207_600 {
     pub Locked: bool,
     pub ValidActualValue: bool,
 }
-impl crate::Specific for DPT_207_600 {
+impl crate::specific::SpecificDataPoint for DPT_207_600 {
     const DPT: DPT = DPT::new(207u16, Some(600u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -11117,7 +11120,7 @@ pub struct DPT_207_x {
     pub Locked: bool,
     pub ValidActualValue: bool,
 }
-impl crate::Specific for DPT_207_x {
+impl crate::specific::SpecificDataPoint for DPT_207_x {
     const DPT: DPT = DPT::new(207u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -11170,7 +11173,7 @@ pub struct DPT_217_1 {
     pub VersionNumber: u8,
     pub RevisionNumber: u8,
 }
-impl crate::Specific for DPT_217_1 {
+impl crate::specific::SpecificDataPoint for DPT_217_1 {
     const DPT: DPT = DPT::new(217u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -11207,7 +11210,7 @@ pub struct DPT_217_x {
     pub VersionNumber: u8,
     pub RevisionNumber: u8,
 }
-impl crate::Specific for DPT_217_x {
+impl crate::specific::SpecificDataPoint for DPT_217_x {
     const DPT: DPT = DPT::new(217u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -11254,7 +11257,7 @@ pub struct DPT_219_1 {
     pub AlarmUnAck: bool,
     pub InAlarm: bool,
 }
-impl crate::Specific for DPT_219_1 {
+impl crate::specific::SpecificDataPoint for DPT_219_1 {
     const DPT: DPT = DPT::new(219u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -11332,7 +11335,7 @@ pub struct DPT_219_x {
     pub AlarmUnAck: bool,
     pub InAlarm: bool,
 }
-impl crate::Specific for DPT_219_x {
+impl crate::specific::SpecificDataPoint for DPT_219_x {
     const DPT: DPT = DPT::new(219u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -11400,7 +11403,7 @@ pub struct DPT_222_100 {
     pub TempSetpStdby: f32,
     pub TempSetpEco: f32,
 }
-impl crate::Specific for DPT_222_100 {
+impl crate::specific::SpecificDataPoint for DPT_222_100 {
     const DPT: DPT = DPT::new(222u16, Some(100u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -11452,7 +11455,7 @@ pub struct DPT_222_101 {
     pub TempSetpShiftStdby: f32,
     pub TempSetpShiftEco: f32,
 }
-impl crate::Specific for DPT_222_101 {
+impl crate::specific::SpecificDataPoint for DPT_222_101 {
     const DPT: DPT = DPT::new(222u16, Some(101u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -11504,7 +11507,7 @@ pub struct DPT_222_x {
     pub TempSetpStdby: f32,
     pub TempSetpEco: f32,
 }
-impl crate::Specific for DPT_222_x {
+impl crate::specific::SpecificDataPoint for DPT_222_x {
     const DPT: DPT = DPT::new(222u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -11555,7 +11558,7 @@ pub struct DPT_225_1 {
     pub timeperiod: u16,
     pub percent: u8,
 }
-impl crate::Specific for DPT_225_1 {
+impl crate::specific::SpecificDataPoint for DPT_225_1 {
     const DPT: DPT = DPT::new(225u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -11589,7 +11592,7 @@ pub struct DPT_225_2 {
     pub timeperiod: u16,
     pub percent: u8,
 }
-impl crate::Specific for DPT_225_2 {
+impl crate::specific::SpecificDataPoint for DPT_225_2 {
     const DPT: DPT = DPT::new(225u16, Some(2u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -11623,7 +11626,7 @@ pub struct DPT_225_x {
     pub timeperiod: u16,
     pub percent: u8,
 }
-impl crate::Specific for DPT_225_x {
+impl crate::specific::SpecificDataPoint for DPT_225_x {
     const DPT: DPT = DPT::new(225u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -11663,7 +11666,7 @@ pub struct DPT_229_1 {
     pub Fault: bool,
     pub OutOfService: bool,
 }
-impl crate::Specific for DPT_229_1 {
+impl crate::specific::SpecificDataPoint for DPT_229_1 {
     const DPT: DPT = DPT::new(229u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -11721,7 +11724,7 @@ pub struct DPT_229_x {
     pub Fault: bool,
     pub OutOfService: bool,
 }
-impl crate::Specific for DPT_229_x {
+impl crate::specific::SpecificDataPoint for DPT_229_x {
     const DPT: DPT = DPT::new(229u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -11775,7 +11778,7 @@ pub struct DPT_230_1000 {
     pub Version: u8,
     pub Medium: u8,
 }
-impl crate::Specific for DPT_230_1000 {
+impl crate::specific::SpecificDataPoint for DPT_230_1000 {
     const DPT: DPT = DPT::new(230u16, Some(1000u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -11818,7 +11821,7 @@ pub struct DPT_230_x {
     pub Version: u8,
     pub Medium: u8,
 }
-impl crate::Specific for DPT_230_x {
+impl crate::specific::SpecificDataPoint for DPT_230_x {
     const DPT: DPT = DPT::new(230u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -11860,7 +11863,7 @@ pub struct DPT_232_600 {
     pub G: u8,
     pub B: u8,
 }
-impl crate::Specific for DPT_232_600 {
+impl crate::specific::SpecificDataPoint for DPT_232_600 {
     const DPT: DPT = DPT::new(232u16, Some(600u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -11897,7 +11900,7 @@ pub struct DPT_232_x {
     pub G: u8,
     pub B: u8,
 }
-impl crate::Specific for DPT_232_x {
+impl crate::specific::SpecificDataPoint for DPT_232_x {
     const DPT: DPT = DPT::new(232u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -11929,7 +11932,7 @@ impl Display for DPT_232_x {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_234_1(pub String);
-impl crate::Specific for DPT_234_1 {
+impl crate::specific::SpecificDataPoint for DPT_234_1 {
     const DPT: DPT = DPT::new(234u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -11963,7 +11966,7 @@ impl Display for DPT_234_1 {
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[allow(non_camel_case_types)]
 pub struct DPT_234_x(pub String);
-impl crate::Specific for DPT_234_x {
+impl crate::specific::SpecificDataPoint for DPT_234_x {
     const DPT: DPT = DPT::new(234u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -12004,7 +12007,7 @@ pub struct DPT_235_1 {
     pub ElectricalEngergyValidity: bool,
     pub TariffValidity: bool,
 }
-impl crate::Specific for DPT_235_1 {
+impl crate::specific::SpecificDataPoint for DPT_235_1 {
     const DPT: DPT = DPT::new(235u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -12053,7 +12056,7 @@ pub struct DPT_235_x {
     pub ElectricalEngergyValidity: bool,
     pub TariffValidity: bool,
 }
-impl crate::Specific for DPT_235_x {
+impl crate::specific::SpecificDataPoint for DPT_235_x {
     const DPT: DPT = DPT::new(235u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -12100,7 +12103,7 @@ pub struct DPT_236_1 {
     pub prioritylevel: u8,
     pub modelevel: u8,
 }
-impl crate::Specific for DPT_236_1 {
+impl crate::specific::SpecificDataPoint for DPT_236_1 {
     const DPT: DPT = DPT::new(236u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -12140,7 +12143,7 @@ pub struct DPT_236_x {
     pub prioritylevel: u8,
     pub modelevel: u8,
 }
-impl crate::Specific for DPT_236_x {
+impl crate::specific::SpecificDataPoint for DPT_236_x {
     const DPT: DPT = DPT::new(236u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -12184,7 +12187,7 @@ pub struct DPT_237_600 {
     pub AddressIndicator: bool,
     pub DALIDeviceAddressorDALIGroupAddress: u8,
 }
-impl crate::Specific for DPT_237_600 {
+impl crate::specific::SpecificDataPoint for DPT_237_600 {
     const DPT: DPT = DPT::new(237u16, Some(600u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -12240,7 +12243,7 @@ pub struct DPT_237_x {
     pub AddressIndicator: bool,
     pub DALIDeviceAddressorDALIGroupAddress: u8,
 }
-impl crate::Specific for DPT_237_x {
+impl crate::specific::SpecificDataPoint for DPT_237_x {
     const DPT: DPT = DPT::new(237u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -12292,7 +12295,7 @@ pub struct DPT_238_600 {
     pub LampFailure: bool,
     pub DeviceAddress: u8,
 }
-impl crate::Specific for DPT_238_600 {
+impl crate::specific::SpecificDataPoint for DPT_238_600 {
     const DPT: DPT = DPT::new(238u16, Some(600u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -12329,7 +12332,7 @@ pub struct DPT_238_x {
     pub LampFailure: bool,
     pub DeviceAddress: u8,
 }
-impl crate::Specific for DPT_238_x {
+impl crate::specific::SpecificDataPoint for DPT_238_x {
     const DPT: DPT = DPT::new(238u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -12368,7 +12371,7 @@ pub struct DPT_240_800 {
     pub ValiditySlatsPosition: bool,
     pub ValidityHeightPosition: bool,
 }
-impl crate::Specific for DPT_240_800 {
+impl crate::specific::SpecificDataPoint for DPT_240_800 {
     const DPT: DPT = DPT::new(240u16, Some(800u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -12417,7 +12420,7 @@ pub struct DPT_240_x {
     pub ValiditySlatsPosition: bool,
     pub ValidityHeightPosition: bool,
 }
-impl crate::Specific for DPT_240_x {
+impl crate::specific::SpecificDataPoint for DPT_240_x {
     const DPT: DPT = DPT::new(240u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -12477,7 +12480,7 @@ pub struct DPT_241_800 {
     pub Lowerendposreached: bool,
     pub Upperendposreached: bool,
 }
-impl crate::Specific for DPT_241_800 {
+impl crate::specific::SpecificDataPoint for DPT_241_800 {
     const DPT: DPT = DPT::new(241u16, Some(800u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -12571,7 +12574,7 @@ pub struct DPT_241_x {
     pub Lowerendposreached: bool,
     pub Upperendposreached: bool,
 }
-impl crate::Specific for DPT_241_x {
+impl crate::specific::SpecificDataPoint for DPT_241_x {
     const DPT: DPT = DPT::new(241u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -12655,7 +12658,7 @@ pub struct DPT_242_600 {
     pub Validityxy: bool,
     pub Validitybrightness: bool,
 }
-impl crate::Specific for DPT_242_600 {
+impl crate::specific::SpecificDataPoint for DPT_242_600 {
     const DPT: DPT = DPT::new(242u16, Some(600u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -12707,7 +12710,7 @@ pub struct DPT_242_x {
     pub Validityxy: bool,
     pub Validitybrightness: bool,
 }
-impl crate::Specific for DPT_242_x {
+impl crate::specific::SpecificDataPoint for DPT_242_x {
     const DPT: DPT = DPT::new(242u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -12761,7 +12764,7 @@ pub struct DPT_244_600 {
     pub PartialDurationTestPending: u8,
     pub ConverterFailure: u8,
 }
-impl crate::Specific for DPT_244_600 {
+impl crate::specific::SpecificDataPoint for DPT_244_600 {
     const DPT: DPT = DPT::new(244u16, Some(600u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -12824,7 +12827,7 @@ pub struct DPT_244_x {
     pub PartialDurationTestPending: u8,
     pub ConverterFailure: u8,
 }
-impl crate::Specific for DPT_244_x {
+impl crate::specific::SpecificDataPoint for DPT_244_x {
     const DPT: DPT = DPT::new(244u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -12889,7 +12892,7 @@ pub struct DPT_245_600 {
     pub LDTR: u16,
     pub LPDTR: u8,
 }
-impl crate::Specific for DPT_245_600 {
+impl crate::specific::SpecificDataPoint for DPT_245_600 {
     const DPT: DPT = DPT::new(245u16, Some(600u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -12956,7 +12959,7 @@ pub struct DPT_245_x {
     pub LDTR: u16,
     pub LPDTR: u8,
 }
-impl crate::Specific for DPT_245_x {
+impl crate::specific::SpecificDataPoint for DPT_245_x {
     const DPT: DPT = DPT::new(245u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -13018,7 +13021,7 @@ pub struct DPT_246_600 {
     pub BatteryFailure: bool,
     pub BatteryChargeLevel: u8,
 }
-impl crate::Specific for DPT_246_600 {
+impl crate::specific::SpecificDataPoint for DPT_246_600 {
     const DPT: DPT = DPT::new(246u16, Some(600u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -13067,7 +13070,7 @@ pub struct DPT_246_x {
     pub BatteryFailure: bool,
     pub BatteryChargeLevel: u8,
 }
-impl crate::Specific for DPT_246_x {
+impl crate::specific::SpecificDataPoint for DPT_246_x {
     const DPT: DPT = DPT::new(246u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -13118,7 +13121,7 @@ pub struct DPT_249_600 {
     pub validityoftheAbsoluteColourTemperature: bool,
     pub validityoftheabsolutebrightness: bool,
 }
-impl crate::Specific for DPT_249_600 {
+impl crate::specific::SpecificDataPoint for DPT_249_600 {
     const DPT: DPT = DPT::new(249u16, Some(600u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -13174,7 +13177,7 @@ pub struct DPT_249_x {
     pub validityoftheAbsoluteColourTemperature: bool,
     pub validityoftheabsolutebrightness: bool,
 }
-impl crate::Specific for DPT_249_x {
+impl crate::specific::SpecificDataPoint for DPT_249_x {
     const DPT: DPT = DPT::new(249u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -13232,7 +13235,7 @@ pub struct DPT_250_600 {
     pub CCTandStepCodeColourValidity: bool,
     pub CBandStepCodeBrightnessValidity: bool,
 }
-impl crate::Specific for DPT_250_600 {
+impl crate::specific::SpecificDataPoint for DPT_250_600 {
     const DPT: DPT = DPT::new(250u16, Some(600u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -13301,7 +13304,7 @@ pub struct DPT_250_x {
     pub CCTandStepCodeColourValidity: bool,
     pub CBandStepCodeBrightnessValidity: bool,
 }
-impl crate::Specific for DPT_250_x {
+impl crate::specific::SpecificDataPoint for DPT_250_x {
     const DPT: DPT = DPT::new(250u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -13371,7 +13374,7 @@ pub struct DPT_251_600 {
     pub mB: bool,
     pub mW: bool,
 }
-impl crate::Specific for DPT_251_600 {
+impl crate::specific::SpecificDataPoint for DPT_251_600 {
     const DPT: DPT = DPT::new(251u16, Some(600u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -13439,7 +13442,7 @@ pub struct DPT_251_x {
     pub mB: bool,
     pub mW: bool,
 }
-impl crate::Specific for DPT_251_x {
+impl crate::specific::SpecificDataPoint for DPT_251_x {
     const DPT: DPT = DPT::new(251u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -13514,7 +13517,7 @@ pub struct DPT_252_600 {
     pub Cr: bool,
     pub StepCodeColourRed: u8,
 }
-impl crate::Specific for DPT_252_600 {
+impl crate::specific::SpecificDataPoint for DPT_252_600 {
     const DPT: DPT = DPT::new(252u16, Some(600u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -13614,7 +13617,7 @@ pub struct DPT_252_x {
     pub Cr: bool,
     pub StepCodeColourRed: u8,
 }
-impl crate::Specific for DPT_252_x {
+impl crate::specific::SpecificDataPoint for DPT_252_x {
     const DPT: DPT = DPT::new(252u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -13706,7 +13709,7 @@ pub struct DPT_254_600 {
     pub Cr: bool,
     pub StepCodeColourRed: u8,
 }
-impl crate::Specific for DPT_254_600 {
+impl crate::specific::SpecificDataPoint for DPT_254_600 {
     const DPT: DPT = DPT::new(254u16, Some(600u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -13774,7 +13777,7 @@ pub struct DPT_254_x {
     pub Cr: bool,
     pub StepCodeColourRed: u8,
 }
-impl crate::Specific for DPT_254_x {
+impl crate::specific::SpecificDataPoint for DPT_254_x {
     const DPT: DPT = DPT::new(254u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -13835,7 +13838,7 @@ pub struct DPT_255_1 {
     pub Longitude: f32,
     pub Latitude: f32,
 }
-impl crate::Specific for DPT_255_1 {
+impl crate::specific::SpecificDataPoint for DPT_255_1 {
     const DPT: DPT = DPT::new(255u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -13877,7 +13880,7 @@ pub struct DPT_255_x {
     pub Longitude: f32,
     pub Latitude: f32,
 }
-impl crate::Specific for DPT_255_x {
+impl crate::specific::SpecificDataPoint for DPT_255_x {
     const DPT: DPT = DPT::new(255u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -13921,7 +13924,7 @@ pub struct DPT_275_100 {
     pub roomtemperaturesetpointeconomy: f32,
     pub roomtemperaturesetpointbuildingprotection: f32,
 }
-impl crate::Specific for DPT_275_100 {
+impl crate::specific::SpecificDataPoint for DPT_275_100 {
     const DPT: DPT = DPT::new(275u16, Some(100u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -13992,7 +13995,7 @@ pub struct DPT_275_101 {
     pub roomtemperaturesetpointshifteconomy: f32,
     pub roomtemperaturesetpointshiftbuildingprotection: f32,
 }
-impl crate::Specific for DPT_275_101 {
+impl crate::specific::SpecificDataPoint for DPT_275_101 {
     const DPT: DPT = DPT::new(275u16, Some(101u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -14064,7 +14067,7 @@ pub struct DPT_275_x {
     pub roomtemperaturesetpointeconomy: f32,
     pub roomtemperaturesetpointbuildingprotection: f32,
 }
-impl crate::Specific for DPT_275_x {
+impl crate::specific::SpecificDataPoint for DPT_275_x {
     const DPT: DPT = DPT::new(275u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -14147,7 +14150,7 @@ pub struct DPT_285_1 {
     pub int15: u8,
     pub int16: u8,
 }
-impl crate::Specific for DPT_285_1 {
+impl crate::specific::SpecificDataPoint for DPT_285_1 {
     const DPT: DPT = DPT::new(285u16, Some(1u16));
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();
@@ -14228,7 +14231,7 @@ pub struct DPT_285_x {
     pub int15: u8,
     pub int16: u8,
 }
-impl crate::Specific for DPT_285_x {
+impl crate::specific::SpecificDataPoint for DPT_285_x {
     const DPT: DPT = DPT::new(285u16, None);
     fn to_data_point(&self) -> DataPoint {
         let mut bytes = Vec::new();

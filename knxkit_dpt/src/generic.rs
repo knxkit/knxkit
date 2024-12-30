@@ -9,30 +9,33 @@
 
 use std::cell::LazyCell;
 
-use knxkit::core::DataPoint;
 use serde_json::Value;
 
-use crate::{Specific, DPT};
+use knxkit::{core::DataPoint, project::DPT};
+
+use crate::specific::SpecificDataPoint;
+
+pub use super::generated::generic::*;
 
 type Lazy<T> = LazyCell<T, Box<dyn FnOnce() -> T>>;
 
-pub struct OpaqueDataPoint {
+pub struct GenericDataPoint {
     dpt: DPT,
     raw: Lazy<DataPoint>,
     json: Lazy<Value>,
     display: Lazy<String>,
 }
 
-impl OpaqueDataPoint {
+impl GenericDataPoint {
     pub fn new<T>(value: T) -> Self
     where
-        T: Specific + std::fmt::Display + 'static,
+        T: SpecificDataPoint + std::fmt::Display + 'static,
     {
         let value = std::sync::Arc::new(value);
         let display = value.clone();
         let json = value.clone();
 
-        OpaqueDataPoint {
+        GenericDataPoint {
             dpt: T::DPT,
             raw: LazyCell::new(Box::new(move || value.as_ref().to_data_point())),
             display: LazyCell::new(Box::new(move || display.to_string())),
@@ -59,7 +62,7 @@ impl OpaqueDataPoint {
     }
 }
 
-impl std::fmt::Display for OpaqueDataPoint {
+impl std::fmt::Display for GenericDataPoint {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         f.write_str(&self.display)
     }

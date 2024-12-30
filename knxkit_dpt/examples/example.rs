@@ -1,5 +1,8 @@
 use knxkit::core::DataPoint;
-use knxkit_dpt::{generic, specific::DPT_3_7, OpaqueDataPoint, Specific};
+use knxkit_dpt::{
+    generic::{try_decode, try_decode_json, GenericDataPoint},
+    specific::{SpecificDataPoint, DPT_3_7},
+};
 use serde_json;
 
 fn main() {
@@ -23,15 +26,15 @@ fn main() {
     println!("DataPoint: {}", value);
     // -> DataPoint: $09
 
-    let opaque: OpaqueDataPoint = generic::try_decode(DPT_3_7::DPT, &value).unwrap();
-    println!("Opaque: {}", opaque);
-    // -> Opaque: true/1
+    let generic: GenericDataPoint = try_decode(DPT_3_7::DPT, &value).unwrap();
+    println!("Generic: {}", generic);
+    // -> Generic: true/1
 
-    let json = opaque.to_json_value();
+    let json = generic.to_json_value();
     println!("JSON: {}", json);
     // -> JSON: {"Increase":true,"StepCode":1}
 
-    let opaque = generic::try_decode_json(DPT_3_7::DPT, json).unwrap();
-    println!("Opaque: {}", opaque);
-    // -> Opaque: true/1
+    let generic = try_decode_json(DPT_3_7::DPT, json).unwrap();
+    println!("Generic: {}", generic);
+    // -> Generic: true/1
 }

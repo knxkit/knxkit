@@ -35,16 +35,16 @@ pub fn generate(masterdata: &MasterData) -> TokenStream {
         .unwrap_or(quote!(None));
 
         quote! {
-            (#new_dpt, DataPointTypeInfo{dpt: #new_dpt, name: #name, text: #text, unit: #unit})
+            (#new_dpt, TypeInfo{dpt: #new_dpt, name: #name, text: #text, unit: #unit})
         }
     });
 
     quote! {
         use knxkit::project::DPT;
-        use crate::DataPointTypeInfo;
+        use crate::typeinfo::TypeInfo;
 
-        pub fn lookup(dpt: DPT) -> Option<&'static DataPointTypeInfo> {
-            static DATAPOINTS: &'static [(DPT, DataPointTypeInfo)] =
+        pub fn lookup(dpt: DPT) -> Option<&'static TypeInfo> {
+            static DATAPOINTS: &'static [(DPT, TypeInfo)] =
                 &[#(#typeinfos),*];
 
             DATAPOINTS
