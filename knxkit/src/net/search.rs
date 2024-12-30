@@ -7,9 +7,9 @@
 //
 // SPDX-License-Identifier: EPL-2.0 OR GPL-3.0
 
-use std::{future::Future, net::Ipv4Addr, time::Duration};
+use std::net::Ipv4Addr;
 
-use tokio::time::Instant;
+use futures::stream::Stream;
 
 use crate::{
     error::Error,
@@ -22,42 +22,31 @@ use crate::{
     },
 };
 
-pub fn search(local: Ipv4Addr) -> impl Future<Output = Result<Vec<SearchResponse>, Error>> {
-    search_ext(local, false, Duration::from_secs(5))
-}
-
-pub async fn search_ext(
+pub async fn search(
     local: Ipv4Addr,
     nat: bool,
-    wait: Duration,
-) -> Result<Vec<SearchResponse>, Error> {
+) -> Result<impl Stream<Item = SearchResponse>, Error> {
     let endpoint = UdpEndpoint::bind(local, UdpEndpoint::multicast_peer(), nat).await?;
 
     let request = SearchRequest {
         hpai: endpoint.hpai(),
-    }
-    .into();
-    endpoint.send_control(request).await?;
+    };
 
-    let mut found = Vec::new();
+    endpoint.send_control(request.into()).await?;
 
-    let deadline = Instant::now() + wait;
-
-    loop {
-        tokio::select! {
-            rec = endpoint.recv() => {
-                let (response, _) = rec?;
+    let stream = async_stream::stream! {
+        loop {
+            if let Ok((response, _)) = endpoint.recv().await  {
                 if response.service_type == ServiceType::SearchResponse {
-                    let response = SearchResponse::try_parse(response)?;
-                    found.push(response);
+                    if let Ok(response) = SearchResponse::try_parse(response) {
+                        yield response;
+                    }
                 }
-            },
-
-            _ = tokio::time::sleep_until(deadline) => {
+            }else{
                 break;
             }
         }
-    }
+    };
 
-    Ok(found)
+    Ok(stream)
 }

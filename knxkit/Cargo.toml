@@ -27,6 +27,7 @@ hex = "0.4.3"
 url = "2.5.4"
 dns-lookup = "2.0.4"
 macaddr = "1.0.1"
+async-stream = "0.3.6"
 strum = { version = "0.26.3", features = ["derive"] }
 
 [dev-dependencies]
