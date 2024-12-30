@@ -9,14 +9,13 @@
 
 use std::{
     net::{IpAddr, Ipv4Addr},
-    str::FromStr,
     sync::LazyLock,
 };
 
 use anyhow::{bail, Result};
 use clap::{command, Parser, Subcommand};
 
-use knxkit::{connection::remote, core::address::GroupAddress, project::Project};
+use knxkit::{connection::remote, project::Project};
 
 fn parse_local(v: &str) -> Result<Ipv4Addr> {
     let local = if v != "auto" {
@@ -83,54 +82,7 @@ pub struct Cli {
 pub enum Command {
     Group {
         #[command(subcommand)]
-        command: GroupCommand,
-    },
-}
-
-#[derive(clap::ValueEnum, Debug, Clone, Copy, PartialEq)]
-pub enum ValueFormat {
-    Raw,
-    Value,
-}
-
-#[derive(Subcommand, Debug, Clone)]
-pub enum GroupCommand {
-    Monitor {
-        #[command(flatten)]
-        remote: Remote,
-
-        #[command(flatten)]
-        format: Format,
-    },
-
-    Read {
-        #[command(flatten)]
-        remote: Remote,
-
-        #[arg(value_parser = GroupAddress::from_str)]
-        group: GroupAddress,
-
-        #[arg(long, value_enum, default_value = "raw")]
-        format: ValueFormat,
-
-        #[arg(long, default_value = "false")]
-        unit: bool,
-
-        #[arg(long, value_parser = parse_duration::parse, default_value = "5s")]
-        timeout: std::time::Duration,
-    },
-
-    Write {
-        #[command(flatten)]
-        remote: Remote,
-
-        #[arg(value_parser = GroupAddress::from_str)]
-        group: GroupAddress,
-
-        value: String,
-
-        #[arg(long, value_enum, default_value = "raw")]
-        format: ValueFormat,
+        command: crate::group::GroupCommand,
     },
 }
 

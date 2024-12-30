@@ -10,13 +10,10 @@
 use anyhow::{anyhow, Result};
 
 use knxkit::connection::{ops::GroupOps, KnxBusConnection};
-
 use knxkit_dpt::project::ProjectExtDPT;
 
-use crate::{
-    cli::{GroupCommand, ValueFormat, CLI},
-    util::connect,
-};
+use super::{GroupCommand, ValueFormat};
+use crate::{cli::CLI, util::connect};
 
 pub async fn command(command: &GroupCommand) -> Result<()> {
     crate::match_variant!(GroupCommand::Read {

@@ -26,9 +26,11 @@ use knxkit::{
 use knxkit_dpt::project::ProjectExtDPT;
 
 use crate::{
-    cli::{Format, GroupCommand, CLI},
+    cli::{Format, CLI},
     util::{connect, Defaults},
 };
+
+use super::GroupCommand;
 
 fn format_cemi(cemi: &CEMI, format: &Format) -> Result<Option<String>> {
     let CEMI {

@@ -16,10 +16,8 @@ use knxkit::{
     core::DataPoint,
 };
 
-use crate::{
-    cli::{GroupCommand, ValueFormat},
-    util::connect,
-};
+use super::{GroupCommand, ValueFormat};
+use crate::util::connect;
 
 pub async fn command(command: &GroupCommand) -> Result<()> {
     crate::match_variant!(GroupCommand::Write {
