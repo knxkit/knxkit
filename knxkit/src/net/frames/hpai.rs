@@ -83,6 +83,17 @@ impl HPAI {
     }
 }
 
+impl std::fmt::Display for HPAI {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let s = match self {
+            HPAI::UDP(soa) => format!("udp://{}", soa),
+            HPAI::TCP(soa) => format!("tcp://{}", soa),
+        };
+
+        f.pad(&s)
+    }
+}
+
 mod test {
     #[test]
     fn test() {

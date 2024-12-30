@@ -10,12 +10,13 @@
 use std::net::Ipv4Addr;
 
 use macaddr::MacAddr6;
+use strum::Display;
 
 use super::DescriptionType;
 use crate::{core::address::IndividualAddress, core::util::prelude::*};
 
 // 3/8/2-7.5.4.2
-#[derive(PartialEq, Debug, Clone, ToPrimitive, FromPrimitive)]
+#[derive(PartialEq, Debug, Clone, ToPrimitive, FromPrimitive, Display)]
 pub enum Medium {
     TP1 = 0x02,
     PL110 = 0x04,
@@ -25,7 +26,7 @@ pub enum Medium {
 
 // 3/8/2-7.5.4.2
 #[derive(Debug, Clone, PartialEq)]
-pub struct Status(u8);
+pub struct Status(pub u8);
 
 impl Status {
     pub fn is_programming(&self) -> bool {
