@@ -97,10 +97,6 @@ pub(crate) fn encode_knxf16(value: f32) -> u16 {
 
 #[cfg(test)]
 mod tests {
-    use super::*;
-    use crate::generic::*;
-    use crate::specific::*;
-
     #[test]
     fn test_knx_f16() {
         use super::{decode_knxf16, encode_knxf16};

@@ -7,7 +7,52 @@
 //
 // SPDX-License-Identifier: EPL-2.0 OR GPL-3.0
 
-//! Generated datapoint structures for [knxkit](https://crates.io/crates/knxkit)
+//! Datapoint structures for [knxkit](https://crates.io/crates/knxkit)
+//!
+//! Create a specific datapoint and convert it to a binary representation
+//!```rust
+//!  use knxkit_dpt::specific::{SpecificDataPoint, DPT_3_7};   
+//!
+//!  let value37 = DPT_3_7 {
+//!    Increase: true,
+//!    StepCode: 1,
+//!  };
+//!
+//!  let datapoint = value37.to_data_point();
+//!     
+//!  assert_eq!(datapoint, knxkit::core::DataPoint::Short(0x09));
+//!```
+//!
+//! Decode a binary representation to a specific datapoint
+//! ```rust
+//!  use knxkit_dpt::specific::{SpecificDataPoint, DPT_3_7};   
+//!
+//!  let datapoint = knxkit::core::DataPoint::Short(0x09);
+//!  let value37 = DPT_3_7::from_data_point(&datapoint).unwrap();
+//!
+//!  assert_eq!(value37, DPT_3_7 {Increase: true, StepCode: 1});
+//! ```
+//!
+//! Decode a binary representation to a generic datapoint and then to JSON string
+//!```rust
+//!  use knxkit_dpt::specific::{SpecificDataPoint, DPT_3_7};
+//!  use knxkit_dpt::generic;
+//!
+//!  let datapoint = knxkit::core::DataPoint::Short(0x09);
+//!  let generic = generic::try_decode(DPT_3_7::DPT, &datapoint).unwrap();
+//!  let json = generic.to_json_string();
+//!  assert_eq!(json, "{\"Increase\":true,\"StepCode\":1}");
+//!```
+//! Lookup a datapoint info by DPT
+//! ```rust
+//!  use knxkit_dpt::specific::{SpecificDataPoint, DPT_3_7};
+//!
+//!  let info = knxkit_dpt::typeinfo::lookup(DPT_3_7::DPT).unwrap();   
+//!
+//!  assert_eq!(info.name, "DPT_Control_Dimming");
+//!  assert_eq!(info.text, Some("dimming control"));
+//!  assert_eq!(info.unit, None);
+//! ```
 
 mod error;
 mod generated;
@@ -20,7 +65,6 @@ pub use error::Error;
 
 #[cfg(test)]
 mod tests {
-    use super::*;
     use crate::generic::*;
     use crate::specific::*;
     use knxkit::{core::DataPoint, project::DPT};
