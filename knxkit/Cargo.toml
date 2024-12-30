@@ -29,4 +29,4 @@ dns-lookup = "2.0.4"
 macaddr = "1.0.1"
 
 [dev-dependencies]
-knxkit_dpt = "0.1.0"
+knxkit_dpt = "0.1.1"
