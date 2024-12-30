@@ -43,6 +43,7 @@ impl<'a> Defaults<'a> for Option<CowString<'a>> {
 #[macro_export]
 macro_rules! match_variant {
     ($p:pat = $e:expr => $s:stmt) => {
+        #[allow(irrefutable_let_patterns)]
         if let $p = $e {
             $s
         } else {

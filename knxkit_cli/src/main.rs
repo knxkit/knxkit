@@ -11,6 +11,7 @@ use std::process;
 
 mod cli;
 mod group;
+mod ip;
 mod util;
 
 use cli::CLI;
@@ -35,6 +36,7 @@ async fn main() {
 
     let result = match &cli::CLI.command {
         cli::Command::Group { command } => group::command(&command).await,
+        cli::Command::Ip { command } => ip::command(&command).await,
     };
 
     if let Err(error) = &result {

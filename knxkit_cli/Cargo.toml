@@ -20,6 +20,8 @@ url = "2.5.4"
 dns-lookup = "2.0.4"
 interpolator = { version = "0.5.0", features = ["number", "debug"] }
 parse_duration = "2.1.1"
+async-stream = "0.3.6"
+futures-util = "0.3.31"
 
 [[bin]]
 name = "knx"

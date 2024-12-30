@@ -62,6 +62,10 @@ pub struct Globals {
     pub local_address: Ipv4Addr,
 
     #[arg(long)]
+    #[arg(default_value = "false", env = "KNX_NAT")]
+    pub nat: bool,
+
+    #[arg(long)]
     pub log: bool,
 
     #[arg(long, value_parser = parse_project, env="KNX_PROJECT")]
@@ -83,6 +87,11 @@ pub enum Command {
     Group {
         #[command(subcommand)]
         command: crate::group::GroupCommand,
+    },
+
+    Ip {
+        #[command(subcommand)]
+        command: crate::ip::IpCommand,
     },
 }
 
