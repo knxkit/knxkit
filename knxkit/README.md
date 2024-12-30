@@ -1,14 +1,15 @@
 # High-level API for KNX devices and networks
 __knxkit__ is a library for interfacing with [KNX](https://www.knx.org) devices and networks. It provides a high-level API for interacting with KNX devices and networks, and is designed to be easy to use and flexible.
 
-- __major data structures__ — individual and group addresses, CEMI, APDU, DataPoint, KNXnet/IP frames
+- __Data structures__ — individual and group addresses, CEMI, APDU, DPT, DataPoint, KNXnet/IP frames
 
 - __KNXnet/IP services__ — search, describe, tunneling are implemented.
 
-- __Project files__ — knxkit can process _.knxproj_ files, which are used by ETS to store KNX project information. Devices and group definitions can be extracted. In addition it DPT definitions, that are used for code generation.
+- __Project files__ — read _.knxproj_ files, which are used by ETS to store KNX project information. Devices and group definitions can be extracted.
 
-- data structures for all __Data point types (DPT)__  generated from knx_master.xml contents. Serialzation to and from JSON is supported. _Display_ implementations are generated.
-- __command line__ utilities for data structures generation and knx network interaction.
+- __Data point structures__  generated from knx_master.xml contents. Typed and generic representations are supported
+
+- __Command line__ utilities for data structures generation and knx network interaction.
 
 
 ### Example
