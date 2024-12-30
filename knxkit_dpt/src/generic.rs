@@ -19,6 +19,7 @@ pub use super::generated::generic::*;
 
 type Lazy<T> = LazyCell<T, Box<dyn FnOnce() -> T>>;
 
+/// Untyped datapioint representation
 pub struct GenericDataPoint {
     dpt: DPT,
     raw: Lazy<DataPoint>,
@@ -45,18 +46,22 @@ impl GenericDataPoint {
         }
     }
 
+    /// Get the DPT identifier  of the data point
     pub fn dpt(&self) -> DPT {
         self.dpt
     }
 
+    /// Convert to json value
     pub fn to_json_value(&self) -> Value {
         self.json.clone()
     }
 
+    /// Convert to json string
     pub fn to_json_string(&self) -> String {
         self.json.to_string()
     }
 
+    /// Convert to DataPoint
     pub fn to_data_point(&self) -> DataPoint {
         self.raw.clone()
     }

@@ -12,8 +12,15 @@ pub use super::generated::typeinfo::*;
 use knxkit::project::DPT;
 
 pub struct TypeInfo {
+    /// DPT identifier
     pub dpt: DPT,
+
+    /// Datapoint name
     pub name: &'static str,
+
+    /// Datapoint text
     pub text: Option<&'static str>,
+
+    /// Datapoint unit
     pub unit: Option<&'static str>,
 }

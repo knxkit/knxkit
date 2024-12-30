@@ -7,6 +7,8 @@
 //
 // SPDX-License-Identifier: EPL-2.0 OR GPL-3.0
 
+//! Generated datapoint structures for [knxkit](https://crates.io/crates/knxkit)
+
 mod error;
 mod generated;
 pub mod generic;

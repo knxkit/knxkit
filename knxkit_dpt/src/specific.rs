@@ -7,6 +7,8 @@
 //
 // SPDX-License-Identifier: EPL-2.0 OR GPL-3.0
 
+//! Generated structures for specific datapoints
+
 use num_traits::{Pow, Signed};
 use serde::{Deserialize, Serialize};
 use std::ops::Neg;
@@ -17,17 +19,21 @@ use crate::Error;
 
 pub use super::generated::specific::*;
 
+/// Cvery generated datapoint structure implements this trait
 pub trait SpecificDataPoint: std::fmt::Display + Serialize {
     const DPT: DPT;
 
+    /// Convert to DataPoint
     fn to_data_point(&self) -> DataPoint;
 
+    /// Convert from DataPoint
     fn from_data_point(data: &DataPoint) -> Result<Self, Error>
     where
         Self: Sized;
 }
 
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
+/// Placeholder for for the 'Reserved' format
 pub struct Reserved;
 
 impl Reserved {

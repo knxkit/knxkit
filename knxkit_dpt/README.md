@@ -1,4 +1,4 @@
-Pre-generated datapoint structures for [knxkit](https://crates.io/crates/knxkit)
+Generated datapoint structures for [knxkit](https://crates.io/crates/knxkit)
 =
 
 #### Exmple
