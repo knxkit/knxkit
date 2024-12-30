@@ -10,10 +10,52 @@ __knxkit__ is a library for interfacing with [KNX](https://www.knx.org) devices 
 - data structures for all __Data point types (DPT)__  generated from knx_master.xml contents. Serialzation to and from JSON is supported. _Display_ implementations are generated.
 - __command line__ utilities for data structures generation and knx network interaction.
 
+
+### Example
+```toml
+[dependencies]
+knxkit = "0.1.1"
+knxkit_dpt = "0.1"
+```
+
+```rust
+use std::{net::Ipv4Addr, str::FromStr, time::Duration};
+
+use knxkit::{
+    connection::{self, ops::GroupOps, KnxBusConnection, RemoteSpec},
+    core::address::GroupAddress,
+};
+
+use knxkit_dpt::{
+    specific::{SpecificDataPoint, DPT_9_1},
+    typeinfo,
+};
+
+#[tokio::main]
+async fn main() {
+    let remote = RemoteSpec::KnxIpTunnel("192.168.8.2:3671".parse().unwrap());
+    let local = Ipv4Addr::from_str("192.168.7.51").unwrap();
+
+    let mut tunnel = connection::connect(local, &remote).await.unwrap();
+
+    let group = GroupAddress::from_str("2/0/0").unwrap();
+    let timeout = Duration::from_secs(1);
+
+    let data_point = tunnel.group_read(group, timeout).await.unwrap();
+
+    let temp = DPT_9_1::from_data_point(&data_point).unwrap();
+    let info = typeinfo::lookup(DPT_9_1::DPT).unwrap();
+
+    println!("{}: {}{}", info.text.unwrap(), temp.0, info.unit.unwrap());
+    // -> temperature (°C): 19.5°C
+
+    tunnel.terminate().await
+}
+```
+
 ### Related crates
-  - [knxkit_dpt](knxkit_dpt) - DPT definitions
-  - [knxkit_dptgen](knxkit_dptgen) - DPT definitions generator
-  - [knxkit_cli](knxkit_cli) - command line utility
+  - [knxkit_dpt](https://crates.io/crates/knxkit_dpt) - DPT definitions
+  - [knxkit_dptgen](https://crates.io/crates/knxkit_dptgen) - DPT definitions generator
 
 ### Status
 Currently the library is in development. It may be used for testing and experimentation, but is not yet ready for production use. The API is subject to change. The library is being developed in the open, and contributions are welcome.
