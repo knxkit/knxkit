@@ -13,34 +13,36 @@ use anyhow::Result;
 
 use knxkit::{
     connection::{ops::GroupOps, KnxBusConnection},
-    core::{address::GroupAddress, DataPoint},
+    core::DataPoint,
 };
 
 use crate::{
-    cli::{Remote, ValueFormat},
+    cli::{GroupCommand, ValueFormat},
     util::connect,
 };
 
-pub async fn command(
-    remote: &Remote,
-    group: GroupAddress,
-    value: &String,
-    format: ValueFormat,
-) -> Result<()> {
-    let mut connection = connect(&remote.remote).await.unwrap();
+pub async fn command(command: &GroupCommand) -> Result<()> {
+    crate::match_variant!(GroupCommand::Write {
+        remote,
+        group,
+        value,
+        format,
+    } = command => {
+        let mut connection = connect(&remote.remote).await.unwrap();
 
-    let data = match format {
-        ValueFormat::Raw => DataPoint::from_str(&value)?,
-        ValueFormat::Value => {
-            unimplemented!()
-        }
-    };
+        let data = match format {
+            ValueFormat::Raw => DataPoint::from_str(&value)?,
+            ValueFormat::Value => {
+                unimplemented!()
+            }
+        };
 
-    let notify = connection.group_write(group, data).await?;
+        let notify = connection.group_write(*group, data).await?;
 
-    notify.notified().await;
+        notify.notified().await;
 
-    connection.terminate().await;
+        connection.terminate().await;
 
-    Ok(())
+        Ok(())
+    })
 }

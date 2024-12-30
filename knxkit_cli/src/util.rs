@@ -39,3 +39,14 @@ impl<'a> Defaults<'a> for Option<CowString<'a>> {
         self.unwrap_or_else(|| CowString::Ref(""))
     }
 }
+
+#[macro_export]
+macro_rules! match_variant {
+    ($p:pat = $e:expr => $s:stmt) => {
+        if let $p = $e {
+            $s
+        } else {
+            panic!("invalid pattern")
+        }
+    };
+}

@@ -7,52 +7,49 @@
 //
 // SPDX-License-Identifier: EPL-2.0 OR GPL-3.0
 
-use std::time::Duration;
-
 use anyhow::{anyhow, Result};
 
-use knxkit::{
-    connection::{ops::GroupOps, KnxBusConnection},
-    core::address::GroupAddress,
-};
+use knxkit::connection::{ops::GroupOps, KnxBusConnection};
 
 use knxkit_dpt::project::ProjectExtDPT;
 
 use crate::{
-    cli::{Remote, ValueFormat, CLI},
+    cli::{GroupCommand, ValueFormat, CLI},
     util::connect,
 };
 
-pub async fn command(
-    remote: &Remote,
-    group: GroupAddress,
-    format: ValueFormat,
-    unit: bool,
-    timeout: Duration,
-) -> Result<()> {
-    let mut connection = connect(&remote.remote).await.unwrap();
+pub async fn command(command: &GroupCommand) -> Result<()> {
+    crate::match_variant!(GroupCommand::Read {
+        remote,
+        group,
+        format,
+        unit,
+        timeout,
+    } = command => {
+        let mut connection = connect(&remote.remote).await.unwrap();
 
-    let dp = connection.group_read(group, timeout).await?;
+        let dp = connection.group_read(*group, *timeout).await?;
 
-    connection.terminate().await;
+        connection.terminate().await;
 
-    match format {
-        ValueFormat::Raw => {
-            println!("{}", dp);
-        }
+        match format {
+            ValueFormat::Raw => {
+                println!("{}", dp);
+            }
 
-        ValueFormat::Value => {
-            let project = CLI.globals.project.as_ref();
+            ValueFormat::Value => {
+                let project = CLI.globals.project.as_ref();
 
-            if let Some(display) = project.group_value(group, &dp, unit) {
-                println!("{}", display);
-            } else {
-                return Err(anyhow!(
-                    "value cannot be decoded (project not set or unknown group)"
-                ));
+                if let Some(display) = project.group_value(*group, &dp, *unit) {
+                    println!("{}", display);
+                } else {
+                    return Err(anyhow!(
+                        "value cannot be decoded (project not set or unknown group)"
+                    ));
+                }
             }
         }
-    }
 
-    Ok(())
+        Ok(())
+    })
 }

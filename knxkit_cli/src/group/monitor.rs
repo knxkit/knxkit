@@ -26,7 +26,7 @@ use knxkit::{
 use knxkit_dpt::project::ProjectExtDPT;
 
 use crate::{
-    cli::{Format, Remote, CLI},
+    cli::{Format, GroupCommand, CLI},
     util::{connect, Defaults},
 };
 
@@ -124,33 +124,35 @@ fn format_cemi(cemi: &CEMI, format: &Format) -> Result<Option<String>> {
     Ok(line)
 }
 
-pub async fn command(remote: &Remote, format: &Format) -> Result<()> {
-    let mut signal = crate::util::interrupt().await?;
-    let mut tunnel = connect(&remote.remote).await.unwrap();
+pub async fn command(command: &GroupCommand) -> Result<()> {
+    crate::match_variant!(GroupCommand::Monitor { remote, format } = command => {
+        let mut signal = crate::util::interrupt().await?;
+        let mut tunnel = connect(&remote.remote).await.unwrap();
 
-    loop {
-        tokio::select! {
-            _ = signal.recv() => {
-                break;
-            }
-
-            recv = tunnel.recv() => {
-                if let Some(cemi) = recv {
-                    if let Some(line) = format_cemi(&cemi, format)? {
-                        if CLI.globals.log {
-                            tracing::info!("{}", line);
-                        }else{
-                            println!("{}", line);
-                        }
-                    }
-                } else {
+        loop {
+            tokio::select! {
+                _ = signal.recv() => {
                     break;
+                }
+
+                recv = tunnel.recv() => {
+                    if let Some(cemi) = recv {
+                        if let Some(line) = format_cemi(&cemi, format)? {
+                            if CLI.globals.log {
+                                tracing::info!("{}", line);
+                            }else{
+                                println!("{}", line);
+                            }
+                        }
+                    } else {
+                        break;
+                    }
                 }
             }
         }
-    }
 
-    tunnel.terminate().await;
+        tunnel.terminate().await;
 
-    Ok(())
+        Ok(())
+    })
 }

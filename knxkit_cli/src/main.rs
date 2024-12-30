@@ -23,7 +23,7 @@ async fn main() {
 
         let filter = Targets::default()
             .with_target("knxkit", tracing::Level::DEBUG)
-            .with_target("knxkit_cli", tracing::Level::DEBUG);
+            .with_target("knx", tracing::Level::DEBUG);
 
         let format = tracing_subscriber::fmt::layer().compact();
 

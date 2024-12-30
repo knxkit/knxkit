@@ -17,22 +17,8 @@ mod write;
 
 pub async fn command(command: &GroupCommand) -> Result<()> {
     match command {
-        GroupCommand::Monitor {
-            remote: source,
-            format,
-        } => monitor::command(source, format).await,
-        GroupCommand::Read {
-            remote: source,
-            group,
-            format,
-            unit,
-            timeout,
-        } => read::command(source, *group, *format, *unit, *timeout).await,
-        GroupCommand::Write {
-            remote: source,
-            group,
-            value,
-            format,
-        } => write::command(source, *group, value, *format).await,
+        GroupCommand::Monitor { .. } => monitor::command(command).await,
+        GroupCommand::Read { .. } => read::command(command).await,
+        GroupCommand::Write { .. } => write::command(command).await,
     }
 }
