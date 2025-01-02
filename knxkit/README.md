@@ -15,6 +15,7 @@ __knxkit__ is a library for interfacing with [KNX](https://www.knx.org) devices 
 ### Example
 ```toml
 [dependencies]
+tokio = { version = "1.42.0", features = ["full"] }
 knxkit = "0.1.1"
 knxkit_dpt = "0.1"
 ```
