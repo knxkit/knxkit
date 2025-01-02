@@ -45,9 +45,7 @@ pub struct Remote {
 #[derive(Parser, Debug, Clone)]
 pub struct Format {
     #[arg(long = "format")]
-    #[arg(
-        default_value = "{time} {prio} {src} {src_name} {dst} {dst_name} {service} {hops} {dpt} {dpt_name} {data_raw} {data} {unit}"
-    )]
+    #[arg(default_value = "{time} {src:40} {dst_address:10} {service:20} {dpt_name:30} {data}")]
     pub line_format: String,
 
     #[arg(value_parser = time::format_description::parse_strftime_owned)]
