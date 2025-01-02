@@ -1,4 +1,4 @@
-# High-level API for KNX devices and networks
+# Rust API for KNX devices and networks
 __knxkit__ is a library for interfacing with [KNX](https://www.knx.org) devices and networks. It provides a high-level API for interacting with KNX devices and networks, and is designed to be easy to use and flexible.
 
 - __Data structures__ — individual and group addresses, CEMI, APDU, DPT, DataPoint, KNXnet/IP frames
@@ -63,10 +63,10 @@ export KNX_PROJECT=~/knxkit/_hidden/etc/TestProject.knxproj
 ```
 
 Search
-![search](doc/images/search.png)
+![search](https://github.com/knxkit/knxkit/blob/master/.github/images/search.png)
 
 Group Monitor
-![group monitor](doc/images/monitor.png)
+![group monitor](https://github.com/knxkit/knxkit/blob/master/.github/images/monitor.png)
 
 Downloadable binary releases for Linux (and maybe Windows) will be provided in the future.
 
