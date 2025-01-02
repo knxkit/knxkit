@@ -12,7 +12,7 @@ __knxkit__ is a library for interfacing with [KNX](https://www.knx.org) devices 
 - __Command line__ utilities for data structures generation and knx network interaction.
 
 
-### Example
+### Code Example
 ```toml
 [dependencies]
 tokio = { version = "1.42.0", features = ["full"] }
@@ -54,6 +54,21 @@ async fn main() {
     tunnel.terminate().await
 }
 ```
+
+### Command line utility example
+```shell
+cargo install knxkit_cli
+export KNX_REMOTE=udp://192.168.8.2
+export KNX_PROJECT=~/knxkit/_hidden/etc/TestProject.knxproj
+```
+
+Search
+![search](doc/images/search.png)
+
+Group Monitor
+![group monitor](doc/images/monitor.png)
+
+Downloadable binary releases for Linux (and maybe Windows) will be provided in the future.
 
 ### Related crates
   - [knxkit_dpt](https://crates.io/crates/knxkit_dpt) - DPT definitions
